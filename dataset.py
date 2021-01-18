@@ -79,13 +79,11 @@ class PairedDataset(data.Dataset):
                 self.transform(self.loader(self.image_names_b[index])),
                 self.matches[index])
     
+    self.image_names_a
 
     def _prepare_dataset(self):
         raise NotImplementedError
- name_checka = self.transform(self.loader(self.image_names_a[index]))
- name_checkb = self.transform(self.loader(self.image_names_a[index]))
-namea= os.path.dirname(name_checka)
-nameb= os.path.dirname(name_checkb)
+
 
 class LFWPairedDataset(PairedDataset):
 
