@@ -23,10 +23,10 @@ def create_datasets(dataroot, train_val_split=0.9):
     validation_set = []
     for klass, name in enumerate(names):
         def add_class(image):
-            image_path = os.path.join(images_root, name,'m.0_1dtzr', image)
+            image_path = os.path.join(images_root, name, image)
             return (image_path, klass, name)
 
-        images_of_person = os.listdir(os.path.join(images_root))
+        images_of_person = os.listdir(os.path.join(images_root, name))
         total = len(images_of_person)
 
         training_set += map(
@@ -94,18 +94,17 @@ class LFWPairedDataset(PairedDataset):
                 name1, name2, index1, index2 = \
                     pair[0], pair[0], int(pair[1]), int(pair[2])
 
-
             else:
                 match = False
                 name1, name2, index1, index2 = \
                     pair[0], pair[2], int(pair[1]), int(pair[3])
 
             self.image_names_a.append(os.path.join(
-                    self.dataroot, 'RFW',
+                    self.dataroot, 'lfw-deepfunneled',
                     name1, "{}_{:04d}.jpg".format(name1, index1)))
 
             self.image_names_b.append(os.path.join(
-                    self.dataroot, 'RFW',
+                    self.dataroot, 'lfw-deepfunneled',
                     name2, "{}_{:04d}.jpg".format(name2, index2)))
             self.matches.append(match)
 
