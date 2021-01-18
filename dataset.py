@@ -23,7 +23,7 @@ def create_datasets(dataroot, train_val_split=0.9):
     validation_set = []
     for klass, name in enumerate(names):
         def add_class(image):
-            image_path = os.path.join(images_root, name, image)
+            image_path = os.path.join(images_root, name,'m.0_1dtzr', image)
             return (image_path, klass, name)
 
         images_of_person = os.listdir(os.path.join(images_root))
