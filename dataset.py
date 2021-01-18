@@ -100,14 +100,14 @@ class LFWPairedDataset(PairedDataset):
                     pair[0], pair[2], int(pair[1]), int(pair[3])
 
             self.image_names_a.append(os.path.join(
-                    self.dataroot, 'lfw-deepfunneled',
+                    self.dataroot, 'RFW',
                     name1, "{}_{:04d}.jpg".format(name1, index1)))
 
             self.image_names_b.append(os.path.join(
-                    self.dataroot, 'lfw-deepfunneled',
+                    self.dataroot, 'RFW',
                     name2, "{}_{:04d}.jpg".format(name2, index2)))
             self.matches.append(match)
-   def _read_pairs(self, pairs_filename):
+    def _read_pairs(self, pairs_filename):
         pairs = []
         with open(pairs_filename, 'r') as f:
             for line in f.readlines()[1:]:
