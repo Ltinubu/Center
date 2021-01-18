@@ -28,7 +28,7 @@ def create_datasets(dataroot, train_val_split=0.9):
 
     images_root = os.path.join(dataroot)
     race=black
-    names = os.listdir(images_root,black )
+    names = os.listdir(images_root,black,m.0_1dtzr)
     if len(names) == 0:
         raise RuntimeError('Empty dataset')
 
