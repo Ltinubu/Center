@@ -74,7 +74,6 @@ class Trainer(object):
         total_center_loss = 0
         total_loss = 0
         total_top1_matches = 0
-        total_top3_matches = 0
         batch = 0
 
         with torch.set_grad_enabled(mode == 'train'):
@@ -134,7 +133,7 @@ class Trainer(object):
                     center_loss.item(), loss.item(),
                     top1_acc*100, )
 
-    def _get_matches(self, targets, logits, n=1):
+     def _get_matches(self, targets, logits, n=1):
         _, preds = logits.topk(n, dim=1)
         targets_repeated = targets.view(-1, 1).repeat(1, n)
         matches = torch.sum(preds == targets_repeated, dim=1) \
