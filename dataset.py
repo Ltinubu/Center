@@ -8,38 +8,37 @@ import numpy as np
 
 from utils import image_loader, download
 
-DATASET_TARBALL = " "
-PAIRS_TRAIN = " "
-PAIRS_VAL = " "
+DATASET_TARBALL = "http://vis-www.cs.umass.edu/lfw/lfw-deepfunneled.tgz"
+PAIRS_TRAIN = "http://vis-www.cs.umass.edu/lfw/pairsDevTrain.txt"
+PAIRS_VAL = "http://vis-www.cs.umass.edu/lfw/pairsDevTest.txt"
 
- def create_datasets(dataroot, train_val_split=0.9):
+def create_datasets(dataroot, train_val_split=0.9):
     if not os.path.isdir(dataroot):
         os.mkdir(dataroot)
 
-  #  dataroot_files = os.listdir(dataroot)
-   # data_tarball_file = DATASET_TARBALL.split('/')[-1]
-    # data_dir_name = data_tarball_file.split('.')[0]
+    dataroot_files = os.listdir(dataroot)
+    data_tarball_file = DATASET_TARBALL.split('/')[-1]
+    data_dir_name = data_tarball_file.split('.')[0]
 
-    # if data_dir_name not in dataroot_files:
-     #   if data_tarball_file not in dataroot_files:
-      #      tarball = download(dataroot, DATASET_TARBALL)
-       # with tarfile.open(tarball, 'r') as t:
-        #    t.extractall(dataroot)
-race = black
-    images_root = os.path.join(dataroot, race)
-    name_root= os.path.join(dataroot, ass)
-    names = os.listdir(name_root)
+    if data_dir_name not in dataroot_files:
+        if data_tarball_file not in dataroot_files:
+            tarball = download(dataroot, DATASET_TARBALL)
+        with tarfile.open(tarball, 'r') as t:
+            t.extractall(dataroot)
+
+    images_root = os.path.join(dataset,RFW,Back)
+    names = os.listdir(images_root)
     if len(names) == 0:
         raise RuntimeError('Empty dataset')
-#### change
+
     training_set = []
     validation_set = []
     for klass, name in enumerate(names):
         def add_class(image):
-            image_path = os.path.join(name_root, name, image)
+            image_path = os.path.join(images_root, name, image)
             return (image_path, klass, name)
 
-        images_of_person = os.listdir(os.path.join(name_root, name))
+        images_of_person = os.listdir(os.path.join(images_root, name))
         total = len(images_of_person)
 
         training_set += map(
