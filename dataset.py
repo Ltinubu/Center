@@ -27,7 +27,7 @@ PAIRS_VAL = " "
         #    t.extractall(dataroot)
 
     images_root = os.path.join(dataroot, 'lfw-deepfunneled')
-    name_root= os.path.join(dataroot, 'RFW')
+    name_root= os.path.join(dataroot, ass)
     names = os.listdir(name_root)
     if len(names) == 0:
         raise RuntimeError('Empty dataset')
