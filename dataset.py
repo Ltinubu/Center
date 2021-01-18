@@ -25,8 +25,8 @@ PAIRS_VAL = " "
       #      tarball = download(dataroot, DATASET_TARBALL)
        # with tarfile.open(tarball, 'r') as t:
         #    t.extractall(dataroot)
-
-    images_root = os.path.join(dataroot, 'lfw-deepfunneled')
+race = black
+    images_root = os.path.join(dataroot, race)
     name_root= os.path.join(dataroot, ass)
     names = os.listdir(name_root)
     if len(names) == 0:
