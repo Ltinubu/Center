@@ -26,7 +26,7 @@ def create_datasets(dataroot, train_val_split=0.9):
     #    with tarfile.open(tarball, 'r') as t:
      #       t.extractall(dataroot)
 
-    images_root = os.path.join(dataroot, 'lfw-deepfunneled')
+    images_root = os.path.join(dataroot, 'RFW')
     names = os.listdir(images_root)
     #if len(names) == 0:
      #   raise RuntimeError('Empty dataset')
