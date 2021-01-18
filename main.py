@@ -112,7 +112,7 @@ def evaluate(args):
     log_dir = get_log_dir(args)
     model_class = get_model_class(args)
 
-   pairs_path = args.pairs if args.pairs else \
+    pairs_path = args.pairs if args.pairs else \
         os.path.join(dataset_dir, 'pairs.txt')
 
     if not os.path.isfile(pairs_path):
