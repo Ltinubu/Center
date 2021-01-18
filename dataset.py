@@ -39,7 +39,7 @@ def create_datasets(dataroot, train_val_split=0.9):
             image_path = os.path.join(images_root, name, image)
             return (image_path, klass, name)
 
-        images_of_person = os.listdir(os.path.join(images_root, names))
+        images_of_person = os.listdir(os.path.join(images_root))
         total = len(images_of_person)
 
         training_set += map(
