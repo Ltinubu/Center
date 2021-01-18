@@ -13,8 +13,8 @@ from utils import image_loader, download
 #PAIRS_VAL = "http://vis-www.cs.umass.edu/lfw/pairsDevTest.txt"
 
 def create_datasets(dataroot, train_val_split=0.9):
-    if not os.path.isdir(dataroot):
-        os.mkdir(dataroot)
+    if not os.path.isdir(dataset_dir):
+        os.mkdir(dataset_dir)
 
  #   dataroot_files = os.listdir(dataroot)
   #  data_tarball_file = DATASET_TARBALL.split('/')[-1]
