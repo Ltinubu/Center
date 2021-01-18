@@ -78,9 +78,7 @@ class PairedDataset(data.Dataset):
         return (self.transform(self.loader(self.image_names_a[index])),
                 self.transform(self.loader(self.image_names_b[index])),
                 self.matches[index])
-    
-    self.image_names_a
-
+  
     def _prepare_dataset(self):
         raise NotImplementedError
 
