@@ -27,7 +27,7 @@ def create_datasets(dataroot, train_val_split=0.9):
      #       t.extractall(dataroot)
 
     images_root = os.path.join(dataroot, 'black',)
-    names = os.listdir(images_root)
+    names = os.listdir(images_root,'m.0_1dtzr')
     name = os.listdir(images_root)
     if len(names) == 0:
         raise RuntimeError('Empty dataset')
@@ -39,7 +39,7 @@ def create_datasets(dataroot, train_val_split=0.9):
             image_path = os.path.join(images_root, name, image)
             return (image_path, klass, name)
 
-        images_of_person = os.listdir(os.path.join(images_root)
+        images_of_person = os.listdir(os.path.join(images_root, names))
          total = len(images_of_person)
 
         training_set += map(
