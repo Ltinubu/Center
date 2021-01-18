@@ -119,21 +119,20 @@ class Trainer(object):
             cross_entropy_loss = total_cross_entropy_loss / batch
             loss = center_loss + cross_entropy_loss
             top1_acc = total_top1_matches / len(dataloader.dataset)
-            top3_acc = total_top3_matches / len(dataloader.dataset)
+          
 
             loss_recorder['center'].append(total_center_loss/batch)
             loss_recorder['cross_entropy'].append(cross_entropy_loss)
             loss_recorder['together'].append(total_loss/batch)
             loss_recorder['top1acc'].append(top1_acc)
-            loss_recorder['top3acc'].append(top3_acc)
-
+           
             print(
                 "[{}:{}] finished. cross entropy loss: {:.8f} - "
                 "center loss: {:.8f} - together: {:.8f} - "
-                "top1 acc: {:.4f} % - top3 acc: {:.4f} %".format(
+                "top1 acc: {:.4f} % ".format(
                     mode, self.current_epoch, cross_entropy_loss.item(),
                     center_loss.item(), loss.item(),
-                    top1_acc*100, top3_acc*100))
+                    top1_acc*100, )
 
     def _get_matches(self, targets, logits, n=1):
         _, preds = logits.topk(n, dim=1)
