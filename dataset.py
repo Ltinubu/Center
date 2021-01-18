@@ -30,7 +30,7 @@ def create_datasets(dataroot, train_val_split=0.9):
     names = os.listdir(images_root)
     if len(names) == 0:
         raise RuntimeError('Empty dataset')
-
+#### change
     training_set = []
     validation_set = []
     for klass, name in enumerate(names):
