@@ -112,7 +112,7 @@ def evaluate(args):
     log_dir = get_log_dir(args)
     model_class = get_model_class(args)
 
-    pairs_path = Users\ladet\datasets\RFW\lfw-deepfunneled\Aaron_Eckhart
+    pairs_path = 'Users'\'ladet'\'datasets'\'RFW'\'lfw-deepfunneled'
   
     dataset = LFWPairedDataset(
         dataset_dir, pairs_path, transform_for_infer(model_class.IMAGE_SHAPE))
