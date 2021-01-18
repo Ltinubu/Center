@@ -112,7 +112,8 @@ def evaluate(args):
     log_dir = get_log_dir(args)
     model_class = get_model_class(args)
 
-    pairs_path = 'Users'\'ladet'\'datasets'\'RFW'\'lfw-deepfunneled'
+    pairs_path = args.pairs if args.pairs else \
+        os.path.join(dataset_dir,'evlaute')
   
     dataset = LFWPairedDataset(
         dataset_dir, pairs_path, transform_for_infer(model_class.IMAGE_SHAPE))
