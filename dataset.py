@@ -10,6 +10,9 @@ from utils import image_loader, download
 
 
 def create_datasets(dataroot, train_val_split=0.9):
+    if not os.path.isdir(dataroot):
+        os.mkdir(dataroot)
+
 
     images_root = os.path.join(dataroot, 'black',)
     names = os.listdir(images_root)
