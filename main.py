@@ -72,14 +72,14 @@ def train(args):
     training_dataloader = torch.utils.data.DataLoader(
         training_dataset,
         batch_size=args.batch_size,
-        num_workers=6,
+        #num_workers=6,
         shuffle=True
     )
 
     validation_dataloader = torch.utils.data.DataLoader(
         validation_dataset,
         batch_size=args.batch_size,
-        num_workers=6,
+        #num_workers=6,
         shuffle=False
     )
 
