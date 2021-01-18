@@ -160,4 +160,3 @@ class Trainer(object):
         }
         state_path = os.path.join(model_dir, file_name)
         torch.save(state, state_path)
-© 202
