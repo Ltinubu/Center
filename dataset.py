@@ -8,27 +8,11 @@ import numpy as np
 
 from utils import image_loader, download
 
-#DATASET_TARBALL = "http://vis-www.cs.umass.edu/lfw/lfw-deepfunneled.tgz"
-#PAIRS_TRAIN = "http://vis-www.cs.umass.edu/lfw/pairsDevTrain.txt"
-#PAIRS_VAL = "http://vis-www.cs.umass.edu/lfw/pairsDevTest.txt"
 
 def create_datasets(dataroot, train_val_split=0.9):
- #   if not os.path.isdir(dataroot):
- #       os.mkdir(dataroot)
-
- #   dataroot_files = os.listdir(dataroot)
- #   data_tarball_file = DATASET_TARBALL.split('/')[-1]
- #   data_dir_name = data_tarball_file.split('.')[0]
-
- #   if data_dir_name not in dataroot_files:
-  #      if data_tarball_file not in dataroot_files:
-   #         tarball = download(dataroot, DATASET_TARBALL)
-    #    with tarfile.open(tarball, 'r') as t:
-     #       t.extractall(dataroot)
 
     images_root = os.path.join(dataroot, 'black',)
     names = os.listdir(images_root)
-    name = os.listdir(images_root)
     if len(names) == 0:
         raise RuntimeError('Empty dataset')
 
