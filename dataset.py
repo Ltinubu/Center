@@ -102,7 +102,6 @@ class LFWPairedDataset(PairedDataset):
         pairs = self._read_pairs(self.pairs_cfg)
 
         for pair in pairs:
-            for pair in pairs:
             if len(pair) == 3:
                 match = True
                 name1, name2, index1, index2 = \
