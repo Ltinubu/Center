@@ -83,8 +83,8 @@ class PairedDataset(data.Dataset):
     def _prepare_dataset(self):
         raise NotImplementedError
  
-name_a= os.path.dirname(self.transform(self.loader(self.image_names_a[index]))
- name_b= os.path.dirname(self.transform(self.loader(self.image_names_a[index]))
+namea= os.path.dirname(self.transform(self.loader(self.image_names_a[index]))
+nameb= os.path.dirname(self.transform(self.loader(self.image_names_a[index]))
 
 class LFWPairedDataset(PairedDataset):
 
@@ -92,7 +92,7 @@ class LFWPairedDataset(PairedDataset):
         pairs = self._read_pairs(self.pairs_cfg)
 
         for pair in pairs:
-            if name_a=name_b:
+            if namea==nameb:
                 match = True
                 name1, name2, index1, index2 = \
                     pair[0], pair[0], int(pair[1]), int(pair[2])
