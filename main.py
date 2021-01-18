@@ -114,9 +114,7 @@ def evaluate(args):
 
     pairs_path = args.pairs if args.pairs else \
         os.path.join(dataset_dir, 'pairs.txt')
-    if not os.path.isfile(pairs_path):
-        os.mkdir(dataset_dir, 'pairs.txt')
-
+  
     dataset = LFWPairedDataset(
         dataset_dir, pairs_path, transform_for_infer(model_class.IMAGE_SHAPE))
     dataloader = DataLoader(dataset, batch_size=args.batch_size, num_workers=4)
