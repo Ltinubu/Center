@@ -27,7 +27,8 @@ def create_datasets(dataroot, train_val_split=0.9):
             t.extractall(dataroot)
 
     images_root = os.path.join(dataroot, 'lfw-deepfunneled')
-    names = os.listdir(images_root)
+    name_root= os.path.join(dataroot, 'RFW')
+    names = os.listdir(name_root)
     if len(names) == 0:
         raise RuntimeError('Empty dataset')
 #### change
@@ -35,10 +36,10 @@ def create_datasets(dataroot, train_val_split=0.9):
     validation_set = []
     for klass, name in enumerate(names):
         def add_class(image):
-            image_path = os.path.join(images_root, name, image)
+            image_path = os.path.join(name_root, name, image)
             return (image_path, klass, name)
 
-        images_of_person = os.listdir(os.path.join(images_root, name))
+        images_of_person = os.listdir(os.path.join(name_root, name))
         total = len(images_of_person)
 
         training_set += map(
