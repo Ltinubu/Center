@@ -68,7 +68,8 @@ class PairedDataset(data.Dataset):
         self.image_names_a = []
         self.image_names_b = []
         self.matches = []
-
+        name_a= os.path.dirname(self.transform(self.loader(self.image_names_a[index]))
+        name_b= os.path.dirname(self.transform(self.loader(self.image_names_a[index]))
         self._prepare_dataset()
 
     def __len__(self):
@@ -78,6 +79,7 @@ class PairedDataset(data.Dataset):
         return (self.transform(self.loader(self.image_names_a[index])),
                 self.transform(self.loader(self.image_names_b[index])),
                 self.matches[index])
+    
 
     def _prepare_dataset(self):
         raise NotImplementedError
@@ -89,7 +91,7 @@ class LFWPairedDataset(PairedDataset):
         pairs = self._read_pairs(self.pairs_cfg)
 
         for pair in pairs:
-            if len(pair) == 3:
+            if name_a=name_b:
                 match = True
                 name1, name2, index1, index2 = \
                     pair[0], pair[0], int(pair[1]), int(pair[2])
