@@ -114,8 +114,7 @@ class Trainer(object):
 
                 # compute acc here
                 total_top1_matches += self._get_matches(targets, logits, 1)
-                total_top3_matches += self._get_matches(targets, logits, 3)
-
+              
             center_loss = total_center_loss / batch
             cross_entropy_loss = total_cross_entropy_loss / batch
             loss = center_loss + cross_entropy_loss
