@@ -115,8 +115,6 @@ def evaluate(args):
     pairs_path = args.pairs if args.pairs else \
         os.path.join(dataset_dir, 'pairs.txt')
 
-    if not os.path.isfile(pairs_path):
-        download(dataset_dir, 'http://vis-www.cs.umass.edu/lfw/pairs.txt')
 
     dataset = LFWPairedDataset(
         dataset_dir, pairs_path, transform_for_infer(model_class.IMAGE_SHAPE))
