@@ -15,6 +15,7 @@ from utils import image_loader, download
 def create_datasetsAF(dataroot, train_val_split=0.9):
     if not os.path.isdir(dataroot):
         os.mkdir(dataroot)
+        
 
 
     images_root = os.path.join(dataroot, 'African')
@@ -88,7 +89,7 @@ def create_datasetsSA(dataroot, train_val_split=0.9):
     for klass, name in enumerate(names_SA):
         def add_class(image):
             image_path = os.path.join(images_root, name, image)
-            return (image_path, klass, name_SA)
+            return (image_path, klass, name)
 
         images_of_person = os.listdir(os.path.join(images_root, name))
         total = len(images_of_person)
@@ -100,7 +101,7 @@ def create_datasetsSA(dataroot, train_val_split=0.9):
                 add_class,
                 images_of_person[floor(total * train_val_split):])
 
-    return SA_training_set, SA_validation_set, len(names)
+    return SA_training_set, SA_validation_set, len(names_SA)
 
 def create_datasetsW(dataroot, train_val_split=0.9):
     if not os.path.isdir(dataroot):
