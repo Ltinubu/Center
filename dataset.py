@@ -27,8 +27,8 @@ def create_datasetsAF(dataroot, train_val_split=0.9):
     af_validation_set =[]
     count=0
     for count in range(0, 1):
-        count+=1
         for klass, name in enumerate(names_af):
+            count+=1
             def add_class(image):
                 image_path = os.path.join(images_root, name, image)
                 return (image_path, klass, name)
@@ -58,8 +58,8 @@ def create_datasetsAs(dataroot, train_val_split=0.9):
     as_validation_set = []
     count=0
     for count in range(0, 1): 
-        count+=1
         for klass, name in enumerate(names_as):
+             count+=1
             def add_class(image):
                 image_path = os.path.join(images_root, name, image)
                 return (image_path, klass, name)
@@ -91,8 +91,8 @@ def create_datasetsSA(dataroot, train_val_split=0.9):
     sa_validation_set = []
     count=0
     for count in range(0, 1):
-        count+=1
         for klass, name in enumerate(names_sa):
+            count+=1
             def add_class(image):
                 image_path = os.path.join(images_root, name, image)
                 return (image_path, klass, name)
@@ -151,8 +151,8 @@ def create_datasets(dataroot, train_val_split=0.9):
     validation_set = []
     count=0
     for count in range(0, 1):
-        count+=1
         for klass, name in enumerate(names):
+            count+=1
             def add_class(image):
                 image_path = os.path.join(images_root, name, image)
                 return (image_path, klass, name)
