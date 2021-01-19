@@ -38,8 +38,9 @@ def create_datasetsAF(dataroot, train_val_split=0.9):
         AF_validation_set += map(
                 add_class,
                 images_of_person[floor(total * train_val_split):])
+      
 
-    return AF_training_set, AF_validation_set, len(names_AF)
+  #  return AF_training_set, AF_validation_set, len(names_AF)
 
 def create_datasetsAs(dataroot, train_val_split=0.9):
     if not os.path.isdir(dataroot):
@@ -150,9 +151,9 @@ def create_datasets(dataroot, train_val_split=0.9):
                 images_of_person[floor(total * train_val_split):])
 
     return training_set, validation_set, len(names)
-def concat_dataset(dataset1):
-        trainset_set = [AF_training_set, ]
-        validation_set  = [AF_validation_set,]
+def concat_dataset(data.Dataset):
+        trainset_set = [AF_training_set]
+        validation_set  = [AF_validation_set]
         num_classes = [len(names_AF),]   
         return training_set, validation_set, num_classes
 
