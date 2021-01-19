@@ -123,7 +123,9 @@ class LitModel(LightningModule):
     def trainfinal_dataloader(self):
         concat_dataset = ConcatDataset(
             datasets.ImageFolder(traindir_A),
-            datasets.ImageFolder(traindir_B)
+            datasets.ImageFolder(traindir_B),
+             datasets.ImageFolder(traindir_B),
+             datasets.ImageFolder(traindir_B),
         )
 
         loader = torch.utils.data.DataLoader(
