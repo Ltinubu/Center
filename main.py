@@ -62,10 +62,10 @@ def train(args):
     log_dir = get_log_dir(args)
     model_class = get_model_class(args)
 
-   dataset1 =  create_datasetsAF(dataset_dir)
-   dataset2 = create_datasetsAs(dataset_dir)
-   dataset3 = create_datasetsSA(dataset_dir)
-   dataset4 =create_datasetsW(dataset_dir)
+    dataset1 =  create_datasetsAF(dataset_dir)
+    dataset2 = create_datasetsAs(dataset_dir)
+    dataset3 = create_datasetsSA(dataset_dir)
+    dataset4 =create_datasetsW(dataset_dir)
     
     concate_dataset = torch.utils.data.ConcatDataset([dataset1, dataset2,dataset2,dataset2])
     
