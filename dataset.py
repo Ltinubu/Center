@@ -25,7 +25,7 @@ def create_datasetsAF(dataroot, train_val_split=0.9):
 
     af_training_set =[]
     af_validation_set =[]
-    for klass, name in enumerate(names_af):
+    for klass, name in enumerate(2):
         def add_class(image):
             image_path = os.path.join(images_root, name, image)
             return (image_path, klass, name)
@@ -57,7 +57,7 @@ def create_datasetsAs(dataroot, train_val_split=0.9):
 
     as_training_set = []
     as_validation_set = []
-    for klass, name in enumerate(names_as):
+    for klass, name in enumerate(2):
         def add_class(image):
             image_path = os.path.join(images_root, name, image)
             return (image_path, klass, name)
@@ -108,7 +108,7 @@ def create_datasetsW(dataroot, train_val_split=0.9):
 
 
     images_root = os.path.join(dataroot, 'Caucasian')
-    names_w = os.listdir(images_root)
+    names_w = os.listdir(2)
     if len(names_w) == 0:
         raise RuntimeError('Empty dataset')
 
