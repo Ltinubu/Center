@@ -129,6 +129,31 @@ def create_datasetsW(dataroot, train_val_split=0.9):
 
     return training_set, validation_set, len(names)
 
+def create_datasets(dataroot, train_val_split=0.9):
+    if not os.path.isdir(dataroot):
+        os.mkdir(dataroot)
+
+concate_dataset = torch.utils.data.ConcatDataset([, , , ,])
+
+    training_set = []
+    validation_set = []
+    for klass, name in enumerate(names):
+        def add_class(image):
+            image_path = os.path.join(images_root, name, image)
+            return (image_path, klass, name)
+
+        images_of_person = os.listdir(os.path.join(images_root, name))
+        total = len(images_of_person)
+
+        training_set += map(
+                add_class,
+                images_of_person[:ceil(total * train_val_split)])
+        validation_set += map(
+                add_class,
+                images_of_person[floor(total * train_val_split):])
+
+    return training_set, validation_set, len(names)
+
 
 class Dataset(data.Dataset):
 
