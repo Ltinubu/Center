@@ -6,7 +6,7 @@ from torch.utils.data import DataLoader
 from torchvision import transforms
 import numpy as np
 
-from dataset import Dataset, create_datasets, LFWPairedDataset, create_datasetsW , create_datasetsSA, create_datasetsAs, create_datasetsAF,ConcatDataset
+from dataset import Dataset, create_datasets, LFWPairedDataset, create_datasetsW , create_datasetsSA, create_datasetsAs, create_datasetsAF,
 from loss import compute_center_loss, get_center_delta
 from models import Resnet50FaceModel, Resnet18FaceModel
 from device import device
@@ -67,9 +67,9 @@ def train(args):
     dataset3 = create_datasetsSA(dataset_dir)
     dataset4 =create_datasetsW(dataset_dir)
     
-    concate_dataset = ConcatDataset()
+    concatedataset = concat_dataset()
     
-    training_set, validation_set, num_classes =  concate_dataset
+    training_set, validation_set, num_classes =  concatedataset
 
     training_dataset = Dataset(
             training_set, transform_for_training(model_class.IMAGE_SHAPE))
