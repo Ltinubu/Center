@@ -46,7 +46,7 @@ def create_datasetsAs(dataroot, train_val_split=0.9):
         os.mkdir(dataroot)
 
 
-    images_root = os.path.join(dataroot, 'Asain')
+    images_root = os.path.join(dataroot, 'Asian')
     names_As = os.listdir(images_root)
     if len(names_As) == 0:
         raise RuntimeError('Empty dataset')
