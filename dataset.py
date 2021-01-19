@@ -8,6 +8,7 @@ import numpy as np
 
 from utils import image_loader, download
 
+dataroot= /cmlscratch/dtinubu/Centerloss/Center
 
 def create_datasets(dataroot, train_val_split=0.9):
     if not os.path.isdir(dataroot):
