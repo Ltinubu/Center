@@ -25,23 +25,29 @@ def create_datasetsAF(dataroot, train_val_split=0.9):
 
     af_training_set =[]
     af_validation_set =[]
-    for klass, name in enumerate(names_af):
-        def add_class(image):
-            image_path = os.path.join(images_root, name, image)
-            return (image_path, klass, name)
+    count=0
+    for count in range(0, 1):
+        for klass, name in enumerate(names_af):
+            def add_class(image):
+                image_path = os.path.join(images_root, name, image)
+                return (image_path, klass, name)
 
-        images_of_person = os.listdir(os.path.join(images_root, name))
-        total = len(images_of_person)
+            images_of_person = os.listdir(os.path.join(images_root, name))
+           
+            total = len(images_of_person)
 
-        af_training_set += map(
-                add_class,
-                images_of_person[:ceil(total * train_val_split)])
-        af_validation_set += map(
-                add_class,
-                images_of_person[floor(total * train_val_split):])
-        train_af=af_training_set 
-        validat_af=af_validation_set
-        
+            af_training_set += map(
+                    add_class,
+                    images_of_person[:ceil(total * train_val_split)])
+            af_validation_set += map(
+                    add_class,
+                    images_of_person[floor(total * train_val_split):])
+             count+=1
+              
+            train_af=af_training_set 
+            validat_af=af_validation_set
+            
+
 
     return af_training_set, af_validation_set, len(names_af)
 
@@ -58,7 +64,7 @@ def create_datasetsAs(dataroot, train_val_split=0.9):
     as_training_set = []
     as_validation_set = []
     count=0
-    for count in range(0, 4):  
+    for count in range(0, 1):  
         for klass, name in enumerate(names_as):
             def add_class(image):
                 image_path = os.path.join(images_root, name, image)
@@ -89,20 +95,23 @@ def create_datasetsSA(dataroot, train_val_split=0.9):
 
     sa_training_set = []
     sa_validation_set = []
-    for klass, name in enumerate(names_sa):
-        def add_class(image):
-            image_path = os.path.join(images_root, name, image)
-            return (image_path, klass, name)
+    count=0
+    for count in range(0, 1):
+        for klass, name in enumerate(names_sa):
+            def add_class(image):
+                image_path = os.path.join(images_root, name, image)
+                return (image_path, klass, name)
 
-        images_of_person = os.listdir(os.path.join(images_root, name))
-        total = len(images_of_person)
+            images_of_person = os.listdir(os.path.join(images_root, name))
+            total = len(images_of_person)
 
-        sa_training_set += map(
-                add_class,
-                images_of_person[:ceil(total * train_val_split)])
-        sa_validation_set += map(
-                add_class,
-                images_of_person[floor(total * train_val_split):])
+            sa_training_set += map(
+                    add_class,
+                    images_of_person[:ceil(total * train_val_split)])
+            sa_validation_set += map(
+                    add_class,
+                    images_of_person[floor(total * train_val_split):])
+             count+=1
 
     return sa_training_set, sa_validation_set, len(names_sa)
 
@@ -118,20 +127,23 @@ def create_datasetsW(dataroot, train_val_split=0.9):
 
     w_training_set = []
     w_validation_set = []
-    for klass, name in enumerate(names_w):
-        def add_class(image):
-            image_path = os.path.join(images_root, name, image)
-            return (image_path, klass, name)
+    count=0
+    for count in range(0, 1):
+        for klass, name in enumerate(names_w):
+            def add_class(image):
+                image_path = os.path.join(images_root, name, image)
+                return (image_path, klass, name)
 
-        images_of_person = os.listdir(os.path.join(images_root, name))
-        total = len(images_of_person)
+            images_of_person = os.listdir(os.path.join(images_root, name))
+            total = len(images_of_person)
 
-        w_training_set += map(
-                add_class,
-                images_of_person[:ceil(total * train_val_split)])
-        w_validation_set += map(
-                add_class,
-                images_of_person[floor(total * train_val_split):])
+            w_training_set += map(
+                    add_class,
+                    images_of_person[:ceil(total * train_val_split)])
+            w_validation_set += map(
+                    add_class,
+                    images_of_person[floor(total * train_val_split):])
+             count+=1
 
     return w_training_set, w_validation_set, len(names_w)
 
@@ -141,19 +153,21 @@ def create_datasets(dataroot, train_val_split=0.9):
 
     training_set = []
     validation_set = []
-    for klass, name in enumerate(names):
-        def add_class(image):
-            image_path = os.path.join(images_root, name, image)
-            return (image_path, klass, name)
-        images_of_person = os.listdir(os.path.join(images_root, name))
-        total = len(images_of_person)
+    count=0
+    for count in range(0, 1):
+        for klass, name in enumerate(names):
+            def add_class(image):
+                image_path = os.path.join(images_root, name, image)
+                return (image_path, klass, name)
+            images_of_person = os.listdir(os.path.join(images_root, name))
+            total = len(images_of_person)
 
-        training_set += map(
-                add_class,
-                images_of_person[:ceil(total * train_val_split)])
-        validation_set += map(
-                add_class,
-                images_of_person[floor(total * train_val_split):])
+            training_set += map(
+                    add_class,
+                    images_of_person[:ceil(total * train_val_split)])
+            validation_set += map(
+                    add_class,
+                    images_of_person[floor(total * train_val_split):])
 
     return training_set, validation_set, len(names)
 
