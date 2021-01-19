@@ -2,7 +2,7 @@ import os
 import random
 import tarfile
 from math import ceil, floor
-from main import args
+from main import args.af
 import argparse
 
 
