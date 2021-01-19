@@ -1,7 +1,8 @@
 import os
 import random
 import tarfile
-from math import ceil, floor, argparse, args
+from math import ceil, floor
+from main import argparse, args
 import argparse
 
 
