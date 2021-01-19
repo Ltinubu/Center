@@ -65,12 +65,8 @@ def train(args):
     dataset2 =create_datasetsSA(dataset_dir)  
     dataset3 = create_datasetsAs(dataset_dir) 
     dataset4 =create_datasetsAF(dataset_dir)
-    concate_dataset = torch.utils.data.ConcatDataset([dataset1, dataset2])
-    
-    training_set, validation_set, num_classes = concate_dataset 
-    
-    training_set, validation_set, num_classes =   multiple_json_dataset
-
+    concate_dataset = torch.utils.data.ConcatDataset([dataset1, dataset2,dataset3, dataset4])
+   
     training_dataset = Dataset(
             training_set, transform_for_training(model_class.IMAGE_SHAPE))
     validation_dataset = Dataset(
