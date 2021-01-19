@@ -63,19 +63,19 @@ def train(args):
     
     
     
-    W_training_set, W_validation_set, len(names_W) = create_datasetsW(dataset_dir)
+    w_training_set, w_validation_set, len(names_w) = create_datasetsW(dataset_dir)
   
 
-    SA_training_set, SA_validation_set, len(names_SA) =create_datasetsSA(dataset_dir)  
+    sa_training_set, sa_validation_set, len(names_sa) =create_datasetsSA(dataset_dir)  
      
-    As_training_set, As_validation_set, len(names_As)= create_datasetsAs(dataset_dir) 
+    as_training_set, as_validation_set, len(names_as)= create_datasetsAs(dataset_dir) 
     
     
-    AF_training_set, AF_validation_set, len(names_AF) =create_datasetsAF(dataset_dir)
+    af_training_set, af_validation_set, len(names_af) =create_datasetsAF(dataset_dir)
      
-    training_set = [  W_training_set,SA_training_set, As_training_set, AF_training_set]
-    validation_set = [W_validation_set,SA_validation_set,As_validation_set,AF_validation_set]
-    num_classes = [len(names_W),len(names_SA),len(names_As),len(names_AF)]
+    training_set = [  w_training_set,sa_training_set, as_training_set, af_training_set]
+    validation_set = [w_validation_set,sa_validation_set,as_validation_set,af_validation_set]
+    num_classes = [len(names_w),len(names_sa),len(names_as),len(names_af)]
 
     
     training_dataset = Dataset(
