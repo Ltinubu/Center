@@ -58,7 +58,7 @@ def create_datasetsAs(dataroot, train_val_split=0.9):
     as_training_set = []
     as_validation_set = []
     count=0
-    While Count < 4   
+    While count < 4   
         for klass, name in enumerate(names_as):
             def add_class(image):
                 image_path = os.path.join(images_root, name, image)
