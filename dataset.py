@@ -42,7 +42,7 @@ def create_datasetsAF(dataroot, train_val_split=0.9):
         validat_AF=AF_validation_set
         le_AF=len(names_AF)
 
-    return AF_training_set, AF_validation_set, len(names_AF
+    return AF_training_set, AF_validation_set, len(names_AF)
 
 def create_datasetsAs(dataroot, train_val_split=0.9):
     if not os.path.isdir(dataroot):
