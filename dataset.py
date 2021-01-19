@@ -25,10 +25,11 @@ def create_datasetsAF(dataroot, train_val_split=0.9):
 
     af_training_set_DD =[]
     af_validation_set_DD =[]
-    for klass, name in enumerate(names_af):
-       def add_class(image):
-           image_path = os.path.join(images_root, name, image)
+   for klass, name in enumerate(names_af):
+        def add_class(image):
+            image_path = os.path.join(images_root, name, image)
             return (image_path, klass, name)
+
       images_of_person = os.listdir(os.path.join(images_root, name))     
             total = len(images_of_person)
             af_training_set__DD += map(
