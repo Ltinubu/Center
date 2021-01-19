@@ -141,7 +141,6 @@ def create_datasets(dataroot, train_val_split=0.9):
         def add_class(image):
             image_path = os.path.join(images_root, name, image)
             return (image_path, klass, name)
-FF
         images_of_person = os.listdir(os.path.join(images_root, name))
         total = len(images_of_person)
 
