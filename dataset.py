@@ -19,13 +19,13 @@ def create_datasetsAF(dataroot, train_val_split=0.9):
 
 
     images_root = os.path.join(dataroot, 'African')
-    names_AF = os.listdir(images_root)
-    if len(names_AF) == 0:
+    names_af = os.listdir(images_root)
+    if len(names_af) == 0:
         raise RuntimeError('Empty dataset')
 
-    AF_training_set =[]
-    AF_validation_set =[]
-    for klass, name in enumerate(names_AF):
+    af_training_set =[]
+    af_validation_set =[]
+    for klass, name in enumerate(names_af):
         def add_class(image):
             image_path = os.path.join(images_root, name, image)
             return (image_path, klass, name)
@@ -33,31 +33,31 @@ def create_datasetsAF(dataroot, train_val_split=0.9):
         images_of_person = os.listdir(os.path.join(images_root, name))
         total = len(images_of_person)
 
-        AF_training_set += map(
+        af_training_set += map(
                 add_class,
                 images_of_person[:ceil(total * train_val_split)])
-        AF_validation_set += map(
+        af_validation_set += map(
                 add_class,
                 images_of_person[floor(total * train_val_split):])
-        train_AF=AF_training_set 
-        validat_AF=AF_validation_set
-        le_AF=len(names_AF)
+        train_af=af_training_set 
+        validat_af=af_validation_set
+        
 
-    return AF_training_set, AF_validation_set, len(names_AF)
+    return af_training_set, af_validation_set, len(names_af)
 
-def create_datasetsAs(dataroot, train_val_split=0.9):
+def create_datasetsas(dataroot, train_val_split=0.9):
     if not os.path.isdir(dataroot):
         os.mkdir(dataroot)
 
 
     images_root = os.path.join(dataroot, 'Asian')
-    names_As = os.listdir(images_root)
-    if len(names_As) == 0:
+    names_as = os.listdir(images_root)
+    if len(names_as) == 0:
         raise RuntimeError('Empty dataset')
 
-    As_training_set = []
-    As_validation_set = []
-    for klass, name in enumerate(names_As):
+    as_training_set = []
+    as_validation_set = []
+    for klass, name in enumerate(names_as):
         def add_class(image):
             image_path = os.path.join(images_root, name, image)
             return (image_path, klass, name)
@@ -65,14 +65,13 @@ def create_datasetsAs(dataroot, train_val_split=0.9):
         images_of_person = os.listdir(os.path.join(images_root, name))
         total = len(images_of_person)
 
-        As_training_set += map(
+        as_training_set += map(
                 add_class,
                images_of_person[:ceil(total * train_val_split)])
-        As_validation_set += map(
                 add_class,
                 images_of_person[floor(total * train_val_split):])
 
-    return As_training_set, As_validation_set, len(names_As)
+    return as_training_set, as_validation_set, len(names_as)
 
 def create_datasetsSA(dataroot, train_val_split=0.9):
     if not os.path.isdir(dataroot):
@@ -80,13 +79,13 @@ def create_datasetsSA(dataroot, train_val_split=0.9):
 
 
     images_root = os.path.join(dataroot, 'Indian')
-    names_SA = os.listdir(images_root)
-    if len(names_SA) == 0:
+    names_sa = os.listdir(images_root)
+    if len(names_sa) == 0:
         raise RuntimeError('Empty dataset')
 
-    SA_training_set = []
-    SA_validation_set = []
-    for klass, name in enumerate(names_SA):
+    sa_training_set = []
+    sa_validation_set = []
+    for klass, name in enumerate(names_sa):
         def add_class(image):
             image_path = os.path.join(images_root, name, image)
             return (image_path, klass, name)
@@ -94,14 +93,14 @@ def create_datasetsSA(dataroot, train_val_split=0.9):
         images_of_person = os.listdir(os.path.join(images_root, name))
         total = len(images_of_person)
 
-        SA_training_set += map(
+        sa_training_set += map(
                 add_class,
                 images_of_person[:ceil(total * train_val_split)])
-        SA_validation_set += map(
+        sa_validation_set += map(
                 add_class,
                 images_of_person[floor(total * train_val_split):])
 
-    return SA_training_set, SA_validation_set, len(names_SA)
+    return sa_training_set, sa_validation_set, len(names_sa)
 
 def create_datasetsW(dataroot, train_val_split=0.9):
     if not os.path.isdir(dataroot):
@@ -109,13 +108,13 @@ def create_datasetsW(dataroot, train_val_split=0.9):
 
 
     images_root = os.path.join(dataroot, 'Caucasian')
-    names_W = os.listdir(images_root)
-    if len(names_W) == 0:
+    names_w = os.listdir(images_root)
+    if len(names_w) == 0:
         raise RuntimeError('Empty dataset')
 
-    W_training_set = []
-    W_validation_set = []
-    for klass, name in enumerate(names_W):
+    w_training_set = []
+    w_validation_set = []
+    for klass, name in enumerate(names_w):
         def add_class(image):
             image_path = os.path.join(images_root, name, image)
             return (image_path, klass, name)
@@ -123,14 +122,14 @@ def create_datasetsW(dataroot, train_val_split=0.9):
         images_of_person = os.listdir(os.path.join(images_root, name))
         total = len(images_of_person)
 
-        W_training_set += map(
+        w_training_set += map(
                 add_class,
                 images_of_person[:ceil(total * train_val_split)])
-        W_validation_set += map(
+        w_validation_set += map(
                 add_class,
                 images_of_person[floor(total * train_val_split):])
 
-    return W_training_set, W_validation_set, len(names_W)
+    return w_training_set, w_validation_set, len(names_w)
 
 def create_datasets(dataroot, train_val_split=0.9):
     if not os.path.isdir(dataroot):
@@ -142,7 +141,7 @@ def create_datasets(dataroot, train_val_split=0.9):
         def add_class(image):
             image_path = os.path.join(images_root, name, image)
             return (image_path, klass, name)
-
+FF
         images_of_person = os.listdir(os.path.join(images_root, name))
         total = len(images_of_person)
 
