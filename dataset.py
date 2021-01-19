@@ -47,8 +47,8 @@ def create_datasetsAs(dataroot, train_val_split=0.9):
 
 
     images_root = os.path.join(dataroot, 'Asain')
-    names = os.listdir(images_root)
-    if len(names) == 0:
+    names_As = os.listdir(images_root)
+    if len(names_As) == 0:
         raise RuntimeError('Empty dataset')
 
     As_training_set = []
@@ -77,8 +77,8 @@ def create_datasetsSA(dataroot, train_val_split=0.9):
 
 
     images_root = os.path.join(dataroot, 'Indian')
-    names = os.listdir(images_root)
-    if len(names) == 0:
+    names_SA = os.listdir(images_root)
+    if len(names_SA) == 0:
         raise RuntimeError('Empty dataset')
 
     SA_training_set = []
@@ -106,7 +106,7 @@ def create_datasetsW(dataroot, train_val_split=0.9):
 
 
     images_root = os.path.join(dataroot, 'Caucasian')
-    names = os.listdir(images_root)
+    names_W = os.listdir(images_root)
     if len(names) == 0:
         raise RuntimeError('Empty dataset')
 
@@ -127,7 +127,7 @@ def create_datasetsW(dataroot, train_val_split=0.9):
                 add_class,
                 images_of_person[floor(total * train_val_split):])
 
-    return W_training_set, W_validation_set, len(names)
+    return W_training_set, W_validation_set, len(_Wnames)
 
 def create_datasets(dataroot, train_val_split=0.9):
     if not os.path.isdir(dataroot):
