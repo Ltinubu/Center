@@ -129,7 +129,7 @@ def create_datasetsW(dataroot, train_val_split=0.9):
                 add_class,
                 images_of_person[floor(total * train_val_split):])
 
-    return W_training_set, W_validation_set, len(_Wnames)
+    return W_training_set, W_validation_set, len(names_W)
 
 def create_datasets(dataroot, train_val_split=0.9):
     if not os.path.isdir(dataroot):
