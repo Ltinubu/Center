@@ -153,7 +153,8 @@ def create_datasets(dataroot, train_val_split=0.9):
                 images_of_person[floor(total * train_val_split):])
 
     return training_set, validation_set, len(names)
-def concat_dataset(dataset1):
+
+def concat_dataset(AF_training_set, AF_validation_set, len(names_AF)):
         trainset_set = [train_AF]
         validation_set  = [AF_validation_set]
         num_classes = [len(names_AF),]   
