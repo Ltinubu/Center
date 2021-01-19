@@ -63,9 +63,9 @@ def train(args):
     model_class = get_model_class(args)
     
     
-    conca.tedataset = concat_dataset()
+   multiple_json_dataset = torch.utils.data.ConcatDataset(dataset1,dataset2,dataset3,dataset4,)
     
-    training_set, validation_set, num_classes =  concatedataset
+    training_set, validation_set, num_classes =   multiple_json_dataset
 
     training_dataset = Dataset(
             training_set, transform_for_training(model_class.IMAGE_SHAPE))
