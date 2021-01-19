@@ -22,8 +22,8 @@ def create_datasetsAF(dataroot, train_val_split=0.9):
     if len(names_AF) == 0:
         raise RuntimeError('Empty dataset')
 
-     AF_training_set = []
-    AF_validation_set = []
+    AF_training_set =[]
+    AF_validation_set =[]
     for klass, name in enumerate(names_AF):
         def add_class(image):
             image_path = os.path.join(images_root, name, image)
