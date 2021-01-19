@@ -31,7 +31,6 @@ def create_datasetsAF(dataroot, train_val_split=0.9):
             def add_class(image):
                 image_path = os.path.join(images_root, name, image)
                 return (image_path, klass, name)
-
             images_of_person = os.listdir(os.path.join(images_root, name))
            
             total = len(images_of_person)
@@ -42,13 +41,7 @@ def create_datasetsAF(dataroot, train_val_split=0.9):
             af_validation_set += map(
                     add_class,
                     images_of_person[floor(total * train_val_split):])
-             count+=1
-              
-            train_af=af_training_set 
-            validat_af=af_validation_set
-            
-
-
+        count+=1
     return af_training_set, af_validation_set, len(names_af)
 
 def create_datasetsAs(dataroot, train_val_split=0.9):
