@@ -230,7 +230,7 @@ class LFWPairedDataset(PairedDataset):
         return pairs
     
     def ConcatDataset():
-     trainset_set = [AF_training_set}
+     trainset_set = [AF_training_set]
      validation_set  = [AF_validation_set]
      num_classes = [len(names_AF]   
         return training_set, validation_set, num_classes)
