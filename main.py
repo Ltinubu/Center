@@ -63,7 +63,7 @@ def train(args):
     model_class = get_model_class(args)
     
     
-   multiple_json_dataset = torch.utils.data.ConcatDataset(dataset1,dataset2,dataset3,dataset4,)
+   multiple_json_dataset = torch.utils.data.ConcatDataset(dataset1,dataset2,dataset3,dataset4)
     
     training_set, validation_set, num_classes =   multiple_json_dataset
 
