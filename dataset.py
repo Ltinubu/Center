@@ -108,7 +108,7 @@ def create_datasetsW(dataroot, train_val_split=0.9):
 
 
     images_root = os.path.join(dataroot, 'Caucasian')
-    names_w = os.listdir(names_w)
+    names_w = os.listdir(images_root)
     if len(names_w) == 0:
         raise RuntimeError('Empty dataset')
 
