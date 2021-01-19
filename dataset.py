@@ -64,7 +64,7 @@ def create_datasetsAs(dataroot, train_val_split=0.9):
         As_training_set += map(
                 add_class,
                images_of_person[:ceil(total * train_val_split)])
-        AS_validation_set += map(
+        As_validation_set += map(
                 add_class,
                 images_of_person[floor(total * train_val_split):])
 
