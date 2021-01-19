@@ -53,7 +53,7 @@ def create_datasetsAs(dataroot, train_val_split=0.9):
 
     As_training_set = []
     As_validation_set = []
-    for klass, name in enumerate(names):
+    for klass, name in enumerate(names_As):
         def add_class(image):
             image_path = os.path.join(images_root, name, image)
             return (image_path, klass, name)
@@ -83,7 +83,7 @@ def create_datasetsSA(dataroot, train_val_split=0.9):
 
     SA_training_set = []
     SA_validation_set = []
-    for klass, name in enumerate(names):
+    for klass, name in enumerate(names_SA):
         def add_class(image):
             image_path = os.path.join(images_root, name, image)
             return (image_path, klass, name)
