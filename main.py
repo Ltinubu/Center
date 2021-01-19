@@ -75,7 +75,7 @@ def train(args):
      
     training_set = [  w_training_set,sa_training_set, as_training_set, af_training_set]
     validation_set = [w_validation_set,sa_validation_set,as_validation_set,af_validation_set]
-    num_classes = [num_classes_w,num_classes_sa,num_classes_as,num_classes_af]
+    num_classes = num_classes_w+num_classes_sa+num_classes_as+num_classes_af
 
     
     training_dataset = Dataset(
