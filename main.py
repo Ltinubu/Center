@@ -63,7 +63,7 @@ def train(args):
     model_class = get_model_class(args)
     
     dataset1= create_datasetsAF(dataset_dir)
-    concatedataset = concat_dataset(dataset_dir)
+    conca.tedataset = concat_dataset(dataset1)
     
     training_set, validation_set, num_classes =  concatedataset
 
@@ -75,14 +75,14 @@ def train(args):
     training_dataloader = torch.utils.data.DataLoader(
         training_dataset,
         batch_size=args.batch_size,
-        #num_workers=6,
+        num_workers=6,
         shuffle=True
     )
 
     validation_dataloader = torch.utils.data.DataLoader(
         validation_dataset,
         batch_size=args.batch_size,
-        #num_workers=6,
+        num_workers=6,
         shuffle=False
     )
 
