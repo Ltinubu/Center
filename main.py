@@ -15,7 +15,6 @@ from utils import download, generate_roc_curve, image_loader
 from metrics import compute_roc, select_threshold
 from imageaug import transform_for_infer, transform_for_training
 
-dataroot= '/cmlscratch/dtinubu/Centerloss/Center'
 
 def main(args):
     if args.evaluate:
@@ -27,9 +26,9 @@ def main(args):
 
 
 def get_dataset_dir(args):
-    home = os.path.expanduser("~")
+    home = cmlscratch/dtinubu/datasets/RFW/
     dataset_dir = args.dataset_dir if args.dataset_dir else os.path.join(
-        home, 'datasets', 'RFW')
+        home, 'Balancedface', 'race_per_7000')
 
     if not os.path.isdir(dataset_dir):
         os.mkdir(dataset_dir)
