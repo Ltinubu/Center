@@ -236,13 +236,13 @@ if __name__ == '__main__':
     parser.add_argument('--verify-images', type=str,
                         help='verify 2 images of face belong to one person,'
                              'split image pathes by comma')
-    parser.add_argument('--af', type=int,
+    parser.add_argument('--af', type=int,default=0
                         help='how many blacks you want')
-    parser.add_argument('--as', type=int,
+    parser.add_argument('--sa', type=int,default=0
                         help='how many south asian you want')
-    parser.add_argument('--w', type=int,
+    parser.add_argument('--w', type=int,default=0
                         help='how many whitess you want')
-    parser.add_argument('--as', type=int,
+    parser.add_argument('--as', type=int,default=0
                         help='how many asians you want')
  
                    
