@@ -228,7 +228,7 @@ class LFWPairedDataset(PairedDataset):
                 pair = line.strip().split()
                 pairs.append(pair)
         return pairs
-    def concat_dataset(dataroot, train_val_split=0.9):
+    def concat_dataset():
         trainset_set = [AF_training_set]
         validation_set  = [AF_validation_set]
         num_classes = [len(names_AF)]   
