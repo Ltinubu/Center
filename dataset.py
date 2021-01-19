@@ -3,7 +3,6 @@ import random
 import tarfile
 from math import ceil, floor
 from main import args
-import argparse
 
 
 from torch.utils import data
@@ -26,8 +25,8 @@ def create_datasetsAF(dataroot, train_val_split=0.9):
     if len(names_af) == 0:
         raise RuntimeError('Empty dataset')
 
-    af_training_set_DD =[]
-    af_validation_set_DD =[]
+    af_training_set =[]
+    af_validation_set =[]
     for klass, name in enumerate(names_af):
         def add_class(image):
             image_path = os.path.join(images_root, name, image)
@@ -36,10 +35,10 @@ def create_datasetsAF(dataroot, train_val_split=0.9):
         images_of_person = os.listdir(os.path.join(images_root, name))     
         total = len(images_of_person)
         
-        af_training_set_DD += map(
+        af_training_set+= map(
                     add_class,
                     images_of_person[:ceil(total * train_val_split)])
-        af_validation_set_DD += map(
+        af_validation_set+= map(
                     add_class,
                     images_of_person[floor(total * train_val_split):])
      
