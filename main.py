@@ -6,8 +6,7 @@ from torch.utils.data import DataLoader
 from torchvision import transforms
 import numpy as np
 
-from dataset import Dataset, create_datasets,create_datasetsW,create_datasetsSA,create_datasetsAs,create_datasetsAF,LFWPairedDataset,CDataset, concat_dataset
-from loss import compute_center_loss, get_center_delta
+from dataset import Dataset, create_datasets,create_datasetsW,create_datasetsSA,create_datasetsAs,create_datasetsAF,LFWPairedDataset,
 from models import Resnet50FaceModel, Resnet18FaceModel
 from device import device
 from trainer import Trainer
