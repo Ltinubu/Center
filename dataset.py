@@ -27,6 +27,7 @@ def create_datasetsAF(dataroot, train_val_split=0.9):
     af_validation_set =[]
     count=0
     for count in range(0, 1):
+        count+=1
         for klass, name in enumerate(names_af):
             def add_class(image):
                 image_path = os.path.join(images_root, name, image)
@@ -41,7 +42,6 @@ def create_datasetsAF(dataroot, train_val_split=0.9):
             af_validation_set += map(
                     add_class,
                     images_of_person[floor(total * train_val_split):])
-        count+=1
     return af_training_set, af_validation_set, len(names_af)
 
 def create_datasetsAs(dataroot, train_val_split=0.9):
@@ -57,7 +57,8 @@ def create_datasetsAs(dataroot, train_val_split=0.9):
     as_training_set = []
     as_validation_set = []
     count=0
-    for count in range(0, 1):  
+    for count in range(0, 1): 
+        count+=1
         for klass, name in enumerate(names_as):
             def add_class(image):
                 image_path = os.path.join(images_root, name, image)
@@ -72,7 +73,7 @@ def create_datasetsAs(dataroot, train_val_split=0.9):
             as_validation_set += map(
                     add_class,
                     images_of_person[floor(total * train_val_split):])
-            count+=1
+           
             
     return as_training_set, as_validation_set, len(names_as)
 
@@ -90,6 +91,7 @@ def create_datasetsSA(dataroot, train_val_split=0.9):
     sa_validation_set = []
     count=0
     for count in range(0, 1):
+        count+=1
         for klass, name in enumerate(names_sa):
             def add_class(image):
                 image_path = os.path.join(images_root, name, image)
@@ -104,7 +106,7 @@ def create_datasetsSA(dataroot, train_val_split=0.9):
             sa_validation_set += map(
                     add_class,
                     images_of_person[floor(total * train_val_split):])
-        count+=1
+        
 
     return sa_training_set, sa_validation_set, len(names_sa)
 
@@ -149,6 +151,7 @@ def create_datasets(dataroot, train_val_split=0.9):
     validation_set = []
     count=0
     for count in range(0, 1):
+        count+=1
         for klass, name in enumerate(names):
             def add_class(image):
                 image_path = os.path.join(images_root, name, image)
