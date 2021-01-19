@@ -57,20 +57,24 @@ def create_datasetsAs(dataroot, train_val_split=0.9):
 
     as_training_set = []
     as_validation_set = []
-    for klass, name in enumerate(names_as):
-        def add_class(image):
-            image_path = os.path.join(images_root, name, image)
-            return (image_path, klass, name)
+    count=0
+     While Count < 4   
+        for klass, name in enumerate(names_as):
+            def add_class(image):
+                image_path = os.path.join(images_root, name, image)
+                return (image_path, klass, name)
 
-        images_of_person = os.listdir(os.path.join(images_root, name))
-        total = len(images_of_person)
+            images_of_person = os.listdir(os.path.join(images_root, name))
+            total = len(images_of_person)
 
-        as_training_set += map(
-                add_class,
-                images_of_person[:ceil(total * train_val_split)])
-        as_validation_set += map(
-                add_class,
-                images_of_person[floor(total * train_val_split):])
+            as_training_set += map(
+                    add_class,
+                    images_of_person[:ceil(total * train_val_split)])
+            as_validation_set += map(
+                    add_class,
+                    images_of_person[floor(total * train_val_split):])
+            Count+=1
+            
     return as_training_set, as_validation_set, len(names_as)
 
 def create_datasetsSA(dataroot, train_val_split=0.9):
