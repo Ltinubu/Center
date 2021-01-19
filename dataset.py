@@ -117,3 +117,20 @@ class LFWPairedDataset(PairedDataset):
                 pair = line.strip().split()
                 pairs.append(pair)
         return pairs
+    
+class LitModel(LightningModule):
+
+    def trainfinal_dataloader(self):
+        concat_dataset = ConcatDataset(
+            datasets.ImageFolder(traindir_A),
+            datasets.ImageFolder(traindir_B)
+        )
+
+        loader = torch.utils.data.DataLoader(
+            concat_dataset,
+            batch_size=args.batch_size,
+            shuffle=True,
+            num_workers=args.workers,
+            pin_memory=True
+        )
+        return loader
