@@ -154,11 +154,7 @@ def create_datasets(dataroot, train_val_split=0.9):
 
     return training_set, validation_set, len(names)
 
-def concat_dataset(AF_training_set, AF_validation_set, len(names_AF)):
-        trainset_set = [train_AF]
-        validation_set  = [AF_validation_set]
-        num_classes = [len(names_AF),]   
-        return training_set, validation_set, num_classes
+
 
 
 class Dataset(data.Dataset):
@@ -203,7 +199,8 @@ class PairedDataset(data.Dataset):
   
     def _prepare_dataset(self):
         raise NotImplementedError
-
+        
+    
 
 class LFWPairedDataset(PairedDataset):
 
@@ -236,3 +233,8 @@ class LFWPairedDataset(PairedDataset):
                 pair = line.strip().split()
                 pairs.append(pair)
         return pairs
+    def concat_dataset():
+        trainset_set = [train_AF]
+        validation_set  = [AF_validation_set]
+        num_classes = [len(names_AF),]   
+        return training_set, validation_set, num_classes
