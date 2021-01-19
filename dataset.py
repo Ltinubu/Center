@@ -18,13 +18,13 @@ def create_datasetsAF(dataroot, train_val_split=0.9):
 
 
     images_root = os.path.join(dataroot, 'African')
-    names = os.listdir(images_root)
-    if len(names) == 0:
+    names_AF = os.listdir(images_root)
+    if len(names_AF) == 0:
         raise RuntimeError('Empty dataset')
 
     training_set = []
     validation_set = []
-    for klass, name in enumerate(names):
+    for klass, name in enumerate(names_AF):
         def add_class(image):
             image_path = os.path.join(images_root, name, image)
             return (image_path, klass, name)
@@ -32,14 +32,14 @@ def create_datasetsAF(dataroot, train_val_split=0.9):
         images_of_person = os.listdir(os.path.join(images_root, name))
         total = len(images_of_person)
 
-        training_set += map(
+        AF_training_set += map(
                 add_class,
                 images_of_person[:ceil(total * train_val_split)])
-        validation_set += map(
+        AF_validation_set += map(
                 add_class,
                 images_of_person[floor(total * train_val_split):])
 
-    return training_set, validation_set, len(names)
+    return AF_training_set, AF_validation_set, len(names_AF)
 
 def create_datasetsAs(dataroot, train_val_split=0.9):
     if not os.path.isdir(dataroot):
@@ -61,10 +61,10 @@ def create_datasetsAs(dataroot, train_val_split=0.9):
         images_of_person = os.listdir(os.path.join(images_root, name))
         total = len(images_of_person)
 
-        training_set += map(
+        As_training_set += map(
                 add_class,
-                images_of_person[:ceil(total * train_val_split)])
-        validation_set += map(
+               images_of_person[:ceil(total * train_val_split)])
+        AS_validation_set += map(
                 add_class,
                 images_of_person[floor(total * train_val_split):])
 
@@ -91,10 +91,10 @@ def create_datasetsSA(dataroot, train_val_split=0.9):
         images_of_person = os.listdir(os.path.join(images_root, name))
         total = len(images_of_person)
 
-        training_set += map(
+        SA_training_set += map(
                 add_class,
                 images_of_person[:ceil(total * train_val_split)])
-        validation_set += map(
+        SA_validation_set += map(
                 add_class,
                 images_of_person[floor(total * train_val_split):])
 
@@ -112,7 +112,7 @@ def create_datasetsW(dataroot, train_val_split=0.9):
 
     training_set = []
     validation_set = []
-    for klass, name in enumerate(names):
+    for klass, name in enumerate(names_W):
         def add_class(image):
             image_path = os.path.join(images_root, name, image)
             return (image_path, klass, name)
@@ -120,14 +120,14 @@ def create_datasetsW(dataroot, train_val_split=0.9):
         images_of_person = os.listdir(os.path.join(images_root, name))
         total = len(images_of_person)
 
-        training_set += map(
+        W_training_set += map(
                 add_class,
                 images_of_person[:ceil(total * train_val_split)])
-        validation_set += map(
+        W_validation_set += map(
                 add_class,
                 images_of_person[floor(total * train_val_split):])
 
-    return training_set, validation_set, len(names)
+    return W_training_set, W_validation_set, len(names)
 
 def create_datasets(dataroot, train_val_split=0.9):
     if not os.path.isdir(dataroot):
@@ -231,21 +231,14 @@ class LFWPairedDataset(PairedDataset):
                 pairs.append(pair)
         return pairs
     
-class LitModel(LightningModule):
+class ConcatDataset(torch.utils.data.Dataset):
 
-    def trainfinal_dataloader(self):
-        concat_dataset = ConcatDataset(
-            datasets.ImageFolder(traindir_A),
-            datasets.ImageFolder(traindir_B),
-             datasets.ImageFolder(traindir_B),
-             datasets.ImageFolder(traindir_B),
+    trainset_set = [AF_training_set]
+              
         )
 
-        loader = torch.utils.data.DataLoader(
-            concat_dataset,
-            batch_size=args.batch_size,
-            shuffle=True,
-            num_workers=args.workers,
-            pin_memory=True
+     validation_set  = [AF_validation_set]
         )
-        return loader
+     num_classes = [len(names_AF)
+        
+        return training_set, validation_set, num_classes)
