@@ -24,7 +24,7 @@ def create_datasetsAF(dataroot, train_val_split=0.9):
         raise RuntimeError('Empty dataset')
 
     af_training_set_DD =[]
-    af_validation_set =[]
+    af_validation_set_DD =[]
     for klass, name in enumerate(names_af):
         def add_class(image):
             image_path = os.path.join(images_root, name, image)
@@ -33,15 +33,15 @@ def create_datasetsAF(dataroot, train_val_split=0.9):
         images_of_person = os.listdir(os.path.join(images_root, name))     
         total = len(images_of_person)
         
-        af_training_set__DD += map(
+        af_training_set_DD += map(
                     add_class,
                     images_of_person[:ceil(total * train_val_split)])
-        af_validation_set += map(
+        af_validation_set_DD += map(
                     add_class,
                     images_of_person[floor(total * train_val_split):])
      
-    af_training_set =  af_training_set__DD[0:1] 
-    af_validation_set =af_validation_set[0:1]
+    af_training_set =  af_training_set_DD[0:1] 
+    af_validation_set =af_validation_set_DD[0:1]
     return af_training_set, af_validation_set, len(names_af)
 
 
