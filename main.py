@@ -26,9 +26,9 @@ def main(args):
 
 
 def get_dataset_dir(args):
-    home = os.path.expanduser('/cmlscratch/dtinubu/datasets/RFW/Balancedface/race_per_7000')
+    home = os.path.expanduser('/cmlscratch/dtinubu/')
     dataset_dir = args.dataset_dir if args.dataset_dir else os.path.join(
-        home, 'African',)
+        home, 'datasets', 'RFW/Balancedface','race_per_7000')
 
     if not os.path.isdir(dataset_dir):
         os.mkdir(dataset_dir)
