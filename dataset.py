@@ -231,14 +231,8 @@ class LFWPairedDataset(PairedDataset):
                 pairs.append(pair)
         return pairs
     
-class ConcatDataset(torch.utils.data.Dataset):
-
-    trainset_set = [AF_training_set]
-              
-        )
-
+    def ConcatDataset(torch.utils.data.Dataset):
+     trainset_set = [AF_training_set}
      validation_set  = [AF_validation_set]
-        )
-     num_classes = [len(names_AF)
-        
+     num_classes = [len(names_AF]   
         return training_set, validation_set, num_classes)
