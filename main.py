@@ -68,14 +68,14 @@ def train(args):
 
     sa_training_set, sa_validation_set, num_classes_sa =create_datasetsSA(dataset_dir)  
      
-    as_training_set, as_validation_set, len(names_as)= create_datasetsAs(dataset_dir) 
+    as_training_set, as_validation_set, num_classes_as= create_datasetsAs(dataset_dir) 
     
     
-    af_training_set, af_validation_set, len(names_af) =create_datasetsAF(dataset_dir)
+    af_training_set, af_validation_set, num_classes_af  =create_datasetsAF(dataset_dir)
      
     training_set = [  w_training_set,sa_training_set, as_training_set, af_training_set]
     validation_set = [w_validation_set,sa_validation_set,as_validation_set,af_validation_set]
-    num_classes = [num_classes_w,len(names_sa),len(names_as),len(names_af)]
+    num_classes = [num_classes_w,num_classes_sa,num_classes_as,num_classes_af]
 
     
     training_dataset = Dataset(
