@@ -59,7 +59,7 @@ def create_datasetsAs(dataroot, train_val_split=0.9):
     count=0
     for count in range(0, 1): 
         for klass, name in enumerate(names_as):
-             count+=1
+            count+=1
             def add_class(image):
                 image_path = os.path.join(images_root, name, image)
                 return (image_path, klass, name)
