@@ -63,7 +63,7 @@ def train(args):
     model_class = get_model_class(args)
     
     dataset1= create_datasetsAF(dataset_dir)
-    concate_dataset = concat_dataset(dataset_dir)
+    concatedataset = concat_dataset(dataset_dir)
     
     training_set, validation_set, num_classes =  concatedataset
 
