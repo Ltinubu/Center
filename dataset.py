@@ -133,8 +133,6 @@ def create_datasets(dataroot, train_val_split=0.9):
     if not os.path.isdir(dataroot):
         os.mkdir(dataroot)
 
-concate_dataset = torch.utils.data.ConcatDataset([, , , ,])
-
     training_set = []
     validation_set = []
     for klass, name in enumerate(names):
