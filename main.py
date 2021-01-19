@@ -61,7 +61,8 @@ def train(args):
     dataset_dir = get_dataset_dir(args)
     log_dir = get_log_dir(args)
     model_class = get_model_class(args)
-
+    
+    dataset1=create_datasetsAs(dataset_dir)
     concatedataset = concat_dataset()
     
     training_set, validation_set, num_classes =  concatedataset
