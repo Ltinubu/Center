@@ -31,7 +31,7 @@ def create_datasetsAF(dataroot, train_val_split=0.9):
             return (image_path, klass, name)
 
         images_of_person = os.listdir(os.path.join(images_root, name))     
-            total = len(images_of_person)
+        total = len(images_of_person)
             af_training_set__DD += map(
                     add_class,
                     images_of_person[:ceil(total * train_val_split)])
