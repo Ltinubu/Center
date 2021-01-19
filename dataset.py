@@ -45,7 +45,7 @@ def create_datasetsAF(dataroot, train_val_split=0.9):
 
     return af_training_set, af_validation_set, len(names_af)
 
-def create_datasetsas(dataroot, train_val_split=0.9):
+def create_datasetsAs(dataroot, train_val_split=0.9):
     if not os.path.isdir(dataroot):
         os.mkdir(dataroot)
 
