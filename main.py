@@ -63,12 +63,20 @@ def train(args):
     
     
     
-    dataset1 = create_datasetsW(dataset_dir)
-    dataset2 =create_datasetsSA(dataset_dir)  
-    dataset3 = create_datasetsAs(dataset_dir) 
-    dataset4 =create_datasetsAF(dataset_dir)
-    training_set, validation_set, num_classes = torch.utils.data.ConcatDataset([dataset1, dataset2,dataset3, dataset4])
-   
+    W_training_set, W_validation_set, len(names_W) = create_datasetsW(dataset_dir)
+  
+
+    SA_training_set, SA_validation_set, len(names_SA) =create_datasetsSA(dataset_dir)  
+     
+    As_training_set, As_validation_set, len(names_As)= create_datasetsAs(dataset_dir) 
+    
+    
+    AF_training_set, AF_validation_set, len(names_AF) =create_datasetsAF(dataset_dir)
+     
+    training_set = [  W_training_set,SA_training_set, As_training_set, AF_training_set]
+    validation_set = [W_validation_set,SA_validation_set,As_validation_set,AF_validation_set]
+    num_classes = [len(names_W),len(names_SA),len(names_As),len(names_AF)]
+
     
     training_dataset = Dataset(
             training_set, transform_for_training(model_class.IMAGE_SHAPE))
