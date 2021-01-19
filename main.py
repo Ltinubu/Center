@@ -73,8 +73,8 @@ def train(args):
     
     af_training_set, af_validation_set, num_classes_af  =create_datasetsAF(dataset_dir)
      
-    training_set = [  w_training_set,sa_training_set, as_training_set, af_training_set]
-    validation_set = [w_validation_set,sa_validation_set,as_validation_set,af_validation_set]
+    training_set =   w_training_set + sa_training_set + as_training_set + af_training_set
+    validation_set = w_validation_set + sa_validation_set + as_validation_set + af_validation_set]
     num_classes = num_classes_w+num_classes_sa+num_classes_as+num_classes_af
 
     
