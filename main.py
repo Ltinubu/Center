@@ -26,7 +26,7 @@ def main(args):
 
 
 def get_dataset_dir(args):
-    home = cmlscratch/dtinubu/datasets/RFW/
+    home = os.path.expanduser('datasets/RFW/Balancedface/race_per_7000')
     dataset_dir = args.dataset_dir if args.dataset_dir else os.path.join(
         home, 'Balancedface', 'race_per_7000')
 
