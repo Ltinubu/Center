@@ -2,7 +2,6 @@ import os
 import random
 import tarfile
 from math import ceil, floor
-from main import args
 
 
 from torch.utils import data
