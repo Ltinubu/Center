@@ -225,7 +225,6 @@ class LFWPairedDataset(PairedDataset):
             Count = 0
             a=self.pairs_cfg[count]
             b=self.pairs_cfg[count+1]
-            For Count in range
             if a[Count][2] == b[Count+1][2]
                 match = True
                 index1, name1, index1, name2,  = \
