@@ -135,7 +135,6 @@ def evaluate(args):
     model_class = get_model_class(args)
 
     pairs_path = args.pairs
-        os.path.join(dataset_dir,'RFW','Balancedface','race_per_7000', 'RFW', 'eve_set' 'test2',
         
     dataset = LFWPairedDataset(
         dataset_dir, pairs_path, transform_for_infer(model_class.IMAGE_SHAPE))
