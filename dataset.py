@@ -227,7 +227,8 @@ class LFWPairedDataset(PairedDataset):
             if pairs[pair][Count_a ] == pairs[pair][Count_b]:
                 match = True
                 index1, name1, index2, name2  = \
-                    int(pair[pair][1]), pair[0][1], int(pair[pair][1]), int(pair[3]
+                    int(pair[pair][0]), pairs[pair][1], int(pair[pair][1]), pairs[pair][1])
+                                                                           
             else:
                 match = False
                 index1, name1,index2, name2, = \
