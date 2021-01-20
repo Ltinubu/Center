@@ -15,7 +15,7 @@ from utils import image_loader, download
 
 def create_datasetsAF(dataroot, train_val_split=0.9):
     if not os.path.isdir(dataroot):
-        os.mkdir(dataroot)
+        os.mkdir(dataroot,'RFW-deepfunneled.tar')
 
 
     images_root = os.path.join(dataroot, 'African')
@@ -232,12 +232,12 @@ class LFWPairedDataset(PairedDataset):
             else:
                 match = False
                 index1, name1,index2, name2, = \
-                    int(pair[pair][1]), pair[0][1], int(pair[pair][1]), int(pair[3])
+                    int(pairs[pair][0]), pair[0][1], int(pair[pair][1]),  int(pairs[pair][1])
                 
-          self.image_names_a.append(os.path.join(
-                self.dataroot, 'lfw-deepfunneled',
+            self.image_names_a.append(os.path.join(
+                self.dataroot, 'RFW-deepfunneled',
                 name1, "{}_{:04d}.jpg".format(name1, index1)))
-           self.image_names_b.append(os.path.join(
+            self.image_names_b.append(os.path.join(
                 self.dataroot, 'RFW-deepfunneled',
                 name2, "{}_{:04d}.jpg".format(name2, index2)))
             self.matches.append(match)
