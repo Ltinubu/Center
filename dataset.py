@@ -241,7 +241,7 @@ class LFWPairedDataset(PairedDataset):
                 self.dataroot, 'RFW-deepfunneled',
                 name2, "{}_{:04d}.jpg".format(name2, index2)))
             self.matches.append(match)
-             pair+1                
+           pair+1                
                                                                             
                                                       
    def _read_pairs(self, pairs_filename):
