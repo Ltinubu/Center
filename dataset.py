@@ -233,8 +233,7 @@ class LFWPairedDataset(PairedDataset):
                 match = False
                 index1, name1,index2, name2, = \
                     int(pair[pair][1]), pair[0][1], int(pair[pair][1]), int(pair[3]
-           
-
+                                                                            
              self.image_names_a.append(os.path.join(
                  self.dataroot, 'lfw-deepfunneled',
                  name1, "{}_{:04d}.jpg".format(name1, index1)))
