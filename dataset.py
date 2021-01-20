@@ -220,28 +220,26 @@ class LFWPairedDataset(PairedDataset):
 
    def _prepare_dataset(self):
         pairs = self._read_pairs(self.pairs_cfg)
-        
-        Count_a = 0
-        Count_b = 1
+
         for pair in pairs:
-            pair=0
-            if pairs[pair][Count_a ] == pairs[pair][Count_b]:
+            if len(pair) == 3:
                 match = True
-                index1, name1, index2, name2  = \
-                    int(pair[0][0]),  pair[0][1], int(pair[0][1]), pair[0][1]
+                name1, name2, index1, index2 = \
+                    pair[0], pair[0], int(pair[1]), int(pair[2])
+
             else:
                 match = False
-                index1, name1,index2, name2, = \
-                    int(pair[0][0]), pair[0][1], int(pair[0][0]),  pair[0][1]
-                
+                name1, name2, index1, index2 = \
+                    pair[0], pair[2], int(pair[1]), int(pair[3])
+
             self.image_names_a.append(os.path.join(
-                self.dataroot, 'RFW-deepfunneled',
-                name1, "{}_{:04d}.jpg".format(name1, index1)))
+                    self.dataroot, 'lfw-deepfunneled',
+                    name1, "{}_{:04d}.jpg".format(name1, index1)))
+
             self.image_names_b.append(os.path.join(
-                self.dataroot, 'RFW-deepfunneled',
-                name2, "{}_{:04d}.jpg".format(name2, index2)))
+                    self.dataroot, 'lfw-deepfunneled',
+                    name2, "{}_{:04d}.jpg".format(name2, index2)))
             self.matches.append(match)
-            pair+1                
                                                                             
                                                       
    def _read_pairs(self, pairs_filename):
