@@ -231,7 +231,7 @@ class LFWPairedDataset(PairedDataset):
            else:
                 match = False
                 index1, name1,index2, name2, = \
-                    pair[0], pair[0], pair[0], pair[0]
+                    pair[0], lol[0], opp[0], k[0]
            
 
            self.image_names_a.append(os.path.join(
