@@ -256,11 +256,19 @@ class LFWPairedDataset(PairedDataset):
                 pair1.append(pair_odd + pair_even)
             else:
                 pair_odd = line.strip().split() 
-                i += 1 
+            i += 1 
             print(pair1)
             pairs.append(pair1)
             
-            
+           
+                #i += 1 
+            #print(pair1)
+            #pairs.append(pair1)
+        #return pairs   
+                i += 1 
+            print(pair1)
+            pairs.append(pair1)
+        return pairs   
         return pairs   
         #    for line in f.readlines()[1:]:
         #        pair = line.strip().split()
