@@ -244,13 +244,22 @@ class LFWPairedDataset(PairedDataset):
    def _read_pairs(self, pairs_filename):
         pairs = []
         with open(pairs_filename, 'r') as f:
-            for line in f.readlines()[1:]:
-                pair = line.strip().split()
-                pair2 = line.strip().split()[::2]
-                pair1=pair+pair2
-                print(pair1)
-                pairs.append(pair1)
-        return pairs         
+            i = 1
+            for line in f.readlines():
+            if i % 2 == 0 :
+            pair = line.strip().split()
+            else 
+            pair2 = line.strip().split()  
+            i += 1  
+            print(pair1)
+            pairs.append(pair1)
+        return pairs   
+        
+        #for line in f.readlines()[1:]:
+                #pair = line.strip().split()
+                #pair2 = line.strip().split()[::2]
+                #pair1=pair+pair2
+                      
         #  with open('file_name') as f:
     #for line1, line2 in zip(f, f):
      #   print(line1, line2)
