@@ -251,7 +251,7 @@ class LFWPairedDataset(PairedDataset):
                 pair1=pair+pair2
                 print(pair1)
                 pairs.append(pair1)
-               with open("copy.txt", "w") as file:
+                with open("copy.txt", "w") as file:
                 file.write("pair")
         return pairs         
         #  with open('file_name') as f:
