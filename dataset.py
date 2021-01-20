@@ -248,7 +248,7 @@ class LFWPairedDataset(PairedDataset):
         pair1=[]
         pair=[]
         
-      with open(pairs_filename, 'r') as f:
+        with open(pairs_filename, 'r') as f:
         #    for line in f.readlines()[1:]:
         #        pair = line.strip().split()
         #        pairs.append(pair)
