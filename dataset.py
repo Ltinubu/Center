@@ -246,8 +246,8 @@ class LFWPairedDataset(PairedDataset):
       with open(pairs_filename, 'r') as f:
             for line1 in f:
                line2 = f.next()
-                 pair = [line1 , line2]
-                pairs.append(pair)
+               pair = [line1,line2]
+               pairs.append(pair)
            except StopIteration:
         #  with open('file_name') as f:
     #for line1, line2 in zip(f, f):
