@@ -231,7 +231,7 @@ class LFWPairedDataset(PairedDataset):
             else:
                 match = False
                 name1, name2, index1, index2 = \
-                    pair[0], pair[2], int(pair[1]), int(pair[3])
+                    pair[0], pair[2], int(pair[1]), int(pair[2])
 
             self.image_names_a.append(os.path.join(
                     self.dataroot, 'RFW-deepfunneled',
