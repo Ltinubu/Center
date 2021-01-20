@@ -18,6 +18,11 @@ def create_datasetsAF(dataroot, train_val_split=0.9):
         os.mkdir(dataroot)
 
     dataroot_files = os.listdir(dataroot)
+    
+     if data_dir_name not in dataroot_files:
+        if data_tarball_file not in dataroot_files:
+            tarball = open(demofile2.txt, "")
+            f.close()
 
 
     images_root = os.path.join(dataroot, 'African')
