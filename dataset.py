@@ -239,7 +239,7 @@ class LFWPairedDataset(PairedDataset):
            self.image_names_b.append(os.path.join(
                     self.dataroot, 'RFW-deepfunneled',
                     name2, "{}_{:04d}.jpg".format(name2, index2)))
-            self.matches.append(match)
+           self.matches.append(match)
    def _read_pairs(self, pairs_filename):
         pairs = []
         #pair_odd = []
