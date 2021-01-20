@@ -227,11 +227,11 @@ class LFWPairedDataset(PairedDataset):
         if pairs[pair][Count_a ] == pairs[pair][Count_b]:
             match = True
             index1, name1, index2, name2  = \
-            pair[0], pair[0], pair, pair=+1
+            int(pair[pair][1]), pair[0][1], int(pair[pair][1]), int(pair[3]
         else:
             match = False
             index1, name1,index2, name2, = \
-            pair[0], pair[0], pair, pair=+1)
+            pair[0], pair[2], int(pair[1]), int(pair[3]
            
 
            self.image_names_a.append(os.path.join(
