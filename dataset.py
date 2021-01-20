@@ -242,8 +242,6 @@ class LFWPairedDataset(PairedDataset):
                     name2, "{}_{:04d}.jpg".format(name2, index2)))
             self.matches.append(match)
 
- #pairs_filename =os.path.join('/cmlscratch','dtinubu','datasets','RFW','eve_set','test2','RFW_index','African_pair.txt')
-pairs_filename = African_pair.txt
 def_read_pairs(self, pairs_filename):
         pairs = []
         with open(pairs_filename, 'r') as f:
