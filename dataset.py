@@ -249,9 +249,10 @@ class LFWPairedDataset(PairedDataset):
                 if i % 2 == 0 :
                     pair = line.strip().split()
                 else:
-                    pair2 = line.strip().split()  
+                    pair2 = line.strip().split() 
+                    pair1=pair+pair2
                 i += 1 
-            pair1=pair+pair2
+           
             print(pair1)
             pairs.append(pair1)
         return pairs   
