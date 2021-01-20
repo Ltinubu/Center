@@ -258,7 +258,6 @@ class LFWPairedDataset(PairedDataset):
                     pair_odd = line.strip().split() 
                     
                 i += 1 
-                pair1 = pair_odd + pair2 
             print(pair1)
             pairs.append(pair1)
         return pairs   
