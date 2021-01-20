@@ -134,8 +134,8 @@ def evaluate(args):
     log_dir = get_log_dir(args)
     model_class = get_model_class(args)
 
-    pairs_path = args.pairs if args.pairs else \
-        os.path.join(dataset_dir,'RFW','Balancedface','race_per_7000','RFW_pair.zip')
+    pairs_path = args.pairs if args.pairs else 
+        os.path.join(dataset_dir,'RFW','Balancedface','race_per_7000', 'RFW', 'eve_set' 'test2',
         
     dataset = LFWPairedDataset(
         dataset_dir, pairs_path, transform_for_infer(model_class.IMAGE_SHAPE))
