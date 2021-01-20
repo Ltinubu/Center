@@ -235,9 +235,9 @@ class LFWPairedDataset(PairedDataset):
                     int(pair[pair][1]), pair[0][1], int(pair[pair][1]), int(pair[3]
            
 
-            self.image_names_a.append(os.path.join(
-                self.dataroot, 'RFW-deepfunneled',
-                name1, "{}_{:04d}.jpg".format(name1, index1)))
+             self.image_names_a.append(os.path.join(
+                    self.dataroot, 'lfw-deepfunneled',
+                    name1, "{}_{:04d}.jpg".format(name1, index1)))
 
             self.image_names_b.append(os.path.join(
                 self.dataroot, 'RFW-deepfunneled',
