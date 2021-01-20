@@ -265,7 +265,7 @@ class LFWPairedDataset(PairedDataset):
             #print(pair1)
             #pairs.append(pair1)
         #return pairs   
-                i += 1 
+               3 i += 1 
             print(pair1)
             pairs.append(pair1)
         return pairs   
