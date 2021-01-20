@@ -242,10 +242,10 @@ class LFWPairedDataset(PairedDataset):
            self.matches.append(match)
    def _read_pairs(self, pairs_filename):
         pairs = []
-        #pair_odd = []
-        #pair_even = []
+        pair_odd = []
+        pair_even = []
         pair1=[]
-        #pair=[]
+        pair=[]
         
         with open(pairs_filename, 'r') as f:
             i = 1
