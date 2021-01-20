@@ -251,8 +251,10 @@ class LFWPairedDataset(PairedDataset):
                 pair1=pair+pair2
                 print(pair1)
                 pairs.append(pair1)
+                file = open(testpairs.txt, "w") 
+                file.write(pair) 
+                file.close() 
         return pairs         
-        return pairs
         #  with open('file_name') as f:
     #for line1, line2 in zip(f, f):
      #   print(line1, line2)
