@@ -242,10 +242,10 @@ class LFWPairedDataset(PairedDataset):
                     name2, "{}_{:04d}.jpg".format(name2, index2)))
             self.matches.append(match)
 
-    def _read_pairs(self, pairs_filename):
-        pairs = []
-        with open(pairs_filename, 'r') as f:
-            for line in f.readlines()[1:]:
-                pair = line.strip().split()
-                pairs.append(pair)
-        return pairs
+        def _read_pairs(self, pairs_filename):
+            pairs = []
+            with open(pairs_filename, 'r') as f:
+                for line in f.readlines()[1:]:
+                    pair = line.strip().split()
+                    pairs.append(pair)
+            return pairs
