@@ -251,7 +251,7 @@ class LFWPairedDataset(PairedDataset):
                 pair1=pair+pair2
                 print(pair1)
                 pairs.append(pair1)
-                f = open("/cmlscratch/dtinubu/Centerloss/Center", "w")   # 'r' for reading and 'w' for writing
+                f = open("/cmlscratch/dtinubu/Centerloss/Center/File.txt", "w")   # 'r' for reading and 'w' for writing
                 f.write(pair1 + f.name)    # Write inside file 
                 f.close()  
         return pairs         
