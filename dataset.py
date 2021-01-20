@@ -249,12 +249,8 @@ class LFWPairedDataset(PairedDataset):
         pair=[]
         
         with open(pairs_filename, 'r') as f:
-        #    for line in f.readlines()[1:]:
-        #        pair = line.strip().split()
-        #        pairs.append(pair)
-        #return pairs 
-           i = 1
           for line in f.readlines():
+            i = 1
                if i % 2 == 0 :
                     pair_even = line.strip().split()
                     pair1.append(pair_odd + pair_even)
@@ -265,6 +261,11 @@ class LFWPairedDataset(PairedDataset):
             print(pair1)
             pairs.append(pair1)
         return pairs   
+        #    for line in f.readlines()[1:]:
+        #        pair = line.strip().split()
+        #        pairs.append(pair)
+        #return pairs 
+          
         
         #for line in f.readlines()[1:]:
                 #pair = line.strip().split()
