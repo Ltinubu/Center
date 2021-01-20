@@ -219,11 +219,11 @@ class PairedDataset(data.Dataset):
 
 class LFWPairedDataset(PairedDataset):
 
-    def _prepare_dataset(self):
+   def _prepare_dataset(self):
         pairs = self._read_pairs(self.pairs_cfg)
 
         for pair in pairs:
-            if name_a==name_b:
+            if len(pair) == 3:
                 match = True
                 name1, name2, index1, index2 = \
                     pair[0], pair[0], int(pair[1]), int(pair[2])
@@ -234,13 +234,14 @@ class LFWPairedDataset(PairedDataset):
                     pair[0], pair[2], int(pair[1]), int(pair[3])
 
             self.image_names_a.append(os.path.join(
-                    self.dataroot, 'RFW',
+                    self.dataroot, 'lfw-deepfunneled',
                     name1, "{}_{:04d}.jpg".format(name1, index1)))
 
             self.image_names_b.append(os.path.join(
-                    self.dataroot, 'RFW',
+                    self.dataroot, 'lfw-deepfunneled',
                     name2, "{}_{:04d}.jpg".format(name2, index2)))
             self.matches.append(match)
+
     def _read_pairs(self, pairs_filename):
         pairs = []
         with open(pairs_filename, 'r') as f:
@@ -248,9 +249,3 @@ class LFWPairedDataset(PairedDataset):
                 pair = line.strip().split()
                 pairs.append(pair)
         return pairs
-class CDataset(data.Dataset):    
-    def concat_dataset(dataroot):
-        trainset_set = [train_AF]
-        validation_set  = [AF_validation_set]
-        num_classes = [len(names_AF),]   
-        return training_set, validation_set, num_classes
