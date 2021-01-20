@@ -221,11 +221,16 @@ class LFWPairedDataset(PairedDataset):
    def _prepare_dataset(self):
         pairs = self._read_pairs(self.pairs_cfg)
 
-        for pair in pairs:
-            if len(pair) == 3:
+        #for pair in pairs:
+            Count = 0
+            a=self.pairs_cfg[count]
+            b=self.pairs_cfg[count+1]
+            For Count in range
+            if a[Count][2] == b[Count+1][2]
                 match = True
-                name1, name2, index1, index2 = \
+                index1, name1, race, index1, name1, = \
                     pair[0], pair[0], int(pair[1]), int(pair[2])
+             Count =+ 2 
 
             else:
                 match = False
@@ -233,65 +238,22 @@ class LFWPairedDataset(PairedDataset):
                     pair[0], pair[2], int(pair[1]), int(pair[3])
 
             self.image_names_a.append(os.path.join(
-                    self.dataroot, 'lfw-deepfunneled',
-                    name1, "{}_{:04d}.jpg".format(name1, index1)))
+                    self.dataroot, 'RFW-deepfunneled',
+                    name1, "{}_{:04d}.jpg".format(race,name1, index1)))
+            
+
 
             self.image_names_b.append(os.path.join(
-                    self.dataroot, 'lfw-deepfunneled',
-                    name2, "{}_{:04d}.jpg".format(name2, index2)))
+                    self.dataroot, 'RFW-deepfunneled',
+                    name2, "{}_{:04d}.jpg".format(race,name2, index2)))
             self.matches.append(match)
                                                                             
                                                       
-   def _read_pairs(self, pairs_filename):
+     def _read_pairs(self, pairs_filename):
         pairs = []
-        pair_odd = []
-        pair_even = []
-        pair1=[]
-        pair=[]
-        
         with open(pairs_filename, 'r') as f:
-            i = 1
-            for line in f.readlines():
-                if i % 2 == 0 :
-                    pair_even = line.strip().split()
-                    pair1.append( pair_even + pair_odd)
-                else:
-                    pair_odd = line.strip().split()  
-                i += 1
-          
-        
-       # for line in f.readlines():
-        #    i = 1
-         #   if i % 2 == 0 :
-          #      pair_even = line.strip().split()
-           #     pair1.append(pair_odd + pair_even)
-            #else:
-             #   pair_odd = line.strip().split() 
-            #i += 1 
-            #print(pair1)
-            #pairs.append(pair1)
-        #return pairs   
-               # i += 1 
-            print(pair1)
-            pairs.append(pair1)
-        return pairs  
-        #    for line in f.readlines()[1:]:
-        #        pair = line.strip().split()
-        #        pairs.append(pair)
-        #return pairs 
-          
-        
-        #for line in f.readlines()[1:]:
-                #pair = line.strip().split()
-                #pair2 = line.strip().split()[::2]
-                #pair1=pair+pair2
-                      
-        #  with open('file_name') as f:
-    #for line1, line2 in zip(f, f):
-     #   print(line1, line2)
-        #while True:
-    #line1 = f.readline()
-    #line2 = f.readline()
-            #with open(pairs_filename, 'r') as f:
-             #   for line in f.readlines()[2:]:
-            #        pair = line.strip().split()
+            for line in f.readlines()[]:
+                pair = line.strip().split(/)
+                pairs.append(pair)
+        return pairs
+     
