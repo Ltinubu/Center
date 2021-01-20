@@ -223,7 +223,7 @@ class LFWPairedDataset(PairedDataset):
         pairs = self._read_pairs(self.pairs_cfg)
 
         for pair in pairs:
-            if len(pair) == 3:
+            if if(len(set(pair))==1:
                 match = True
                 name1, name2, index1, index2 = \
                     pair[0], pair[0], int(pair[1]), int(pair[2])
