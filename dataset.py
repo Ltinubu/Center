@@ -222,15 +222,15 @@ class LFWPairedDataset(PairedDataset):
         pairs = self._read_pairs(self.pairs_cfg)
 
         for pair in pairs:
-           if pairs[0] == pairs[1] :
+           if pairs[0][pair] == pairs[1][pair] :
                 match = True
                 index1, name1, index2, name2  = \
-                    pair[0], pair[0], int(pair[1]), int(pair[2])
+                    pair[0], pair[0], int(pair[0]), int(pair[0])
 
            else:
                 match = False
                 index1, name1, index2, name2 = \
-                    pair[0], pair[2], int(pair[1]), int(pair[2])
+                    pair[0], pair[0], int(pair[0]), int(pair[0])
 
            self.image_names_a.append(os.path.join(
                    self.dataroot, 'RFW-deepfunneled',
