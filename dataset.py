@@ -223,7 +223,7 @@ class LFWPairedDataset(PairedDataset):
         pairs = self._read_pairs(self.pairs_cfg)
 
         for pair in pairs:
-            if len(pair) == 3:
+            if index1== index2:
                 match = True
                 name1, name2, index1, index2 = \
                     pair[0], pair[0], int(pair[1]), int(pair[2])
@@ -234,11 +234,11 @@ class LFWPairedDataset(PairedDataset):
                     pair[0], pair[2], int(pair[1]), int(pair[3])
 
             self.image_names_a.append(os.path.join(
-                    self.dataroot, 'lfw-deepfunneled',
+                    self.dataroot, 'RFW-deepfunneled',
                     name1, "{}_{:04d}.jpg".format(name1, index1)))
 
             self.image_names_b.append(os.path.join(
-                    self.dataroot, 'lfw-deepfunneled',
+                    self.dataroot, 'RFW-deepfunneled',
                     name2, "{}_{:04d}.jpg".format(name2, index2)))
             self.matches.append(match)
    def _read_pairs(self, pairs_filename):
