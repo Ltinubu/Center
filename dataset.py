@@ -220,18 +220,19 @@ class LFWPairedDataset(PairedDataset):
 
    def _prepare_dataset(self):
         pairs = self._read_pairs(self.pairs_cfg)
-        Count_a = 1
-        Count_b = 0
+        Count_a = 0
+        Count_b = 1
         for pair in pairs:
-           if pairs[0][ Count_a ] == pairs[0][Count_b] :
+            pair=0
+           if pairs[pair][ Count_a ] == pairs[pair][Count_b] :
                 match = True
                 index1, name1, index2, name2  = \
-                    pair[0], pair[0], int(pair=+1), int(pair=+1)
+                    pair[0], pair[0], pair, pair=+1
 
            else:
                 match = False
                 index1, name1,index2, name2, = \
-                     pair[0], pair[0], int((pair=+1)), int((pair=+1))
+                     pair[0], pair[0], pair, pair=+1)
            
 
            self.image_names_a.append(os.path.join(
