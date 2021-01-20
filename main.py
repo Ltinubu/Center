@@ -133,8 +133,8 @@ def evaluate(args):
     dataset_dir = get_dataset_dir(args)
     log_dir = get_log_dir(args)
     model_class = get_model_class(args)
-
-    pairs_path =os.path.join('cmlscratch','dtinubu','datasets','RFW','eve_set','test2','RFW_index',args.pairs'_pairs.txt')
+    
+    pairs_path =os.path.join('cmlscratch','dtinubu','datasets','RFW','eve_set','test2','RFW_index',  args.s '_pairs.txt')
         
     dataset = LFWPairedDataset(
         dataset_dir, pairs_path, transform_for_infer(model_class.IMAGE_SHAPE))
