@@ -220,9 +220,10 @@ class LFWPairedDataset(PairedDataset):
 
    def _prepare_dataset(self):
         pairs = self._read_pairs(self.pairs_cfg)
-
+    Count_a = 1
+    Count_b = 0
         for pair in pairs:
-           if pairs[0][1] == pairs[1][1] :
+           if pairs[0][ Count_a ] == pairs[0][Count_b] :
                 match = True
                 index1, name1, index2, name2  = \
                     pair[0], pair[0], int(pair[0]), int(pair[0])
