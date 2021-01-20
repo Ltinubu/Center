@@ -134,7 +134,7 @@ def evaluate(args):
     log_dir = get_log_dir(args)
     model_class = get_model_class(args)
 
-    pairs_path = args.pairs if args.pairs 
+    pairs_path = args.pairs
         os.path.join(dataset_dir,'RFW','Balancedface','race_per_7000', 'RFW', 'eve_set' 'test2',
         
     dataset = LFWPairedDataset(
