@@ -273,11 +273,11 @@ class LFWPairedDataset(PairedDataset):
         join(sys.argv[2], sys.argv[1])
     
     def _read_pairs(self, pairs_filename):
-        pairs = []
-        with open(pairs_filename, 'r') as f:
-            for line in f.readlines()[1:]:
-                pair = line.strip().split()
-                pairs.append(pair)
+       # pairs = []
+        #with open(pairs_filename, 'r') as f:
+         #   for line in f.readlines()[1:]:
+          #      pair = line.strip().split()
+           #     pairs.append(pair)
         with open(pairs_filename) as f:
             for line1,line2 in pairs(*[f]*2):
                if line1[:15] ==line2[:15] :
