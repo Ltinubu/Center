@@ -248,11 +248,11 @@ class LFWPairedDataset(PairedDataset):
                 extra = find_pair[3]
            self.image_names_a.append(os.path.join(
                         self.dataroot, 'RFW-deepfunneled',
-                        ('/' + race + '/' name1 + '/' + index1 )))
+                        ('/' + race + '/' name1 + '/' + index1 ))
 
             self.image_names_b.append(os.path.join(
                         self.dataroot, 'RFW-deepfunneled', 
-                        ('/' + race + '/' name1 + '/' + index1 ))))
+                        ('/' + race + '/' name1 + '/' + index1 ))
             self.matches.append(match)
     
     def _read_pairs(self, pairs_filename):
