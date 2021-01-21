@@ -225,9 +225,8 @@ class LFWPairedDataset(PairedDataset):
             name_1=self.pairs_cfg[count]
             name_2=self.pairs_cfg[count+1]
             a = name_box(name_1)
-            b= name_box(name_2)
-            
-            if a == b
+            b = name_box(name_2)
+            if a == b:
                 match = True
                 index1, name1, index1, name2,  = \
                     pair[0], pair[0], int(pair[1]), int(pair[2])
