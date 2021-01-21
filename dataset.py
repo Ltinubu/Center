@@ -220,8 +220,7 @@ class LFWPairedDataset(PairedDataset):
         pairs = self._read_pairs(self.pairs_cfg)
 
         for pair in pairs:
-            Count = 0
-            
+            count = 0
             name_1=self.pairs_cfg[count]
             name_2=self.pairs_cfg[count+1]
             a = name_box_1(name_1)
