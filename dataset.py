@@ -225,7 +225,7 @@ class LFWPairedDataset(PairedDataset):
         name1 = [pair]
         a = name1.partition("/m")[2].partition("/")[0]
         race_a , name_a = pair.split('/')
-        for pair in range(1, len(pairs), 2)
+        for pair in range(1, len(pairs), 2):
             name2 = [pair]
             b = namea.partition("/m")[2].partition("/")[0]
             race_b , name_b = pair.split('/')
