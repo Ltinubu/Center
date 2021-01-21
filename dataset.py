@@ -263,7 +263,7 @@ class LFWPairedDataset(PairedDataset):
                 current_line += join_text + rest
             else:
                 if current_line:
-                    print current_line
+                    print (current_line)
                 current_line = line
                 prefix = first_word
 
