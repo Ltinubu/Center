@@ -237,7 +237,14 @@ class LFWPairedDataset(PairedDataset):
                 bainor = find_pair[7] 
           else:
                 match = False
-                race, name1, index1, bainor,  race, name1, index1, bainor, = \
+                race=find_pair[0]
+                name1=find_pair[1]
+                index1 = find_pair[2] 
+                extra = [3]
+                race_name2 = find_pair[4] 
+                name2 = find_pair[5] 
+                index2 = find_pair[6] 
+                bainor = find_pair[7] 
                   pair[0], pair[0], pair[1], pair[2]
                 self.image_names_a.append(os.path.join(
                         self.dataroot, 'RFW-deepfunneled',
