@@ -220,7 +220,7 @@ class PairedDataset(data.Dataset):
         except AttributeError:
      # AAA, ZZZ not found in the original string
             found = 'N/A' # apply your error handling
-        return found
+        return found;
    
     def name_box_2(name_2):
         text = name_2
@@ -229,7 +229,7 @@ class PairedDataset(data.Dataset):
         except AttributeError:
      # AAA, ZZZ not found in the original string
             found = 'N/A' # apply your error handling
-        return found
+        return found;
 
         
 class LFWPairedDataset(PairedDataset):
