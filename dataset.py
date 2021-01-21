@@ -223,15 +223,9 @@ class LFWPairedDataset(PairedDataset):
     def _prepare_dataset(self):
         
      pairs = self._read_pairs(self.pairs_cfg)
-     for pair in pairs(0, len(pairs), 2):
-        name1 = [pair]
-        a = name1.partition("/m")[2].partition("/")[0]
-        race_a , name_a = pair.split('/')
-        for pair in range(1, len(pairs), 2):
-            name2 = [pair]
-            b = namea.partition("/m")[2].partition("/")[0]
-            race_b , name_b = pair.split('/')
-            if (a == b):
+        index = vowels.index('<^&>')
+     
+            if pair[:15] == b[index:index+15]:
                 match = True
                 index1, name1, index1, name2,  = \
                 pair[0], int(len(pair[0])), pair[0], int(len(pair[0]))
@@ -261,7 +255,7 @@ class LFWPairedDataset(PairedDataset):
         with open(pairs_filename) as f:
            for line1,line2 in itertools.zip_longest(*[f]*2):
                if line1[:15] ==line2[:15] :
-                  pair = line1 + '^' +line2
+                  pair = line1 + '<^&>' +line2
                   pairs.append(pair)
                else:
                    pair_b = line1
