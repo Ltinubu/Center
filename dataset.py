@@ -2,6 +2,7 @@ import os
 import random
 import re
 import tarfile
+impory sys
 from math import ceil, floor
 
 from torch.utils import data
@@ -246,10 +247,35 @@ class LFWPairedDataset(PairedDataset):
                         self.dataroot, 'RFW-deepfunneled',
                         name2, "{}_{:04d}.jpg".format(name2, index2)))
                 self.matches.append(match)
+
+    def join(file_name, join_text):
+    prefix = None
+    current_line = ''
+    for line in open(file_name):
+        if line and line[-1] == '\n':
+            line = line[:-1]
+        try:
+            first_word, rest = line.split('\t', 1)
+        except:
+            first_word = None  # empty line or one without tab
+            rest = line
+        if first_word == prefix:
+            current_line += join_text + rest
+        else:
+            if current_line:
+                print current_line
+            current_line = line
+            prefix = first_word
+
+    if current_line:  # do the last line(s)
+        print current_line
+    join(sys.argv[2], sys.argv[1])
+    
     def _read_pairs(self, pairs_filename):
+        join(pairs_filename,[:15] )
         pairs = []
         with open(pairs_filename, 'r') as f:
-            for line in f.readlines()[1:]:
+            for line in f.readlines()[:]:
                 pair = line.strip().split()
                 pairs.append(pair)
         return pairs
