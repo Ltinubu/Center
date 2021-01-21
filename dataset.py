@@ -248,7 +248,7 @@ class LFWPairedDataset(PairedDataset):
                         name2, "{}_{:04d}.jpg".format(name2, index2)))
                 self.matches.append(match)
 
-    def join(file_name, join_text):
+    def join(file_name):
         prefix = lol
         current_line = ''
         for line in open(file_name):
@@ -277,6 +277,21 @@ class LFWPairedDataset(PairedDataset):
             for line in f.readlines()[:]:
                 pair = line.strip().split()
                 pairs.append(pair)
-                pairs = join(pairs_filename, goi )
+                with open(sys.argv[1]) as input:
+                    lines = [item.strip() for item in input.readlines() if not item == ""]
+                    templist = []
+                    for pair in pairs:
+                        if pair.startswith('/m'):
+                            if not len(templist) == 0:
+                                print(' '.join(templist))
+                                templist = [line,]
+                            else:
+                                templist = [line,]
+                        else:
+                            templist.append(line)
+                    else:
+                        print(' '.join(templist))
+                
+                
         return pairs
    
