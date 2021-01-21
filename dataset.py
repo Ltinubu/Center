@@ -223,13 +223,13 @@ class LFWPairedDataset(PairedDataset):
     def _prepare_dataset(self):
         
      pairs = self._read_pairs(self.pairs_cfg)
-           for pair in pairs: 
+        for pair in pairs: 
             index = pair.index('<^&>')
             if pair[:15] == b[index:index+15]:
                 match = True
                 index1, name1, index1, name2,  = \
                 pair[0], int(len(pair[0])), pair[0], int(len(pair[0]))
-           else:
+            else:
                 match = False
                 index1, name1, index1, name2, = \
                 pair[0], pair[0], int(pair[0]), int(pair[0])
