@@ -3,6 +3,7 @@ import random
 import re
 import tarfile
 import sys
+import itertools
 from math import ceil, floor
 
 from torch.utils import data
@@ -277,19 +278,16 @@ class LFWPairedDataset(PairedDataset):
             for line in f.readlines()[1:]:
                 pair = line.strip().split()
                 pairs.append(pair)
-         lines = [item.strip() for item in input.readlines() if not item == ""]
-         templist = []
-         for pair in pairs:
-             if pair.startswith('/m'):
-             if not len(templist) == 0:
-                  print(' '.join(templist))
-                  templist = [line,]
-             else:
-                  templist = [line,]
-             else:
-                  templist.append(line)
-             else:
-                  print(' '.join(templist))
+         with open('a') as f:
+        for line1,line2 in pairs_filename(*[f]*2):
+            if line1[:15] ==line2[:15]
+                pair = line 1
+                pairs.append(pair)
+            else:
+                pair = line 1
+                pairs.append(pair)
+                pair = line 2
+                pairs.append(pair)
                 
                 
         return pairs
