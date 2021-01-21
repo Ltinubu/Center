@@ -257,7 +257,7 @@ class LFWPairedDataset(PairedDataset):
    def name_box_1(name_1):
         text = name_1
         try:
-        found = re.search('/m(.+?)/', text).group(1)
+            found = re.search('/m(.+?)/', text).group(1)
     except AttributeError:
      # AAA, ZZZ not found in the original string
         found = 'N/A' # apply your error handling
@@ -266,7 +266,7 @@ class LFWPairedDataset(PairedDataset):
    def name_box_2(name_2):
         text = name_2
         try:
-        found = re.search('/m(.+?)/', text).group(1)
+            found = re.search('/m(.+?)/', text).group(1)
     except AttributeError:
      # AAA, ZZZ not found in the original string
         found = 'N/A' # apply your error handling
