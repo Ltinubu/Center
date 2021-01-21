@@ -277,6 +277,6 @@ class LFWPairedDataset(PairedDataset):
             for line in f.readlines()[:]:
                 pair = line.strip().split()
                 pairs.append(pair)
-                 join(pairs_filename, goi )
+                pairs = join(pairs_filename, goi )
         return pairs
    
