@@ -249,7 +249,7 @@ if __name__ == '__main__':
     parser.add_argument('--ai', type=int,default=0,
                         help='how many asians you want')
     parser.add_argument('--save_file_name', type=str,
-                        help=gives filename)
+                        help= 'gives filename')
  
                    
                              
