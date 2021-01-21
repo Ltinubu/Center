@@ -245,7 +245,9 @@ class LFWPairedDataset(PairedDataset):
           self.image_names_a.append(os.path.join(
                     self.dataroot, 'lfw-deepfunneled',
                     name1, "{}_{:04d}.jpg".format(name1, index1)
-          self.image_names_b.append(os.path.join( '/cmlscratch','dtinubu','datasets','RFW','Balancedface','race_per_7000', '/' + race2 + '/' + name2 + '/' + index2 ))
+          self.image_names_b.append(os.path.join( 
+                    '/cmlscratch','dtinubu','datasets','RFW','Balancedface','race_per_7000', 
+                    '/' + race2 + '/' + name2 + '/' + index2 ))
           self.matches.append(match)
    
     
