@@ -234,7 +234,7 @@ class LFWPairedDataset(PairedDataset):
             found = 'N/A' # apply your error handling
         return found
 
-   def _prepare_dataset(self):
+    def _prepare_dataset(self):
         pairs = self._read_pairs(self.pairs_cfg)
 
         for pair in pairs:
@@ -264,7 +264,7 @@ class LFWPairedDataset(PairedDataset):
                     self.dataroot, 'RFW-deepfunneled',
                     name2, "{}_{:04d}.jpg".format(name2, index2)))
             self.matches.append(match)
-   def _read_pairs(self, pairs_filename):
+    def _read_pairs(self, pairs_filename):
         pairs = []
         with open(pairs_filename, 'r') as f:
             for line in f.readlines()[1:]:
