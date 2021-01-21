@@ -250,9 +250,9 @@ class LFWPairedDataset(PairedDataset):
    def _read_pairs(self, pairs_filename):
         pairs = []
         with open(pairs_filename, 'r') as f:
-            for line in f.readlines()[]:
-                pair = line.strip().split()
-                pairs.append(pair)
+           for line in f.readlines()[]:
+              pair = line.strip().split()
+              pairs.append(pair)
         return pairs
    def name_box_1(name1)
         text = name_1
