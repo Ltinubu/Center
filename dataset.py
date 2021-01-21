@@ -258,11 +258,11 @@ class LFWPairedDataset(PairedDataset):
         text = name_1
         try:
             found = re.search('/m(.+?)/', text).group(1)
-    except AttributeError:
+        except AttributeError:
      # AAA, ZZZ not found in the original string
         found = 'N/A' # apply your error handling
-       return group(1)
-              self.matches[index])
+        return group(1)
+              [index])
    def name_box_2(name_2):
         text = name_2
         try:
