@@ -227,8 +227,8 @@ class LFWPairedDataset(PairedDataset):
             name2=self.pairs_cfg[count+1]
             a = name1.partition("/m")[2].partition("/")[0]
             b = name2.partition("/m")[2].partition("/")[0]
-            race_a , name_a , index_a =self.pairs_cfg[count].split('/')
-            race_b , name_b , index_b =self.pairs_cfg[count+1].split('/')
+            race_a , name_a =self.pairs_cfg[count].split('/')
+            race_b , name_b  =self.pairs_cfg[count+1].split('/')
             self.pairs_cfg[count+1]
             if (a == b):
                  match = True
