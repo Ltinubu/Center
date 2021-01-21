@@ -220,12 +220,12 @@ class LFWPairedDataset(PairedDataset):
 
     def _prepare_dataset(self):
         pairs = self._read_pairs(self.pairs_cfg)
-        it = iter(pairs)
+        pair = iter(pairs)
         for x in it:
-            for pair, pairs[1]pairs in pairs:
+           for pair, pairs in pairs:
                 count = 0
                 name1=[pair]
-                name2=self.pairs_cfg[count+1]
+                name2=[pair]
                 a = name1.partition("/m")[2].partition("/")[0]
                 b = name2.partition("/m")[2].partition("/")[0]
                 race_a , name_a =self.pairs_cfg[count].split('/')
