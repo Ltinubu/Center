@@ -273,7 +273,7 @@ class LFWPairedDataset(PairedDataset):
         join(sys.argv[2], sys.argv[1])
     
     def _read_pairs(self, pairs_filename):
-        pairs_filename= 'African'
+        fh = open("/cmlscratch/dtinubu/datasets/RFW/eve_set/test2/RFW_index/African_pair.txt")
         pairs = []
         line1= []
         line2 = []
@@ -281,7 +281,7 @@ class LFWPairedDataset(PairedDataset):
          #   for line in f.readlines()[1:]:
           #      pair = line.strip().split()
            #     pairs.append(pair)
-        with open('African_pair.txt') as f:
+        with open(fh) as f:
                 for line1,line2 in pairs_filename(f,f):
                    if line1[:15] ==line2[:15] :
                       pair = line1
