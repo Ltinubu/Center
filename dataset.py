@@ -224,7 +224,7 @@ class LFWPairedDataset(PairedDataset):
         pairs = self._read_pairs(self.pairs_cfg)
         for pair in pairs: 
           index = pair.index('<^&>/')
-          if pair[:15] == pair[(index+6):(index+21)]:
+          if pair[1:15] == pair[(index+6):(index+21)]:
                 match = True
                 find_pair = pair.split("/")
                 race=find_pair[0]
