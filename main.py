@@ -64,18 +64,18 @@ def train(args):
     
     
     w_training_set, w_validation_set, num_classes_w = create_datasetsW(dataset_dir)
-    w_training_set =  w_training_set[0 : (int(args.af/2))] 
-    w_validation_set =  w_validation_set[0:(int(args.af/2))] 
+    w_training_set =  w_training_set[0 : (int(args.w/2))] 
+    w_validation_set =  w_validation_set[0:(int(args.w/2))] 
      
 
     sa_training_set, sa_validation_set, num_classes_sa =create_datasetsSA(dataset_dir)  
-    sa_training_set =  sa_training_set[0:(int(args.af/2))] 
-    sa_validation_set =  sa_validation_set[0:(int(args.af/2))] 
+    sa_training_set =  sa_training_set[0:(int(args.sa/2))] 
+    sa_validation_set =  sa_validation_set[0:(int(args.sa/2))] 
     
     
     as_training_set, as_validation_set, num_classes_as= create_datasetsAs(dataset_dir)
-    as_training_set = as_training_set[0:(int(args.af/2))] 
-    as_validation_set = as_validation_set[0:(int(args.af/2))] 
+    as_training_set = as_training_set[0:(int(args.as/2))] 
+    as_validation_set = as_validation_set[0:(int(args.as/2))] 
    
     af_training_set, af_validation_set, num_classes_af  =create_datasetsAF(dataset_dir)
     af_training_set =  af_training_set[0:(int(args.af/2))] 
