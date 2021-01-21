@@ -224,8 +224,8 @@ class LFWPairedDataset(PairedDataset):
             
             name_1=self.pairs_cfg[count]
             name_2=self.pairs_cfg[count+1]
-            a = name_box(name_1)
-            b = name_box(name_2)
+            a = name_box_1(name_1)
+            b = name_box_2(name_2)
             if a == b:
                 match = True
                 index1, name1, index1, name2,  = \
@@ -250,11 +250,11 @@ class LFWPairedDataset(PairedDataset):
    def _read_pairs(self, pairs_filename):
         pairs = []
         with open(pairs_filename, 'r') as f:
-           for line in f.readlines()[]:
-              pair = line.strip().split()
-              pairs.append(pair)
+            for line in f.readlines()[1:]:
+                pair = line.strip().split()
+                pairs.append(pair)
         return pairs
-   def name_box_1(name1)
+   def name_box_1(name_1)
         text = name_1
     try:
         found = re.search('/m(.+?)/', text).group(1)
