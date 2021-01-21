@@ -261,7 +261,7 @@ class LFWPairedDataset(PairedDataset):
         with open(pairs_filename) as f:
            for line1,line2 in itertools.zip_longest(*[f]*2):
                if line1[:15] ==line2[:15] :
-                  pair = line1
+                  pair = line1 + line2
                   pairs.append(pair)
                else:
                    pair_b = line1
