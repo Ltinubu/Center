@@ -227,12 +227,11 @@ class LFWPairedDataset(PairedDataset):
           if pair[:15] == pair[index:index+15]:
                 match = True
                 index1, name1, index1, name2,  = \
-                pair[0], int(len(pair[0])), pair[0], int(len(pair[0]))
+                    pair[0], pair[0], pair[1], pair[2]
           else:
                 match = False
                 index1, name1, index1, name2, = \
-                pair[0], pair[0], int(pair[0]), int(pair[0])
-
+                  pair[0], pair[0], pair[1], pair[2]
                 self.image_names_a.append(os.path.join(
                         self.dataroot, 'RFW-deepfunneled',
                         name1, "{}_{:04d}.jpg".format(name1, index1)))
