@@ -235,7 +235,6 @@ class LFWPairedDataset(PairedDataset):
                 name2 = find_pair[5] 
                 index2 = find_pair[6] 
                 bainor = find_pair[7] 
-                    pair[0], pair[0], pair[1], pair[2]
           else:
                 match = False
                 race, name1, index1, bainor,  race, name1, index1, bainor, = \
