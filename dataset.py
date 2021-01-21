@@ -244,8 +244,8 @@ class LFWPairedDataset(PairedDataset):
             count = 0
             name1=self.pairs_cfg[count]
             name2=self.pairs_cfg[count+1]
-            a = name_box_1(name1)
-            b = name_box_2(name2)
+            a = re.search(r"(?<=/m).*?(?=/m)", name1).group(0)
+            b = name2.partition("/m")[2].partition("/")[0]
             if a == b:
                 match = True
                 index1, name1, index1, name2,  = \
