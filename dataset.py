@@ -242,12 +242,14 @@ class LFWPairedDataset(PairedDataset):
                 race2=find_pair[1]
                 name2=find_pair[2]
                 index2 = find_pair[3] 
+                
           self.image_names_a.append(os.path.join(
-              self.dataroot, 'lfw-deepfunneled',
-              name1, "{}_{:04d}.jpg".format(name1, index1)
-           self.image_names_a.append(os.path.join(
-              self.dataroot, 'lfw-deepfunneled',
-              name1, "{}_{:04d}.jpg".format(name1, index1)
+                    self.dataroot, 'lfw-deepfunneled',
+                    name1, "{}_{:04d}.jpg".format(name1, index1)))
+
+          self.image_names_b.append(os.path.join(
+                    self.dataroot, 'lfw-deepfunneled',
+                    name2, "{}_{:04d}.jpg".format(name2, index2)))
           self.matches.append(match)
    
     
