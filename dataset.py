@@ -221,8 +221,8 @@ class LFWPairedDataset(PairedDataset):
     def _prepare_dataset(self):
         pairs = self._read_pairs(self.pairs_cfg)
         it = iter(pairs)
-        pair_b=1
-        for pair,pair_b in pairs:
+        pair[ , ]
+        for pair in pairs:
                 count =int(it)
                 name1=[pair][it]
                 name2=[pair_b]
