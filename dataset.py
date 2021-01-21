@@ -2,7 +2,7 @@ import os
 import random
 import re
 import tarfile
-impory sys
+import sys
 from math import ceil, floor
 
 from torch.utils import data
