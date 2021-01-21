@@ -220,33 +220,28 @@ class LFWPairedDataset(PairedDataset):
 
     def _prepare_dataset(self):
         
-        pairs = self._read_pairs(self.pairs_cfg)
-       for pair in pairs(0, len(pairs), 2):
-            pair_b = pair
-            pair_b.index() = pairs.index()+1
-            name1 = [pair]
-            a = nameb.partition("/m")[2].partition("/")[0]
-            race_a , name_a = pair.split('/')
+     pairs = self._read_pairs(self.pairs_cfg)
+     for pair in pairs(0, len(pairs), 2):
+        name1 = [pair]
+        a = name1.partition("/m")[2].partition("/")[0]
+        race_a , name_a = pair.split('/')
             for pair in range(1, len(pairs), 2)
-                    name2 = [pair]
-                    a = namea.partition("/m")[2].partition("/")[0]
-                    race_b , name_b = pair.split('/')
-                if (a == b):
-                     match = True
+                 name2 = [pair]
+                 a = namea.partition("/m")[2].partition("/")[0]
+                 race_b , name_b = pair.split('/')
+                 if (a == b):
+                    match = True
                      index1, name1, index1, name2,  = \
-                        pair[0], int(len(pair[0])), pair[0], int(len(pair[0]))
+                     pair[0], int(len(pair[0])), pair[0], int(len(pair[0]))
 
-                else:
-                     match = False
-                     index1, name1, index1, name2, = \
-                            pair[0], pair[0], int(pair[0]), int(pair[0])
-                count += 2 
+                    else:
+                        match = False
+                        index1, name1, index1, name2, = \
+                        pair[0], pair[0], int(pair[0]), int(pair[0])
 
                 self.image_names_a.append(os.path.join(
                         self.dataroot, 'RFW-deepfunneled',
                         name1, "{}_{:04d}.jpg".format(name1, index1)))
-
-
 
                 self.image_names_b.append(os.path.join(
                         self.dataroot, 'RFW-deepfunneled',
