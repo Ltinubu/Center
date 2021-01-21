@@ -221,7 +221,7 @@ class LFWPairedDataset(PairedDataset):
    
 
     def _prepare_dataset(self):
-     pairs = self._read_pairs(self.pairs_cfg)
+        pairs = self._read_pairs(self.pairs_cfg)
         for pair in pairs: 
           index = pair.index('<^&>/')
           if pair[:15] == pair[(index+6):(index+21)]:
@@ -260,13 +260,13 @@ class LFWPairedDataset(PairedDataset):
           #      pair = line.strip().split()
            #     pairs.append(pair)
         with open(pairs_filename) as f:
-               for line1,line2 in itertools.zip_longest(*[f]*2):
-                   if line1[:15] ==line2[:15] :
+            for line1,line2 in itertools.zip_longest(*[f]*2):
+                if line1[:15] ==line2[:15] :
                   line1 = line1[:-2]
                   line2 = line2[:-2]
                   pair = line1 + '<^&>/' + line2 
                   pairs.append(pair)  
-               else:
+                else:
                   line1 = line1[:-2]
                   line2 = line2[:-2]
                   pair = line1 + '<^&>/' 
