@@ -209,10 +209,17 @@ class PairedDataset(data.Dataset):
         return len(self.matches)
 
     def __getitem__(self, index):
-        image = image_loader(self.datasets[index])
-        if self.transform:
-            image = self.transform(image)
-        return (image, self.datasets[index], self.datasets[index])
+        return (self.transform(self.loader(self.image_names_a[index])),
+                self.transform(self.loader(self.image_names_b[index])),
+                self.matches[index])
+
+    def _prepare_dataset(self):
+        raise NotImplementedError
+
+
+class LFWPairedDataset(PairedDataset):
+    def __len__(self):
+        return len(self.matches
 
         
 class LFWPairedDataset(PairedDataset):
