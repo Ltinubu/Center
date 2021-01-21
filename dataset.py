@@ -249,7 +249,7 @@ class LFWPairedDataset(PairedDataset):
                 self.matches.append(match)
 
     def join(file_name, join_text):
-        prefix = 
+        prefix = lol
         current_line = ''
         for line in open(file_name):
             if line and line[-1] == '\n':
