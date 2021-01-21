@@ -247,16 +247,14 @@ class LFWPairedDataset(PairedDataset):
                     self.dataroot, 'RFW-deepfunneled',
                     name2, "{}_{:04d}.jpg".format(name2, index2)))
             self.matches.append(match)
-                                                                            
-                                                      
-     def _read_pairs(self, pairs_filename):
+   def _read_pairs(self, pairs_filename):
         pairs = []
         with open(pairs_filename, 'r') as f:
             for line in f.readlines()[]:
                 pair = line.strip().split()
                 pairs.append(pair)
         return pairs
-    def name_box_1(name1)
+   def name_box_1(name1)
         text = name_1
     try:
         found = re.search('/m(.+?)/', text).group(1)
@@ -265,7 +263,7 @@ class LFWPairedDataset(PairedDataset):
         found = 'N/A' # apply your error handling
        return group(1)
               self.matches[index])
-    def name_box_2(name_2)
+   def name_box_2(name_2)
         text = name_2
     try:
         found = re.search('/m(.+?)/', text).group(1)
