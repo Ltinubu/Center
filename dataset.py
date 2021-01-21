@@ -210,24 +210,7 @@ class PairedDataset(data.Dataset):
         return (self.transform(self.loader(self.image_names_a[index])),
                 self.transform(self.loader(self.image_names_b[index])),
                 self.matches[index])
-    def name_box_1(name_1)
-        text = name_1
-    try:
-        found = re.search('/m(.+?)/', text).group(1)
-    except AttributeError:
-     # AAA, ZZZ not found in the original string
-        found = 'N/A' # apply your error handling
-       return group(1)
-              self.matches[index])
-    def name_box_2(name_2)
-        text = name_2
-    try:
-        found = re.search('/m(.+?)/', text).group(1)
-    except AttributeError:
-     # AAA, ZZZ not found in the original string
-        found = 'N/A' # apply your error handling
-       return group(1)
-  
+   
     def _prepare_dataset(self):
         raise NotImplementedError
         
@@ -274,4 +257,21 @@ class LFWPairedDataset(PairedDataset):
                 pair = line.strip().split()
                 pairs.append(pair)
         return pairs
-     
+    def name_box_1(name1)
+        text = name_1
+    try:
+        found = re.search('/m(.+?)/', text).group(1)
+    except AttributeError:
+     # AAA, ZZZ not found in the original string
+        found = 'N/A' # apply your error handling
+       return group(1)
+              self.matches[index])
+    def name_box_2(name_2)
+        text = name_2
+    try:
+        found = re.search('/m(.+?)/', text).group(1)
+    except AttributeError:
+     # AAA, ZZZ not found in the original string
+        found = 'N/A' # apply your error handling
+       return group(1)
+    
