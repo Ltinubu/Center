@@ -249,7 +249,7 @@ class LFWPairedDataset(PairedDataset):
                 self.matches.append(match)
 
     def join(file_name, join_text):
-        prefix = None
+        prefix = [:15]
         current_line = ''
         for line in open(file_name):
             if line and line[-1] == '\n':
@@ -259,7 +259,7 @@ class LFWPairedDataset(PairedDataset):
             except:
                 first_word = None  # empty line or one without tab
                 rest = line
-            if first_word == prefix:
+            if first_word == [file_name]prefix:
                 current_line += join_text + rest
             else:
                 if current_line:
@@ -272,7 +272,7 @@ class LFWPairedDataset(PairedDataset):
         join(sys.argv[2], sys.argv[1])
     
     def _read_pairs(self, pairs_filename):
-        join(pairs_filename,[:15] )
+        join(pairs_filename, )
         pairs = []
         with open(pairs_filename, 'r') as f:
             for line in f.readlines()[:]:
