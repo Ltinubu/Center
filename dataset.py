@@ -281,7 +281,7 @@ class LFWPairedDataset(PairedDataset):
          #   for line in f.readlines()[1:]:
           #      pair = line.strip().split()
            #     pairs.append(pair)
-        with open(African_pair.txt) as f:
+        with open('African_pair.txt') as f:
                 for line1,line2 in pairs_filename(f,f):
                    if line1[:15] ==line2[:15] :
                       pair = line1
