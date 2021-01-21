@@ -220,10 +220,8 @@ class LFWPairedDataset(PairedDataset):
 
     def _prepare_dataset(self):
         pairs = self._read_pairs(self.pairs_cfg)
-        it = iter(pairs)
         pair[ , ]
         for pair in pairs:
-                count =int(it)
                 name1=[pair][it]
                 name2=[pair_b]
                 a = name1.partition("/m")[2].partition("/")[0]
