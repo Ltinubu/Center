@@ -223,29 +223,27 @@ class LFWPairedDataset(PairedDataset):
     def _prepare_dataset(self):
         pairs = self._read_pairs(self.pairs_cfg)
         for pair in pairs: 
-          index = pair.index('<^&>/')
+          index = pair.index('/<^&>')
           if pair[1:15] == pair[(index+6):(index+21)]:
                 match = True
                 find_pair = pair.split("/")
-                race=find_pair[0]
-                name1=find_pair[1]
-                index1 = find_pair[2] 
-                extra = find_pair[3]
-                race2 = find_pair[4] 
-                name2 = find_pair[5] 
-                index2 = find_pair[6] 
-                bainor = find_pair[7] 
+                race=find_pair[1]
+                name1=find_pair[2]
+                index1 = find_pair[3] 
+                extra = find_pair[4]
+                race2 = find_pair[5] 
+                name2 = find_pair[6] 
+                index2 = find_pair[7] 
           else:
                 match = False
                 find_pair = pair.split("/")
-                race=find_pair[0]
-                name1=find_pair[1]
-                index1 = find_pair[2] 
-                extra = find_pair[3]
-                race2=find_pair[0]
-                name2=find_pair[1]
-                index2 = find_pair[2] 
-                extra = find_pair[3]
+                race=find_pair[1]
+                name1=find_pair[2]
+                index1 = find_pair[3] 
+                extra = find_pair[4]
+                race2=find_pair[5]
+                name2=find_pair[6]
+                index2 = find_pair[7] 
           self.image_names_a.append(os.path.join( self.dataroot, 'RFW-deepfunneled', '/' + race + '/' + name1 + '/' + index1 ))
           self.image_names_b.append(os.path.join( self.dataroot, 'RFW-deepfunneled', '/' + race2 + '/' + name2 + '/' + index2 ))
           self.matches.append(match)
