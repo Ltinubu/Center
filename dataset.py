@@ -210,7 +210,7 @@ class PairedDataset(data.Dataset):
         return (self.transform(self.loader(self.image_names_a[index])),
                 self.transform(self.loader(self.image_names_b[index])),
                 self.matches[index])
-    def name_box_1(self, name_1)
+    def name_box_1(name_1)
         text = name_1
     try:
         found = re.search('/m(.+?)/', text).group(1)
@@ -219,7 +219,7 @@ class PairedDataset(data.Dataset):
         found = 'N/A' # apply your error handling
        return group(1)
               self.matches[index])
-    def name_box_2(self, name_2)
+    def name_box_2(name_2)
         text = name_2
     try:
         found = re.search('/m(.+?)/', text).group(1)
@@ -241,7 +241,7 @@ class LFWPairedDataset(PairedDataset):
             
             name_1=self.pairs_cfg[count]
             name_2=self.pairs_cfg[count+1]
-            a = name_box( name_1)
+            a = name_box(name_1)
             b= name_box(name_2)
             
             if a == b
