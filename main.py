@@ -74,8 +74,8 @@ def train(args):
     
     
     as_training_set, as_validation_set, num_classes_as= create_datasetsAs(dataset_dir)
-    as_training_set = as_training_set[0:(int(args.as/2))] 
-    as_validation_set = as_validation_set[0:(int(args.as/2))] 
+    as_training_set = as_training_set[0:(int(args.ai/2))] 
+    as_validation_set = as_validation_set[0:(int(args.ai/2))] 
    
     af_training_set, af_validation_set, num_classes_af  =create_datasetsAF(dataset_dir)
     af_training_set =  af_training_set[0:(int(args.af/2))] 
@@ -246,7 +246,7 @@ if __name__ == '__main__':
                         help='how many south asian you want')
     parser.add_argument('--w', type=int,default=0,
                         help='how many whitess you want')
-    parser.add_argument('--as', type=int,default=0,
+    parser.add_argument('--ai', type=int,default=0,
                         help='how many asians you want')
     parser.add_argument('--save_file_name', type=str,
                         help=gives filename)
