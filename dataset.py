@@ -215,15 +215,8 @@ class PairedDataset(data.Dataset):
 
     def _prepare_dataset(self):
         raise NotImplementedError
-
-
-class LFWPairedDataset(PairedDataset):
-    def __len__(self):
-        return len(self.matches
-
         
 class LFWPairedDataset(PairedDataset):
-   
 
     def _prepare_dataset(self):
         pairs = self._read_pairs(self.pairs_cfg)
