@@ -279,7 +279,7 @@ class LFWPairedDataset(PairedDataset):
                 pair = line.strip().split()
                 pairs.append(pair)
         with open(pairs_filename) as f:
-            for line1,line2 in pairs_filename(*[f]*2):
+            for line1,line2 in pairs(*[f]*2):
                if line1[:15] ==line2[:15] :
                   pair = line1
                   pairs.append(pair)
