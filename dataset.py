@@ -221,14 +221,14 @@ class LFWPairedDataset(PairedDataset):
     def _prepare_dataset(self):
         pairs = self._read_pairs(self.pairs_cfg)
         pair[ , ]
-        for pair in pairs:
-                name1=[pair][it]
-                name2=[pair_b]
-                a = name1.partition("/m")[2].partition("/")[0]
-                b = name2.partition("/m")[2].partition("/")[0]
-                race_a , name_a =self.pairs_cfg[count].split('/')
-                race_b , name_b  =self.pairs_cfg[count+1].split('/')
-                self.pairs_cfg[count+1]
+        for pair in pairs: 
+                name1 = [pair]
+                a = nameb.partition("/m")[2].partition("/")[0]
+                race_a , name_a = pair.split('/')
+           for pair in pairs:
+                    name2 = [pair]
+                    a = namea.partition("/m")[2].partition("/")[0]
+                    race_b , name_b = pair.split('/')
                 if (a == b):
                      match = True
                      index1, name1, index1, name2,  = \
