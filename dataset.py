@@ -243,7 +243,7 @@ class LFWPairedDataset(PairedDataset):
                 name2=find_pair[2]
                 index2 = find_pair[3] 
                 
-          self.image_names_a.append(os.path.join( '/cmlscratch','dtinubu','datasets','RFW','Balancedface','race_per_7000','/' + race1 + '/' + name1 + '/' + index1 ))
+          self.image_names_a.append(os.path.join( '/cmlscratch','dtinubu','datasets','RFW','Balancedface','race_per_7000','/' + race + '/' + name1 + '/' + index1 ))
           self.image_names_a.append(os.path.join( '/cmlscratch','dtinubu','datasets','RFW','Balancedface','race_per_7000','/' + race2 + '/' + name2 + '/' + index2 ))
           self.matches.append(match)
    
