@@ -51,10 +51,10 @@ def compute_roc(distances, matches, thresholds, fold_size=10):
         for threshold_index, threshold in enumerate(thresholds):
             predicts = val_distances < threshold
 
-            tp = torch.sum(predicts & val_matches).item()
-            fp = torch.sum(predicts & ~val_matches).item()
-            tn = torch.sum(~predicts & ~val_matches).item()
-            fn = torch.sum(~predicts & val_matches).item()
+            tp = torch.sum((1*predicts) & val_matches).item()
+            fp = torch.sum((1*predicts) & ~val_matches).item()
+            tn = torch.sum((1*~predicts) & ~val_matches).item()
+            fn = torch.sum((1*~predicts) & val_matches).item()
 
             tpr[fold_index][threshold_index] = float(tp) / (tp + fn)
             fpr[fold_index][threshold_index] = float(fp) / (fp + tn)
