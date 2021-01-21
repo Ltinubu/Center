@@ -223,8 +223,8 @@ class LFWPairedDataset(PairedDataset):
     def _prepare_dataset(self):
         
      pairs = self._read_pairs(self.pairs_cfg)
-        index = vowels.index('<^&>')
-     
+        for pair in pairs: 
+            index = pair.index('<^&>')
             if pair[:15] == b[index:index+15]:
                 match = True
                 index1, name1, index1, name2,  = \
