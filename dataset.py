@@ -277,7 +277,6 @@ class LFWPairedDataset(PairedDataset):
             for line in f.readlines()[:]:
                 pair = line.strip().split()
                 pairs.append(pair)
-                with open(sys.argv[1]) as input:
                     lines = [item.strip() for item in input.readlines() if not item == ""]
                     templist = []
                     for pair in pairs:
