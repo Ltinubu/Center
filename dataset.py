@@ -213,9 +213,6 @@ class PairedDataset(data.Dataset):
    
     def _prepare_dataset(self):
         raise NotImplementedError
-        
-class LFWPairedDataset(PairedDataset):
-   
     def name_box_1(name_1):
         text = name_1
         try:
@@ -233,6 +230,10 @@ class LFWPairedDataset(PairedDataset):
      # AAA, ZZZ not found in the original string
             found = 'N/A' # apply your error handling
         return found
+
+        
+class LFWPairedDataset(PairedDataset):
+   
 
     def _prepare_dataset(self):
         pairs = self._read_pairs(self.pairs_cfg)
