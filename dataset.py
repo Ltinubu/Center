@@ -227,10 +227,13 @@ class LFWPairedDataset(PairedDataset):
             name2=self.pairs_cfg[count+1]
             a = name1.partition("/m")[2].partition("/")[0]
             b = name2.partition("/m")[2].partition("/")[0]
+            race_a , name_a , index_a =self.pairs_cfg[count].strip().split(/)
+            race_b , name_b , index_b =self.pairs_cfg[count].strip().split(/)
+            self.pairs_cfg[count+1]
             if (a == b):
                  match = True
                  index1, name1, index1, name2,  = \
-                    pair[0], int(pair[0]), pair[0], int(pair[0])
+                    pair[0], int(len(pair[0])), pair[0], int(len(pair[0]))
 
             else:
                  match = False
