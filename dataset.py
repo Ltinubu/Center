@@ -231,7 +231,8 @@ class LFWPairedDataset(PairedDataset):
                     match = True
                     index1, name1, index1, name2,  = \
                         pair[0], int(pair[1], pair[0], int(pair[2])
-             else:
+
+            else:
                     match = False
                     index1, name1, index1, name2, = \
                         pair[0], pair[2], int(pair[1]), int(pair[3])
