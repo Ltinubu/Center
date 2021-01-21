@@ -267,8 +267,8 @@ class LFWPairedDataset(PairedDataset):
                 else:
                   line1 = line1[:-2]
                   line2 = line2[:-2]
-                  pair = line1 + '<^&>/' 
+                  pair = line1 + '/<^&>' 
                   pairs.append(pair)
-                  pair = line2 + '<^&>/'
+                  pair = line2 + '/<^&>'
                   pairs.append(pair)       
         return pairs
