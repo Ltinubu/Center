@@ -291,5 +291,4 @@ class LFWPairedDataset(PairedDataset):
                        pairs.append(pair)
                        pair = line2
                        pairs.append(pair)              
-     return pairs
-   
+        return pairs
