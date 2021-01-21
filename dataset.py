@@ -220,7 +220,6 @@ class LFWPairedDataset(PairedDataset):
 
     def _prepare_dataset(self):
         pairs = self._read_pairs(self.pairs_cfg)
-        pair[ , ]
         for pair in pairs: 
                 name1 = [pair]
                 a = nameb.partition("/m")[2].partition("/")[0]
