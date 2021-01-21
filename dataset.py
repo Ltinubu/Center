@@ -273,7 +273,7 @@ class LFWPairedDataset(PairedDataset):
         join(sys.argv[2], sys.argv[1])
     
     def _read_pairs(self, pairs_filename):
-     pairs_filename= African_pair.txt
+     pairs_filename= 'African_pair'.txt
      pairs = []
      line1= []
      line2 = []
