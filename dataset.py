@@ -245,7 +245,6 @@ class LFWPairedDataset(PairedDataset):
                 name2 = find_pair[5] 
                 index2 = find_pair[6] 
                 bainor = find_pair[7] 
-                  pair[0], pair[0], pair[1], pair[2]
                 self.image_names_a.append(os.path.join(
                         self.dataroot, 'RFW-deepfunneled',
                         name1, "{}_{:04d}.jpg".format(name1, index1)))
