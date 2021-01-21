@@ -227,14 +227,14 @@ class LFWPairedDataset(PairedDataset):
             name2=self.pairs_cfg[count+1]
             a = name1.partition("/m")[2].partition("/")[0]
             b = name2.partition("/m")[2].partition("/")[0]
-            if a == b:
-                    match = True
-                    index1, name1, index1, name2,  = \
-                        pair[0], int(pair[1], pair[0], int(pair[2])
+            if (a == b):
+                 match = True
+                 index1, name1, index1, name2,  = \
+                    pair[0], int(pair[1]), pair[0], int(pair[2])
 
             else:
-                    match = False
-                    index1, name1, index1, name2, = \
+                 match = False
+                 index1, name1, index1, name2, = \
                         pair[0], pair[2], int(pair[1]), int(pair[3])
                 count += 2 
 
