@@ -240,10 +240,10 @@ class LFWPairedDataset(PairedDataset):
 
         for pair in pairs:
             count = 0
-            name_1=self.pairs_cfg[count]
-            name_2=self.pairs_cfg[count+1]
-            a = name_box_1(name_1)
-            b = name_box_2(name_2)
+            name1=self.pairs_cfg[count]
+            name2=self.pairs_cfg[count+1]
+            a = name_box_1(name1)
+            b = name_box_2(name2)
             if a == b:
                 match = True
                 index1, name1, index1, name2,  = \
