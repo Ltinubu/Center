@@ -223,7 +223,7 @@ class LFWPairedDataset(PairedDataset):
     def _prepare_dataset(self):
         pairs = self._read_pairs(self.pairs_cfg)
         for pair in pairs: 
-          index = pair.index('<^&>')
+          index = if pair.index('<^&>') exits if not = 
           if pair[:15] == pair[index:index+15]:
                 match = True
                 find_pair = pair.split("/")
@@ -267,7 +267,7 @@ class LFWPairedDataset(PairedDataset):
                else:
                    pair_b = line1
                    pairs.append(pair_b)
-                   pair = line2
+                   pair = line2 + '<^&>'
                    pairs.append(pair)
                 
                 
