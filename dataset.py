@@ -272,11 +272,11 @@ class LFWPairedDataset(PairedDataset):
         join(sys.argv[2], sys.argv[1])
     
     def _read_pairs(self, pairs_filename):
-        join(pairs_filename,'hey' )
         pairs = []
         with open(pairs_filename, 'r') as f:
             for line in f.readlines()[:]:
                 pair = line.strip().split()
                 pairs.append(pair)
+                 join(pairs_filename, goi )
         return pairs
    
