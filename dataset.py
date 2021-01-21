@@ -268,7 +268,7 @@ class LFWPairedDataset(PairedDataset):
                 prefix = first_word
 
         if current_line:  # do the last line(s)
-            print current_line
+            print (current_line)
         join(sys.argv[2], sys.argv[1])
     
     def _read_pairs(self, pairs_filename):
