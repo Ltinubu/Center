@@ -213,13 +213,14 @@ class PairedDataset(data.Dataset):
    
     def _prepare_dataset(self):
         raise NotImplementedError
-    def name_box_1(self,name_1,self.pairs_cfg):
+    def name_box_1(self, name_1 , pairs_cfg):
         text = name_1
         try:
             found = re.search('/m(.+?)/', text).group(1)
         except AttributeError:
      # AAA, ZZZ not found in the original string
             found = 'N/A' # apply your error handling
+        name_box_1=()
         return found;
    
     def name_box_2(name_2):
@@ -229,6 +230,7 @@ class PairedDataset(data.Dataset):
         except AttributeError:
      # AAA, ZZZ not found in the original string
             found = 'N/A' # apply your error handling
+        name_box_2=()
         return found;
 
         
