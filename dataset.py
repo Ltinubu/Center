@@ -220,26 +220,27 @@ class LFWPairedDataset(PairedDataset):
 
     def _prepare_dataset(self):
         pairs = self._read_pairs(self.pairs_cfg)
+        it = iter(pairs)
+        for x in it:
+            for pair, pairs[1]pairs in pairs:
+                count = 0
+                name1=[pair]
+                name2=self.pairs_cfg[count+1]
+                a = name1.partition("/m")[2].partition("/")[0]
+                b = name2.partition("/m")[2].partition("/")[0]
+                race_a , name_a =self.pairs_cfg[count].split('/')
+                race_b , name_b  =self.pairs_cfg[count+1].split('/')
+                self.pairs_cfg[count+1]
+                if (a == b):
+                     match = True
+                     index1, name1, index1, name2,  = \
+                        pair[0], int(len(pair[0])), pair[0], int(len(pair[0]))
 
-        for pair, pairs[1]pairs in pairs:
-            count = 0
-            name1=[pair]
-            name2=self.pairs_cfg[count+1]
-            a = name1.partition("/m")[2].partition("/")[0]
-            b = name2.partition("/m")[2].partition("/")[0]
-            race_a , name_a =self.pairs_cfg[count].split('/')
-            race_b , name_b  =self.pairs_cfg[count+1].split('/')
-            self.pairs_cfg[count+1]
-            if (a == b):
-                 match = True
-                 index1, name1, index1, name2,  = \
-                    pair[0], int(len(pair[0])), pair[0], int(len(pair[0]))
-
-            else:
-                 match = False
-                 index1, name1, index1, name2, = \
-                        pair[0], pair[0], int(pair[0]), int(pair[0])
-            count += 2 
+                else:
+                     match = False
+                     index1, name1, index1, name2, = \
+                            pair[0], pair[0], int(pair[0]), int(pair[0])
+                count += 2 
 
             self.image_names_a.append(os.path.join(
                     self.dataroot, 'RFW-deepfunneled',
