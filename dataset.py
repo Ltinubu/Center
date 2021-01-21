@@ -221,9 +221,9 @@ class LFWPairedDataset(PairedDataset):
     def _prepare_dataset(self):
         pairs = self._read_pairs(self.pairs_cfg)
 
-        for pair in pairs:
+        for pair, pairs[1]pairs in pairs:
             count = 0
-            name1=self.pairs_cfg[count]
+            name1=[pair]
             name2=self.pairs_cfg[count+1]
             a = name1.partition("/m")[2].partition("/")[0]
             b = name2.partition("/m")[2].partition("/")[0]
