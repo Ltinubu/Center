@@ -137,7 +137,7 @@ def evaluate(args):
     pairs_path =os.path.join('/cmlscratch','dtinubu','datasets','RFW','eve_set','test2','RFW_index',args.pairs)
         
     dataset = LFWPairedDataset(
-        dataset_dir, pairs_path, transform_for_infer(model_class.IMAGE_SHAPE))
+        dataset_dir, pairs_path,transform_for_infer(model_class.IMAGE_SHAPE))
     dataloader = DataLoader(dataset, batch_size=args.batch_size, num_workers=4)
     model = model_class(False).to(device)
 
