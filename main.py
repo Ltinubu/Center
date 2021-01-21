@@ -248,6 +248,8 @@ if __name__ == '__main__':
                         help='how many whitess you want')
     parser.add_argument('--as', type=int,default=0,
                         help='how many asians you want')
+    parser.add_argument('--save_file_name', type=str,
+                        help=gives filename)
  
                    
                              
