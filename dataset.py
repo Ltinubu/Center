@@ -262,7 +262,7 @@ class LFWPairedDataset(PairedDataset):
                 if line1[:15] ==line2[:15] :
                   line1 = line1[:-2]
                   line2 = line2[:-2]
-                  pair = line1 + '<^&>/' + line2 
+                  pair = line1 + '/<^&>' + line2 
                   pairs.append(pair)  
                 else:
                   line1 = line1[:-2]
