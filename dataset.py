@@ -221,74 +221,56 @@ class LFWPairedDataset(PairedDataset):
    
 
     def _prepare_dataset(self):
-        
      pairs = self._read_pairs(self.pairs_cfg)
-     for pair in pairs(0, len(pairs), 2):
-        name1 = [pair]
-        a = name1.partition("/m")[2].partition("/")[0]
-        race_a , name_a = pair.split('/')
-        for pair in range(1, len(pairs), 2):
-            name2 = [pair]
-            b = namea.partition("/m")[2].partition("/")[0]
-            race_b , name_b = pair.split('/')
-            if (a == b):
+        for pair in pairs: 
+          index = pair.index('<^&>/')
+          if pair[:15] == pair[(index+6):(index+21)]:
                 match = True
-                index1, name1, index1, name2,  = \
-                pair[0], int(len(pair[0])), pair[0], int(len(pair[0]))
-            else:
+                find_pair = pair.split("/")
+                race=find_pair[0]
+                name1=find_pair[1]
+                index1 = find_pair[2] 
+                extra = find_pair[3]
+                race2 = find_pair[4] 
+                name2 = find_pair[5] 
+                index2 = find_pair[6] 
+                bainor = find_pair[7] 
+          else:
                 match = False
-                index1, name1, index1, name2, = \
-                pair[0], pair[0], int(pair[0]), int(pair[0])
-
-                self.image_names_a.append(os.path.join(
-                        self.dataroot, 'RFW-deepfunneled',
-                        name1, "{}_{:04d}.jpg".format(name1, index1)))
-
-                self.image_names_b.append(os.path.join(
-                        self.dataroot, 'RFW-deepfunneled',
-                        name2, "{}_{:04d}.jpg".format(name2, index2)))
-                self.matches.append(match)
-
-    def join(file_name):
-        prefix = lol
-        current_line = ''
-        for line in open(file_name):
-            if line and line[-1] == '\n':
-                line = line[:-1]
-            try:
-                first_word, rest = line.split('\t', 1)
-            except:
-                first_word = None  # empty line or one without tab
-                rest = line
-            if first_word == [file_name][line][:15]:
-                current_line += join_text + rest
-            else:
-                if current_line:
-                    print (current_line)
-                current_line = line
-                prefix = first_word
-
-        if current_line:  # do the last line(s)
-            print (current_line)
-        join(sys.argv[2], sys.argv[1])
+                find_pair = pair.split("/")
+                race=find_pair[0]
+                name1=find_pair[1]
+                index1 = find_pair[2] 
+                extra = find_pair[3]
+                race2=find_pair[0]
+                name2=find_pair[1]
+                index2 = find_pair[2] 
+                extra = find_pair[3]
+          self.image_names_a.append(os.path.join( self.dataroot, 'RFW-deepfunneled', '/' + race + '/' + name1 + '/' + index1 ))
+          self.image_names_b.append(os.path.join( self.dataroot, 'RFW-deepfunneled', '/' + race2 + '/' + name2 + '/' + index2 ))
+          self.matches.append(match)
+   
     
     def _read_pairs(self, pairs_filename):
-        fh = open("/cmlscratch/dtinubu/datasets/RFW/eve_set/test2/RFW_index/African_pair.txt")
         pairs = []
         line1= []
-        line2 = []
-        #with open(pairs_filename, 'r') as f:
-         #   for line in f.readlines()[1:]:
+        line2=[]
+        pair_b=[]
+       #   for line in f.readlines()[1:]:
           #      pair = line.strip().split()
            #     pairs.append(pair)
-        with open(pairs_filename, 'r') as f:
-                for line1,line2 in pairs_filename(f,f):
+        with open(pairs_filename) as f:
+               for line1,line2 in itertools.zip_longest(*[f]*2):
                    if line1[:15] ==line2[:15] :
-                      pair = line1
-                      pairs.append(pair)
-                   else:
-                       pair = line1
-                       pairs.append(pair)
-                       pair = line2
-                       pairs.append(pair)              
+                  line1 = line1[:-2]
+                  line2 = line2[:-2]
+                  pair = line1 + '<^&>/' + line2 
+                  pairs.append(pair)  
+               else:
+                  line1 = line1[:-2]
+                  line2 = line2[:-2]
+                  pair = line1 + '<^&>/' 
+                  pairs.append(pair)
+                  pair = line2 + '<^&>/'
+                  pairs.append(pair)       
         return pairs
