@@ -213,7 +213,7 @@ class PairedDataset(data.Dataset):
    
     def _prepare_dataset(self):
         raise NotImplementedError
-    def name_box_1(self,name_1):
+    def name_box_1(self,name_1,self.pairs_cfg):
         text = name_1
         try:
             found = re.search('/m(.+?)/', text).group(1)
