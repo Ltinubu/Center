@@ -274,8 +274,8 @@ class LFWPairedDataset(PairedDataset):
     def _read_pairs(self, pairs_filename):
         pairs = []
         with open(pairs_filename, 'r') as f:
-        for line in f.readlines()[1:]:
-           pair = line.strip().split()
+            for line in f.readlines()[1:]:
+            pair = line.strip().split()
                 pairs.append(pair)
          lines = [item.strip() for item in input.readlines() if not item == ""]
          templist = []
