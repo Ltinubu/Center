@@ -225,19 +225,18 @@ class LFWPairedDataset(PairedDataset):
         name1 = [pair]
         a = name1.partition("/m")[2].partition("/")[0]
         race_a , name_a = pair.split('/')
-            for pair in range(1, len(pairs), 2)
-                 name2 = [pair]
-                 a = namea.partition("/m")[2].partition("/")[0]
-                 race_b , name_b = pair.split('/')
-                 if (a == b):
-                    match = True
-                     index1, name1, index1, name2,  = \
-                     pair[0], int(len(pair[0])), pair[0], int(len(pair[0]))
-
-                    else:
-                        match = False
-                        index1, name1, index1, name2, = \
-                        pair[0], pair[0], int(pair[0]), int(pair[0])
+        for pair in range(1, len(pairs), 2)
+            name2 = [pair]
+            b = namea.partition("/m")[2].partition("/")[0]
+            race_b , name_b = pair.split('/')
+            if (a == b):
+                match = True
+                index1, name1, index1, name2,  = \
+                pair[0], int(len(pair[0])), pair[0], int(len(pair[0]))
+            else:
+                match = False
+                index1, name1, index1, name2, = \
+                pair[0], pair[0], int(pair[0]), int(pair[0])
 
                 self.image_names_a.append(os.path.join(
                         self.dataroot, 'RFW-deepfunneled',
