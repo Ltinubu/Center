@@ -213,25 +213,6 @@ class PairedDataset(data.Dataset):
    
     def _prepare_dataset(self):
         raise NotImplementedError
-    def name_box_1(self, name_1 , pairs_cfg):
-        text = name_1
-        try:
-            found = re.search('/m(.+?)/', text).group(1)
-        except AttributeError:
-     # AAA, ZZZ not found in the original string
-            found = 'N/A' # apply your error handling
-        name_box_1=()
-        return found;
-   
-    def name_box_2(name_2):
-        text = name_2
-        try:
-            found = re.search('/m(.+?)/', text).group(1)
-        except AttributeError:
-     # AAA, ZZZ not found in the original string
-            found = 'N/A' # apply your error handling
-        name_box_2=()
-        return found;
 
         
 class LFWPairedDataset(PairedDataset):
@@ -249,7 +230,7 @@ class LFWPairedDataset(PairedDataset):
             if a == b:
                 match = True
                 index1, name1, index1, name2,  = \
-                    pair[0], pair[0], int(pair[1]), int(pair[2])
+                    pair[0], int(pair[1], pair[0], int(pair[2])
 
             else:
                 match = False
