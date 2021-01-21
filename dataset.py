@@ -237,6 +237,7 @@ class LFWPairedDataset(PairedDataset):
                 bainor = find_pair[7] 
           else:
                 match = False
+                find_pair = pair.split("/")
                 race=find_pair[0]
                 name1=find_pair[1]
                 index1 = find_pair[2] 
