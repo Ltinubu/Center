@@ -222,7 +222,6 @@ class LFWPairedDataset(PairedDataset):
         pairs = self._read_pairs(self.pairs_cfg)
         it = iter(pairs)
         for pair in it:
-           for pair, pairs in pairs:
                 count = 0
                 name1=[pair][it]
                 name2=[pair][it+1]
