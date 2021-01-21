@@ -1,8 +1,8 @@
 import os
 import random
+import re
 import tarfile
 from math import ceil, floor
-
 
 from torch.utils import data
 import numpy as np
@@ -210,12 +210,27 @@ class PairedDataset(data.Dataset):
         return (self.transform(self.loader(self.image_names_a[index])),
                 self.transform(self.loader(self.image_names_b[index])),
                 self.matches[index])
+    def name_box_1(self, name_1)
+        text = name_1
+    try:
+        found = re.search('/m(.+?)/', text).group(1)
+    except AttributeError:
+     # AAA, ZZZ not found in the original string
+        found = 'N/A' # apply your error handling
+       return group(1)
+              self.matches[index])
+    def name_box_2(self, name_2)
+        text = name_2
+    try:
+        found = re.search('/m(.+?)/', text).group(1)
+    except AttributeError:
+     # AAA, ZZZ not found in the original string
+        found = 'N/A' # apply your error handling
+       return group(1)
   
     def _prepare_dataset(self):
         raise NotImplementedError
         
-    
-
 class LFWPairedDataset(PairedDataset):
 
    def _prepare_dataset(self):
@@ -223,13 +238,16 @@ class LFWPairedDataset(PairedDataset):
 
         for pair in pairs:
             Count = 0
-            a=self.pairs_cfg[count]
-            b=self.pairs_cfg[count+1]
-            if a[Count][2] == b[Count+1][2]
+            
+            name_1=self.pairs_cfg[count]
+            name_2=self.pairs_cfg[count+1]
+            a = name_box( name_1)
+            b= name_box(name_2)
+            
+            if a == b
                 match = True
                 index1, name1, index1, name2,  = \
                     pair[0], pair[0], int(pair[1]), int(pair[2])
-             
 
             else:
                 match = False
