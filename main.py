@@ -94,14 +94,14 @@ def train(args):
     training_dataloader = torch.utils.data.DataLoader(
         training_dataset,
         batch_size=args.batch_size,
-        num_workers=6,
+        num_workers=arg.num_workers,
         shuffle=True
     )
 
     validation_dataloader = torch.utils.data.DataLoader(
         validation_dataset,
         batch_size=args.batch_size,
-        num_workers=6,
+        num_workers=arg.num_workers,
         shuffle=False
     )
 
@@ -138,7 +138,7 @@ def evaluate(args):
         
     dataset = LFWPairedDataset(
         dataset_dir, pairs_path,transform_for_infer(model_class.IMAGE_SHAPE))
-    dataloader = DataLoader(dataset, batch_size=args.batch_size, num_workers=4)
+    dataloader = DataLoader(dataset, batch_size=args.batch_size, num_workers=arg.num_workers)
     model = model_class(False).to(device)
 
     checkpoint = torch.load(args.evaluate)
@@ -250,6 +250,8 @@ if __name__ == '__main__':
                         help='how many asians you want')
     parser.add_argument('--save_file_name', type=str,
                         help= 'gives filename')
+     parser.add_argument('--num_workers',default = 6,type=int,
+                        help= 'workers')
  
                    
                              
