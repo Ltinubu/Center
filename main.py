@@ -58,6 +58,7 @@ def get_model_class(args):
 def train(args):
     t_training_set=[]
     t_validation_set=[]
+    t_num_classes=[]
     dataset_dir = get_dataset_dir(args)
     log_dir = get_log_dir(args)
     model_class = get_model_class(args)
@@ -70,7 +71,7 @@ def train(args):
         w_validation_set =  w_validation_set[0:(int(args.w/2))] 
         t_training_set =+ w_training_set
         t_validation_set =+ w_validation_set
-    
+        t_num_classes =+num_classes_w
     
     
     if args.sa == 0:
@@ -81,7 +82,7 @@ def train(args):
         sa_validation_set =  sa_validation_set[0:int(args.sa/2)]
         t_training_set =+ sa_training_set
         t_validation_set =+ sa_validation_set
-        
+         t_num_classes =+ num_classes_sa
     
     
     if args.ai == 0:
@@ -92,7 +93,7 @@ def train(args):
         as_validation_set = as_validation_set[0:(int(args.ai/2))+1] 
         t_training_set =+ as_training_set
         t_validation_set =+ as_validation_set
-   
+        t_num_classes =+num_classes_as
     
     if args.af == 0:
          j=1+1
@@ -102,12 +103,11 @@ def train(args):
         af_validation_set =af_validation_set[0:(int(args.af/2))+1]
         t_training_set.append(af_training_set)
         t_validation_set.append(af_validation_set)
-        
+        t_num_classes =+ num_classes_af
             
     training_set = t_training_set
     validation_set = t_validation_set
             
-    num_classes = num_classes_w + num_classes_sa + num_classes_as + num_classes_af
 
     
     training_dataset = Dataset(
