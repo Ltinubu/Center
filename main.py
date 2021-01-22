@@ -87,7 +87,7 @@ def train(args):
     
     
     as_training_set, as_validation_set, num_classes_as= create_datasetsAs(dataset_dir)
-    as_training_set = as_training_set[0:args.as/2] 
+    as_training_set =  as_training_set[0:args.as/2]
     as_validation_set = as_validation_set[0:args.as/2] 
     if args.as == 0:
         j=1+1
