@@ -70,7 +70,7 @@ def train(args):
     w_training_set, w_validation_set, num_classes_w = create_datasetsW(dataset_dir)
     w_training_set =  w_training_set[0 : (int(args.w/2))] 
     w_validation_set =  w_validation_set[0:(int(args.w/2))] 
-    if arg.w == 0:
+    if args.w == 0:
         j=1+1
     else:
         t_training_set =+ w_training_set
