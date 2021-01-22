@@ -106,8 +106,8 @@ def train(args):
        
         t_num_classes =+ num_classes_af
             
-    training_set = [AF_training_set]
-    validation_set = [AF_validation_set]
+    training_set = [af_training_set]
+    validation_set = [af_validation_set]
     num_classes = t_num_classes
             
 
