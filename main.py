@@ -91,8 +91,8 @@ def train(args):
     if args.ai == 0:
         j=1+1
     else: 
-        as_training_set =  as_training_set[0:int(args.ai/2)]
-        as_validation_set = as_validation_set[0:int(args.ai/2)] 
+        as_training_set =  as_training_set[0:(int(args.ai/2))+1]
+        as_validation_set = as_validation_set[0:(int(args.ai/2))+1] 
         t_training_set =+ as_training_set
         t_validation_set =+ as_validation_set
    
@@ -100,8 +100,8 @@ def train(args):
     if args.af == 0:
          j=1+1
     else:
-        af_training_set =  af_training_set[0:args.af/2] 
-        af_validation_set =af_validation_set[0:args.af/2]
+        af_training_set =  af_training_set[0:(int(args.af/2))+1]
+        af_validation_set =af_validation_set[0:(int(args.af/2))+1]
         t_training_set =+ as_training_set
         t_validation_set =+ as_validation_set
         
