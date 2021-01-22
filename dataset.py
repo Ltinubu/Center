@@ -28,6 +28,7 @@ def create_datasetsAF(dataroot, int , train_val_split=0.9, ):
 
     af_training_set =[]
     af_validation_set =[]
+    
     for klass, name in enumerate(names_af):
         def add_class(image):
             image_path = os.path.join(images_root, name, image)
@@ -42,10 +43,10 @@ def create_datasetsAF(dataroot, int , train_val_split=0.9, ):
         af_validation_set+= map(
                     add_class,
                     images_of_person[floor(total * train_val_split):])
-        k=len(names_af)[:(int/2)]
+    k=   
      
     
-    return af_training_set, af_validation_set, k
+    return af_training_set, af_validation_set, (len(names_af)[:(args.af/2)] )
 
 
 def create_datasetsAs(dataroot, train_val_split=0.9):
