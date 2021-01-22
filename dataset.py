@@ -225,7 +225,7 @@ class LFWPairedDataset(PairedDataset):
           if pair[1:16] == pair[(index+6):(index+21)]:
                 match = True
                 find_pair = pair.split("/")
-                race=find_pair[1]
+                race1=find_pair[1]
                 name1=find_pair[2]
                 index1 = find_pair[3] 
                 extra = find_pair[4]
@@ -243,7 +243,7 @@ class LFWPairedDataset(PairedDataset):
                 name2=find_pair[2]
                 index2 = find_pair[3] 
                 
-          self.image_names_a.append(os.path.join('cmlscratch','dtinubu','datasets','RFW','eve_set','test','data',race,(name1 + '_0001.jpg'))
+          self.image_names_a.append(os.path.join('cmlscratch','dtinubu','datasets','RFW','eve_set','test','data',race1,(name1 + '_0001.jpg'))
           self.image_names_b.append(os.path.join('cmlscratch','dtinubu','datasets','RFW','eve_set','test','data',race2,(name2 + '_0001.jpg'))
           self.matches.append(match)
    
