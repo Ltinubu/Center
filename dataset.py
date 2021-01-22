@@ -5,6 +5,7 @@ import tarfile
 import sys
 import itertools
 import random
+import argparse 
 from math import ceil, floor
 
 from torch.utils import data
@@ -16,7 +17,7 @@ from utils import image_loader, download
 
 
 
-def create_datasetsAF(dataroot, *args.af , train_val_split=0.9, ):
+def create_datasetsAF(dataroot, args.af , train_val_split=0.9, ):
     if not os.path.isdir(dataroot):
         os.mkdir(dataroot,'RFW-deepfunneled.tar')
 
