@@ -77,7 +77,7 @@ class Trainer(object):
         batch = 0
 
         with torch.set_grad_enabled(mode == 'train'):
-            for images, targets, names in dataloader:
+            for name, targets, images in dataloader:
                 batch += 1
                 targets = torch.tensor(targets).to(device)
                 images = images.to(device)
