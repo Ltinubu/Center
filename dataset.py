@@ -16,7 +16,7 @@ from utils import image_loader, download
 
 
 
-def create_datasetsAF(dataroot, train_val_split=0.9):
+def create_datasetsAF(dataroot, train_val_split=0.9, args.af):
     if not os.path.isdir(dataroot):
         os.mkdir(dataroot,'RFW-deepfunneled.tar')
 
