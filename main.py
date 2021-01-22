@@ -69,8 +69,8 @@ def train(args):
         w_training_set, w_validation_set, num_classes_w = create_datasetsW(dataset_dir)
         w_training_set =  w_training_set[0 : (int(args.w/2))] 
         w_validation_set =  w_validation_set[0:(int(args.w/2))] 
-        t_training_set =+ w_training_set
-        t_validation_set =+ w_validation_set
+        t_training_set =+ [w_training_set]
+        t_validation_set =+ [w_validation_set]
         t_num_classes =+num_classes_w
     
     
@@ -103,12 +103,11 @@ def train(args):
         num_classes_af=len(k_classes_af)
         af_training_set = af_training_set[0:(int(args.af/2))+1]
         af_validation_set =af_validation_set[0:(int(args.af/2))+1]
-        t_training_set.append(af_training_set)
-        t_validation_set.append(af_validation_set)
+       
         t_num_classes =+ num_classes_af
             
-    training_set = t_training_set
-    validation_set = t_validation_set
+    training_set = [AF_training_set]
+    validation_set = [AF_validation_set]
     num_classes = t_num_classes
             
 
