@@ -100,8 +100,8 @@ def train(args):
         af_training_set, af_validation_set, num_classes_af  =create_datasetsAF(dataset_dir)
         af_training_set = af_training_set[0:(int(args.af/2))+1]
         af_validation_set =af_validation_set[0:(int(args.af/2))+1]
-        t_training_set.append(as_training_set)
-        t_validation_set.append(as_validation_set)
+        t_training_set.append(af_training_set)
+        t_validation_set.append(af_validation_set)
         
             
     training_set = t_training_set
