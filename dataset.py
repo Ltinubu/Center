@@ -242,12 +242,12 @@ class LFWPairedDataset(PairedDataset):
                 race2=find_pair[1]
                 name2=find_pair[2]
                 index2 = find_pair[3]
-          lol = os.path.abspath(random.choice(os.listdir('/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data/' + race1 + '/' + name1 +'/')))
-          path_1 = os.listdir
-          self.image_names_a.append(lol)
-          self.matches.append(match)
-          lol_1 = os.path.abspath(random.choice(os.listdir('/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data/' + race1 + '/' + name1 +'/')))
-          self.image_names_b.append(lol_1)
+          lol = random.choice(os.listdir('/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data/' + race1 + '/' + name1 +'/'))
+          imagek=os.path('/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data/' + race1 + '/' + name1 +'/'+ lol)
+          self.image_names_a.append(imagek)
+          lol_1 = random.choice(os.listdir('/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data/' + race2 + '/' + name2 +'/'))
+          imager=os.path('/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data/' + race1 + '/' + name1 +'/'+ lol_1)
+          self.image_names_b.append(imager)
           self.matches.append(match)
     
     def _read_pairs(self, pairs_filename):
