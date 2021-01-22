@@ -16,7 +16,7 @@ from utils import image_loader, download
 
 
 
-def create_datasetsAF(dataroot, k=args.af , train_val_split=0.9, ):
+def create_datasetsAF(dataroot, *args.af , train_val_split=0.9, ):
     if not os.path.isdir(dataroot):
         os.mkdir(dataroot,'RFW-deepfunneled.tar')
 
@@ -45,7 +45,7 @@ def create_datasetsAF(dataroot, k=args.af , train_val_split=0.9, ):
                     images_of_person[floor(total * train_val_split):])
      
     
-    return af_training_set, af_validation_set, (len(names_af)[:(k/2)] )
+    return af_training_set, af_validation_set, (len(names_af)[:(args.af/2)] )
 
 
 def create_datasetsAs(dataroot, train_val_split=0.9):
