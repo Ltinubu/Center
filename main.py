@@ -101,9 +101,10 @@ def train(args):
          j=1+1
     else:
         af_training_set =  af_training_set[0:(int(args.af/2))+1]
-        af_validation_set =af_validation_set[0:(int(args.af/2))+1]
-        t_training_set =+ as_training_set
-        t_validation_set =+ as_validation_set
+        
+        af_validation_set =af_validation_set[0:(int(args.af/2))+1]]
+        t_training_set.append(as_training_set)
+        t_validation_set.append(as_validation_set)
         
             
     training_set = t_training_set
