@@ -4,6 +4,7 @@ import re
 import tarfile
 import sys
 import itertools
+import random
 from math import ceil, floor
 
 from torch.utils import data
@@ -172,7 +173,6 @@ def create_datasets(dataroot, train_val_split=0.9):
 
 
 
-
 class Dataset(data.Dataset):
 
     def __init__(self, datasets, transform=None, target_transform=None):
@@ -243,8 +243,8 @@ class LFWPairedDataset(PairedDataset):
                 name2=find_pair[2]
                 index2 = find_pair[3] 
                 
-          self.image_names_a.append(os.path.join( 'fs','cml-datasets','MS_Celeb_aligned_112', race, name1,  index1 ))
-          self.image_names_b.append(os.path.join( 'fs','cml-datasets','MS_Celeb_aligned_112', race2,  name2, index2 ))
+          self.image_names_a.append(os.path.join( '/cmlscratch','dtinubu','RFW', race, name1, name1+'0001.jpg' ))
+          self.image_names_b.append(os.path.join( '/cmlscratch','dtinubu','RFW', race2,  name1+'0001.jpg'))
           self.matches.append(match)
    
     
