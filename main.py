@@ -70,6 +70,7 @@ def train(args):
     w_training_set =  w_training_set[0 : (int(args.w/2))] 
     w_validation_set =  w_validation_set[0:(int(args.w/2))] 
     if arg.w == 0:
+    
     else:   
         t_training_set =+ w_training_set
         t_validation_set =+ w_validation_set
