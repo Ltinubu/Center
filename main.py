@@ -70,16 +70,15 @@ def train(args):
     w_training_set =  w_training_set[0 : (int(args.w/2))] 
     w_validation_set =  w_validation_set[0:(int(args.w/2))] 
     if arg.w == 0:
-    
-    else:   
-        t_training_set =+ w_training_set
-        t_validation_set =+ w_validation_set
+        else:   
+            t_training_set =+ w_training_set
+            t_validation_set =+ w_validation_set
     
     sa_training_set, sa_validation_set, num_classes_sa =create_datasetsSA(dataset_dir)  
     sa_training_set =  sa_training_set[0:(int(args.sa/2))] 
     sa_validation_set =  sa_validation_set[0:(int(args.sa/2))] 
  if arg.sa == 0:
- else:   
+        else:   
          t_training_set =+ sa_training_set
          t_validation_set =+ sa_validation_set       
     
