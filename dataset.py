@@ -186,12 +186,11 @@ class Dataset(data.Dataset):
     def __len__(self):
         return len(self.datasets)
 
-    def __getitem__(self, index):
-        image = image_loader(self.datasets[index])
+   def __getitem__(self, index):
+        image = image_loader(self.datasets[index][0])
         if self.transform:
             image = self.transform(image)
-        return (image, self.datasets[index], self.datasets[index])
-
+        return (image, self.datasets[index][1], self.datasets[index][2])
 
 class PairedDataset(data.Dataset):
 
