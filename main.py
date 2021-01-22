@@ -57,16 +57,14 @@ def get_model_class(args):
 
 
 def train(args):
+    T_training_set = []
+    t_validation_set = []
+    t_num_classes=0
     dataset_dir = get_dataset_dir(args)
     log_dir = get_log_dir(args)
     model_class = get_model_class(args)
     
-    
-    T_training_set = []
-    t_validation_set = []
-    t_num_classes=0
-    
-    
+ 
     w_training_set, w_validation_set, num_classes_w = create_datasetsW(dataset_dir)
     if args.w == 0:
         j=1+1
