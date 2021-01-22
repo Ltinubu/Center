@@ -241,8 +241,15 @@ class LFWPairedDataset(PairedDataset):
                 extra = find_pair[4]
                 race2=find_pair[1]
                 name2=find_pair[2]
-                index2 = find_pair[3]       
-          self.image_names_a.append(os.path.join(random.choice('/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data/' + race1 + "/" +name1 +'/')))
+                index2 = find_pair[3]
+          path= '/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data/' + race1 + '/' + name1 +'/'
+          files=os.listdir(path)
+          d=random.choice(files)
+          path_1=os.listdir
+          self.image_names_a.append(path_1)
+ 
+
+        
           self.image_names_b.append(os.path.join(random.choice('/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data/' + race2 + '/' +name2 +'/')))
           self.matches.append(match)
     
