@@ -55,49 +55,52 @@ def get_model_class(args):
 
     return model_class
 
-
 def train(args):
-    T_training_set = []
-    t_validation_set = []
-    t_num_classes=0
+      t_training_set=[]
+      w_validation_set=[]
+        
     dataset_dir = get_dataset_dir(args)
     log_dir = get_log_dir(args)
     model_class = get_model_class(args)
     
  
-    w_training_set, w_validation_set, num_classes_w = create_datasetsW(dataset_dir)
+   
     if args.w == 0:
         j=1+1
     else:
+        w_training_set, w_validation_set, num_classes_w = create_datasetsW(dataset_dir)
         w_training_set =  w_training_set[0 : (int(args.w/2))] 
         w_validation_set =  w_validation_set[0:(int(args.w/2))] 
         t_training_set =+ w_training_set
         t_validation_set =+ w_validation_set
     
-    sa_training_set, sa_validation_set, num_classes_sa =create_datasetsSA(dataset_dir)  
+    
     
     if args.sa == 0:
         j=1+1
     else:
+        sa_training_set, sa_validation_set, num_classes_sa =create_datasetsSA(dataset_dir)  
         sa_training_set =  sa_training_set[0:int(args.sa/2)] 
         sa_validation_set =  sa_validation_set[0:int(args.sa/2)]
         t_training_set =+ sa_training_set
         t_validation_set =+ sa_validation_set
         
-    as_training_set, as_validation_set, num_classes_as= create_datasetsAs(dataset_dir)
+    
     
     if args.ai == 0:
         j=1+1
     else: 
+        as_training_set, as_validation_set, num_classes_as= create_datasetsAs(dataset_dir)
         as_training_set =  as_training_set[0:(int(args.ai/2))+1]
         as_validation_set = as_validation_set[0:(int(args.ai/2))+1] 
         t_training_set =+ as_training_set
         t_validation_set =+ as_validation_set
    
-    af_training_set, af_validation_set, num_classes_af  =create_datasetsAF(dataset_dir)
+    
     if args.af == 0:
          j=1+1
     else:
+        af_training_set, af_validation_set, num_classes_af  =create_datasetsAF(dataset_dir)
         af_training_set = af_training_set[0:(int(args.af/2))+1]
         af_validation_set =af_validation_set[0:(int(args.af/2))+1]
         t_training_set.append(as_training_set)
