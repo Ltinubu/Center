@@ -107,6 +107,7 @@ def train(args):
             
     training_set = t_training_set
     validation_set = t_validation_set
+    num_classes = t_num_classes
             
 
     
