@@ -247,6 +247,11 @@ class LFWPairedDataset(PairedDataset):
           d=random.choice(files)
           path_1=os.listdir
           self.image_names_a.append(path_1)
+          path2= '/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data/' + race2 + '/' + name2 +'/'
+          files2=os.listdir(path2)
+          d=random.choice(files2)
+          path_1=os.listdir
+          self.image_names_a.append(path_1)
  
 
         
