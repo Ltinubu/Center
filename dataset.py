@@ -247,7 +247,7 @@ class LFWPairedDataset(PairedDataset):
           self.image_names_a.append(lol)
           self.matches.append(match)
           lol_1 = os.listdir(random.choice(os.listdir('/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data/' + race1 + '/' + name1 +'/')))
-          self.image_names_b.append(lol_1
+          self.image_names_b.append(lol_1)
           self.matches.append(match)
     
     def _read_pairs(self, pairs_filename):
