@@ -77,8 +77,8 @@ def train(args):
         t_validation_set =+ w_validation_set
     
     sa_training_set, sa_validation_set, num_classes_sa =create_datasetsSA(dataset_dir)  
-    sa_training_set =  sa_training_set[0:(int(args.sa/2))] 
-    sa_validation_set =  sa_validation_set[0:(int(args.sa/2))] 
+    sa_training_set =  sa_training_set[0:args.sa/2] 
+    sa_validation_set =  sa_validation_set[0:args.sa/2] 
     if args.sa == 0:
         j=1+1
     else:   
@@ -87,8 +87,8 @@ def train(args):
     
     
     as_training_set, as_validation_set, num_classes_as= create_datasetsAs(dataset_dir)
-    as_training_set = as_training_set[0:(int(args.as/2))] 
-    as_validation_set = as_validation_set[0:(int(args.as/2))] 
+    as_training_set = as_training_set[0:args.as/2] 
+    as_validation_set = as_validation_set[0:args.as/2] 
     if args.as == 0:
         j=1+1
     else: 
@@ -96,8 +96,8 @@ def train(args):
         t_validation_set =+ as_validation_set
    
     af_training_set, af_validation_set, num_classes_af  =create_datasetsAF(dataset_dir)
-    af_training_set =  af_training_set[0:(int(args.af/2))] 
-    af_validation_set =af_validation_set[0:int(args.af/2)]
+    af_training_set =  af_training_set[0:args.af/2] 
+    af_validation_set =af_validation_set[0:args.af/2]
     if args.af == 0:
          j=1+1
     else:
