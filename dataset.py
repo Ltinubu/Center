@@ -243,12 +243,12 @@ class LFWPairedDataset(PairedDataset):
                 name2=find_pair[2]
                 index2 = find_pair[3]       
           self.image_names_a.append(os.path.join(
-                    self.dataroot, 'lfw-deepfunneled',
-                    name1, "{}_{:04d}.jpg".format(name1, index1)))
+                    'cmlscratch', 'dtinubu','datasets','RFW','eve_set','test','data',race1,name1
+                    name1, name1+'_0003.jpg')
 
           self.image_names_b.append(os.path.join(
-                    self.dataroot, 'lfw-deepfunneled',
-                    name2, "{}_{:04d}.jpg".format(name2, index2)))
+                    'cmlscratch', 'dtinubu','datasets','RFW','eve_set','test','data',race2,name2
+                    name2, name2+'_0003.jpg')
           self.matches.append(match)
     
     def _read_pairs(self, pairs_filename):
