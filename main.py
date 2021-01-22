@@ -99,7 +99,8 @@ def train(args):
          j=1+1
     else:
         af_training_set, af_validation_set, k_classes_af  =create_datasetsAF(dataset_dir)
-        num_classes_af= len(k_classes_af[:args.af])
+        k_classes_af= k_classes_af[:args.af]
+        num_classes_af=len(k_classes_af)
         af_training_set = af_training_set[0:(int(args.af/2))+1]
         af_validation_set =af_validation_set[0:(int(args.af/2))+1]
         t_training_set.append(af_training_set)
