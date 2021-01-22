@@ -223,8 +223,6 @@ class LFWPairedDataset(PairedDataset):
         for pair in pairs: 
           index = pair.index('/<^&>')
           if pair[1:16] == pair[(index+6):(index+21)]:
-                line1=line1[:-1]
-                line2=line2[:-1]
                 match = True
                 find_pair = pair.split("/")
                 race=find_pair[1]
@@ -270,7 +268,8 @@ class LFWPairedDataset(PairedDataset):
                 else:
                   line1 = line1.strip()
                   line2 = line2.strip() 
-                    
+                  line1=line1[:-1]
+                  line2=line2[:-1]  
                   line1 = line1
                   line2 = line2
                   pair = line1 + '/<^&>' 
