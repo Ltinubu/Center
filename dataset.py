@@ -243,7 +243,7 @@ class LFWPairedDataset(PairedDataset):
                 name2=find_pair[2]
                 index2 = find_pair[3]       
           self.image_names_a.append(os.path.join(
-                    random.choice(os.listdir('/cmlscratch', 'dtinubu','datasets','RFW','eve_set','test','data',race2,name2)))))
+                    random.choice(os.listdir('/cmlscratch', 'dtinubu','datasets','RFW','eve_set','test','data',race2,name2))))
           self.image_names_b.append(os.path.join(
                     '/cmlscratch', 'dtinubu','datasets','RFW','eve_set','test','data',race2,name2)))
           self.matches.append(match)
