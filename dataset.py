@@ -265,6 +265,6 @@ class LFWPairedDataset(PairedDataset):
                   line2=line2[:-1]
                   line1 = line1
                   line2 = line2
-                  pair = line1 + # + line2 
+                  pair = line1 + '#' + line2 
                   pairs.append(pair)  
                 
