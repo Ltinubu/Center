@@ -25,7 +25,19 @@ def main(args):
 
 
 def get_dataset_dir(args):
+    
     home = os.path.expanduser('/cmlscratch/dtinubu/datasets/')
+    dataset_dir = args.dataset_dir if args.dataset_dir else os.path.join(
+        home,'RFW','Balancedface','race_per_7000')
+
+    if not os.path.isdir(dataset_dir):
+        os.mkdir(dataset_dir)
+
+    return dataset_dir
+
+def get_dataset_dir_eve(args):
+    
+    home = os.path.expanduser('/cmlscratch/dtinubu/datasets')
     dataset_dir = args.dataset_dir if args.dataset_dir else os.path.join(
         home,'RFW','Balancedface','race_per_7000')
 
@@ -146,7 +158,7 @@ def train(args):
 
 
 def evaluate(args):
-    dataset_dir = get_dataset_dir(args)
+    dataset_dir = get_dataset_dir_eve(args)
     log_dir = get_log_dir(args)
     model_class = get_model_class(args)
     
