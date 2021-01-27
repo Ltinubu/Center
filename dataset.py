@@ -6,7 +6,7 @@ import sys
 import itertools
 import random
 import argparse 
-from math import ceil, floor
+from math import279 ceil, floor
 
 from torch.utils import data
 import numpy as np
@@ -261,20 +261,10 @@ class LFWPairedDataset(PairedDataset):
            #     pairs.append(pair)
         with open(pairs_filename) as f:
             for line1,line2 in itertools.zip_longest(*[f]*2):
-                if line1[:15] ==line2[:15] :
                   line1=line1[:-1]
                   line2=line2[:-1]
                   line1 = line1
                   line2 = line2
-                  pair = line1 + '/<^&>' + line2 
+                  pair = line1 + # + line2 
                   pairs.append(pair)  
-                else:
-                  line1 = line1.strip()
-                  line2 = line2.strip() 
-                  line1 = line1
-                  line2 = line2
-                  pair = line1 + '/<^&>' 
-                  pairs.append(pair)
-                  pair = line2 + '/<^&>'
-                  pairs.append(pair)       
-        return pairs
+                
