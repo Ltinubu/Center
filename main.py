@@ -63,9 +63,7 @@ def train(args):
     log_dir = get_log_dir(args)
     model_class = get_model_class(args)
    
-    if args.w == 0:
-        j=1+1
-    else:
+    if args.w != 0:
         w_training_set, w_validation_set, num_classes_w = create_datasetsW(dataset_dir)
         w_training_set =  w_training_set[0 : (int(args.w/2))] 
         w_validation_set =  w_validation_set[0:(int(args.w/2))] 
@@ -74,9 +72,7 @@ def train(args):
         t_num_classes =+num_classes_w
     
     
-    if args.sa == 0:
-        j=1+1
-    else:
+    if args.sa != 0 else:
         sa_training_set, sa_validation_set, num_classes_sa =create_datasetsSA(dataset_dir)  
         sa_training_set =  sa_training_set[0:int(args.sa/2)] 
         sa_validation_set =  sa_validation_set[0:int(args.sa/2)]
@@ -85,9 +81,7 @@ def train(args):
         t_num_classes =+ num_classes_sa
     
     
-    if args.ai == 0:
-        j=1+1
-    else: 
+    if args.ai != 0:
         as_training_set, as_validation_set, num_classes_as= create_datasetsAs(dataset_dir)
         as_training_set =  as_training_set[0:(int(args.ai/2))+1]
         as_validation_set = as_validation_set[0:(int(args.ai/2))+1] 
@@ -95,22 +89,18 @@ def train(args):
         t_validation_set =+ as_validation_set
         t_num_classes =+num_classes_as
     
-    if args.af == 0:
-         j=1+1
-    else:
+    if args.af != 0:
         af_training_set, af_validation_set, k_classes_af  =create_datasetsAF(dataset_dir)
-        k_classes_af= k_classes_af[:args.af]
-        num_classes_af=len(k_classes_af)
-        af_training_set = af_training_set[0:(int(args.af/2))+1]
-        af_validation_set =af_validation_set[0:(int(args.af/2))+1]
-       
-        t_num_classes =+ num_classes_af
-            
-    training_set = af_training_set
-    validation_set = af_validation_set
+        as_training_set =  as_training_set[0:(int(args.ai/2))+1]
+        as_validation_set = as_validation_set[0:(int(args.ai/2))+1] 
+        t_training_set =+ as_training_set
+        t_validation_set =+ as_validation_set
+        t_num_classes =+ num_classes_as
+           
+    training_set =  t_training_set
+    validation_set = t_validation_set
     num_classes = t_num_classes
             
-
     
     training_dataset = Dataset(
             training_set, transform_for_training(model_class.IMAGE_SHAPE))
