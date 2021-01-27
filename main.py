@@ -84,7 +84,7 @@ def train(args):
         t_num_classes =+num_classes_w
     
     
-    if args.sa != 0 else:
+    if args.sa != 0:
         sa_training_set, sa_validation_set, num_classes_sa =create_datasetsSA(dataset_dir)  
         sa_training_set =  sa_training_set[0:int(args.sa/2)] 
         sa_validation_set =  sa_validation_set[0:int(args.sa/2)]
