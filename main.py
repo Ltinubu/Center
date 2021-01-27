@@ -102,12 +102,12 @@ def train(args):
         t_num_classes =+num_classes_as
     
     if args.af != 0:
-        af_training_set, af_validation_set, k_classes_af  =create_datasetsAF(dataset_dir)
-        as_training_set =  as_training_set[0:(int(args.ai/2))+1]
-        as_validation_set = as_validation_set[0:(int(args.ai/2))+1] 
-        t_training_set =+ as_training_set
-        t_validation_set =+ as_validation_set
-        t_num_classes =+ num_classes_as
+        af_training_set, af_validation_set, classes_af  =create_datasetsAF(dataset_dir)
+        af_training_set =  af_training_set[0:(int(args.ai/2))+1]
+        af_validation_set = af_validation_set[0:(int(args.ai/2))+1] 
+        t_training_set =+ af_training_set
+        t_validation_set =+ af_validation_set
+        t_num_classes =+ classes_af
            
     training_set =  t_training_set
     validation_set = t_validation_set
