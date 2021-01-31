@@ -23,10 +23,10 @@ class Trainer(object):
         self.validation_dataloader = validation_dataloader
         self.training_losses = {
                 'center': [], 'cross_entropy': [],
-                'together': [], 'top1acc': []}
+                'together': [], 'top3acc': [], 'top1acc': []}
         self.validation_losses = {
                 'center': [], 'cross_entropy': [],
-                'together': [], 'top1acc': []}
+                'together': [], 'top3acc': [], 'top1acc': []}
         self.start_epoch = 1
         self.current_epoch = 1
         self.lamda = lamda
