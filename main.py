@@ -86,7 +86,7 @@ def train(args):
         sa_training_set, sa_validation_set, num_classes_sa =create_datasetsSA(dataset_dir)  
         t_training_set.extend(sa_training_set)
         t_validation_set.extend(sa_validation_set)
-        t_num_classes+=num_classes_sa)
+        t_num_classes+=num_classes_sa
     
     
     if args.ai != 0:
