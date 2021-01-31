@@ -141,7 +141,7 @@ class Trainer(object):
             .nonzero().size()[0]
         return matches
 
-    def persist(self, is_best=False , file_name = args.save_file_name):
+    def persist(self, is_best=False , file_name = Black):
         model_dir = os.path.join(self.log_dir, file_name , 'models')
         if not os.path.isdir(model_dir):
             os.mkdir(model_dir)
