@@ -77,37 +77,29 @@ def train(args):
    
     if args.w != 0:
         w_training_set, w_validation_set, num_classes_w = create_datasetsW(dataset_dir)
-        w_training_set =  w_training_set[0 : (int(args.w/2))] 
-        w_validation_set =  w_validation_set[0:(int(args.w/2))] 
-        t_training_set =+ [w_training_set]
-        t_validation_set =+ [w_validation_set]
-        t_num_classes =+num_classes_w
+        t_training_set.extend(w_training_set)
+        t_validation_set.extend(w_validation_set)
+        t_num_classes.extend(num_classes_w)
     
     
     if args.sa != 0:
         sa_training_set, sa_validation_set, num_classes_sa =create_datasetsSA(dataset_dir)  
-        sa_training_set =  sa_training_set[0:int(args.sa/2)] 
-        sa_validation_set =  sa_validation_set[0:int(args.sa/2)]
-        t_training_set =+ sa_training_set
-        t_validation_set =+ sa_validation_set
-        t_num_classes =+ num_classes_sa
+        t_training_set.extend(sa_training_set)
+        t_validation_set.extend(sa_validation_set)
+        t_num_classes.extend(num_classes_sa)
     
     
     if args.ai != 0:
         as_training_set, as_validation_set, num_classes_as= create_datasetsAs(dataset_dir)
-        as_training_set =  as_training_set[0:(int(args.ai/2))+1]
-        as_validation_set = as_validation_set[0:(int(args.ai/2))+1] 
-        t_training_set =+ as_training_set
-        t_validation_set =+ as_validation_set
-        t_num_classes =+num_classes_as
+        t_training_set.extend(as_training_set)
+        t_validation_set.extend(as_validation_set)
+        t_num_classes.extend(num_classes_as)
     
     if args.af != 0:
         af_training_set, af_validation_set, classes_af  =create_datasetsAF(dataset_dir)
-        af_training_set =  af_training_set[0:(int(args.ai/2))+1]
-        af_validation_set = af_validation_set[0:(int(args.ai/2))+1] 
-        t_training_set.append(af_training_set)
-        t_validation_set.append(af_validation_set)
-        t_num_classes += classes_af
+        t_training_set.extend(af_training_set)
+        t_validation_set.extend(af_validation_set)
+        t_num_classes.extend(classes_af)
            
     training_set =  t_training_set
     validation_set = t_validation_set
