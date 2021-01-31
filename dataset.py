@@ -187,7 +187,7 @@ class Dataset(data.Dataset):
         return len(self.datasets)
 
     def __getitem__(self, index):
-        image = image_loader(self.datasets[index])
+        image = image_loader(self.datasets[index][1])
         if self.transform:
             image = self.transform(image)
         return (image, self.datasets[index], self.datasets[index])
