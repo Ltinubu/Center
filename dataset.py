@@ -6,7 +6,9 @@ import sys
 import itertools
 import random
 import argparse 
+from pick import perm, test , randperm
 from math import ceil, floor
+
 
 from torch.utils import data
 import numpy as np
