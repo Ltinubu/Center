@@ -44,10 +44,10 @@ def create_datasetsAF(dataroot, train_val_split=0.9, ):
         af_validation_set+= map(
                     add_class,
                     images_of_person[floor(total * train_val_split):])
-     
+        
+        return af_training_set, af_validation_set, names_af
+        
     
-    return af_training_set, af_validation_set, names_af
-
 
 def create_datasetsAs(dataroot, train_val_split=0.9):
     if not os.path.isdir(dataroot):
@@ -221,50 +221,40 @@ class LFWPairedDataset(PairedDataset):
 
     def _prepare_dataset(self):
         pairs = self._read_pairs(self.pairs_cfg)
-        for pair in pairs: 
-          index = pair.index('/<^&>')
-          if pair[1:16] == pair[(index+6):(index+21)]:
+
+        for pair in pairs:
+            if len(pair) == 3:
                 match = True
-                find_pair = pair.split("/")
-                race1=find_pair[1]
-                name1=find_pair[2]
-                index1 = find_pair[3] 
-                extra = find_pair[4]
-                race2 = find_pair[5] 
-                name2 = find_pair[6] 
-                index2 = find_pair[7] 
-          else:
+                name1, name2, index1, index2 = \
+                    pair[0], pair[0], int(pair[1]), int(pair[2])
+
+            else:
                 match = False
-                find_pair = pair.split("/")
-                race1=find_pair[1]
-                name1=find_pair[2]
-                index1 = find_pair[3] 
-                extra = find_pair[4]
-                race2=find_pair[1]
-                name2=find_pair[2]
-                index2 = find_pair[3]
-          lol = random.choice(os.listdir('/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data/' + race1 + '/' + name1 +'/'))
-          imagek= '/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data/' + race1 + '/' + name1 +'/'+ lol
-          self.image_names_a.append(imagek)
-          lol_1 = random.choice(os.listdir('/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data/' + race2 + '/' + name2 +'/'))
-          imager= '/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data/' + race1 + '/' + name1 +'/'+ lol_1
-          self.image_names_b.append(imager)
-          self.matches.append(match)
+                name1, name2, index1, index2 = \
+                    pair[0], pair[2], int(pair[1]), int(pair[3])
+
+            self.image_names_a.append(os.path.join(
+                    self.dataroot, 'lfw-deepfunneled',
+                    name1, "{}_{:04d}.jpg".format(name1, index1)))
+
+            self.image_names_b.append(os.path.join(
+                    self.dataroot, 'lfw-deepfunneled',
+                    name2, "{}_{:04d}.jpg".format(name2, index2)))
+            self.matches.append(match)
     
     def _read_pairs(self, pairs_filename):
         pairs = []
-        line1= []
-        line2=[]
-        pair_b=[]
-       #   for line in f.readlines()[1:]:
-          #      pair = line.strip().split()
-           #     pairs.append(pair)
-        with open(pairs_filename) as f:
-            for line1,line2 in itertools.zip_longest(*[f]*2):
-                  line1=line1[:-1]
-                  line2=line2[:-1]
-                  line1 = line1
-                  line2 = line2
-                  pair = line1 + '#' + line2 
-                  pairs.append(pair)  
-                
+        #line1= []
+        #line2=[]
+        #pair_b=[]
+          for line in f.readlines():
+                pair = line.strip().split()
+                pairs.append(pair)
+       # with open(pairs_filename) as f:
+        #    for line1,line2 in itertools.zip_longest(*[f]*2):
+         #         line1=line1[:-1]
+          #        line2=line2[:-1]
+           #       line1 = line1
+            #      line2 = line2
+             #     pair = line1 + '#' + line2 
+              #    pairs.append(pair) 
