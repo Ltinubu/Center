@@ -45,7 +45,7 @@ def create_datasetsAF(dataroot, train_val_split=0.9, ):
                     add_class,
                     images_of_person[floor(total * train_val_split):])
         
-        return af_training_set, af_validation_set, names_af
+        return af_training_set, af_validation_set, len(names_af)
         
     
 
