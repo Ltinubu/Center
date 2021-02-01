@@ -236,7 +236,7 @@ class LFWPairedDataset(PairedDataset):
                 match = False
                 name1, name2, index1, index2 = \
                     pair[0], pair[0], pair[0], pair[0]
-        lol = random.choice(os.listdir('/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data/' +'/' + name1 +'/'))
+        lol = random.choice(os.listdir('/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data/'+ name1 +'/'))
         imagek=os.path(lol)
         
         self.image_names_a.append(imagek)
