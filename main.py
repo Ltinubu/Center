@@ -95,7 +95,8 @@ def train(args):
         t_num_classes+=num_classes_as
     
     if args.af != 0:
-        af_training_set, af_validation_set, classes_af  =create_datasetsAF(args.af , dataset_dir)
+        af_pics=args.af
+        af_training_set, af_validation_set, classes_af  =create_datasetsAF(af_pics, dataset_dir)
         t_training_set.extend(af_training_set)
         t_validation_set.extend(af_validation_set)
         t_num_classes+=classes_af
