@@ -75,21 +75,24 @@ def train(args):
     model_class = get_model_class(args)
    
     if args.w != 0:
-        w_training_set, w_validation_set, num_classes_w = create_datasetsW(dataset_dir)
+        w_pics=args.w
+        w_training_set, w_validation_set, num_classes_w = create_datasetsW(w_pics,dataset_dir)
         t_training_set.extend(w_training_set)
         t_validation_set.extend(w_validation_set)
         t_num_classes+=num_classes_w
     
     
     if args.sa != 0:
-        sa_training_set, sa_validation_set, num_classes_sa =create_datasetsSA(dataset_dir)  
+        sa_pics=args.sa
+        sa_training_set, sa_validation_set, num_classes_sa =create_datasetsSA(sa_pics,dataset_dir)  
         t_training_set.extend(sa_training_set)
         t_validation_set.extend(sa_validation_set)
         t_num_classes+=num_classes_sa
     
     
     if args.ai != 0:
-        as_training_set, as_validation_set, num_classes_as= create_datasetsAs(ars.ai,dataset_dir)
+        ai_pics=args.ai
+        as_training_set, as_validation_set, num_classes_as= create_datasetsAs(ai_pics,dataset_dir)
         t_training_set.extend(as_training_set)
         t_validation_set.extend(as_validation_set)
         t_num_classes+=num_classes_as
