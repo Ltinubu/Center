@@ -15,6 +15,20 @@ import numpy as np
 from utils import image_loader, download
 
 
+def create_datasets(dataroot, train_val_split=0.9):
+    if not os.path.isdir(dataroot):
+        os.mkdir(dataroot)
+
+    dataroot_files = os.listdir(dataroot)
+    data_tarball_file = []
+    data_dir_name = []
+
+    if data_dir_name not in dataroot_files:
+        if data_tarball_file not in dataroot_files:
+            tarball = download(dataroot, DATASET_TARBALL)
+        with tarfile.open(tarball, 'r') as t:
+            t.extractall(dataroot)
+
 
 
 
