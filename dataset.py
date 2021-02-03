@@ -18,7 +18,7 @@ from utils import image_loader, download
 
 
 
-def create_datasetsAF(,dataroot, train_val_split=0.9, ):
+def create_datasetsAF(dataroot, train_val_split=0.9,args.af):
     if not os.path.isdir(dataroot):
         os.mkdir(dataroot,'RFW-deepfunneled.tar')
 
@@ -52,7 +52,7 @@ def create_datasetsAF(,dataroot, train_val_split=0.9, ):
         
     
 
-def create_datasetsAs(dataroot, train_val_split=0.9):
+def create_datasetsAs(dataroot, train_val_split=0.9 , args.as):
     if not os.path.isdir(dataroot):
         os.mkdir(dataroot)
 
@@ -85,7 +85,7 @@ def create_datasetsAs(dataroot, train_val_split=0.9):
             
     return as_training_set, as_validation_set, len(names_as)
 
-def create_datasetsSA(dataroot, train_val_split=0.9):
+def create_datasetsSA(dataroot, train_val_split=0.9, args.sa):
     if not os.path.isdir(dataroot):
         os.mkdir(dataroot)
 
@@ -118,7 +118,7 @@ def create_datasetsSA(dataroot, train_val_split=0.9):
 
     return sa_training_set, sa_validation_set, len(names_sa)
 
-def create_datasetsW(dataroot, train_val_split=0.9):
+def create_datasetsW(dataroot, train_val_split=0.9, args.w):
     if not os.path.isdir(dataroot):
         os.mkdir(dataroot)
 
@@ -226,57 +226,29 @@ class LFWPairedDataset(PairedDataset):
         pairs = self._read_pairs(self.pairs_cfg)
 
         for pair in pairs:
-           asad=2
-           race1= os.listdir('/cmlscratch','dtinubu','datasets','RFW','eve_set','test,data'), pair[0])
-           name1='/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data' + os.path(pair[0])
-           index1 = '/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data' + os.path(pair[0])
-           race2 = '/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data' + os.path(pair[0])
-           name2 ='/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data' + os.path(pair[0])
-           index2 = find_pair[3] 
-           if name1 == name2 :
-            #
-               match = True
-               race1=find_pair[1]
-               name1=find_pair[2]
-               index1 = find_pair[3] 
-               race2 = find_pair[1] 
-               name2 = find_pair[2] 
-               index2 = find_pair[3] 
-           else:
+            if len(pair) == 3:
+                match = True
+                name1, name2, index1, index2 = \
+                    pair[0], pair[0], int(pair[1]), int(pair[2])
+
+            else:
                 match = False
-                race1=find_pair[1]
-                name1=find_pair[2]
-                index1 = find_pair[3] 
-                race2=find_pair[1]
-                name2=find_pair[2]
-                index2 = find_pair[3]
-     
-           lol = random.choice(os.listdir('/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data/'+ race1 +name1 +'/'))
-           imagek=os.path(lol)
-           self.image_names_a.append(imagek)
-       
-           lol_1 = random.choice(os.listdir('/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data/'+ race1 +name1 +'/'))
-           imager=os.path('/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data/' + name1 +'/'+ lol_1)
-           self.image_names_b.append(imager)
-    
+                name1, name2, index1, index2 = \
+                    pair[0], pair[2], int(pair[1]), int(pair[3])
+
+            self.image_names_a.append(os.path.join(
+                    self.dataroot, 'lfw-deepfunneled',
+                    name1, "{}_{:04d}.jpg".format(name1, index1)))
+
+            self.image_names_b.append(os.path.join(
+                    self.dataroot, 'lfw-deepfunneled',
+                    name2, "{}_{:04d}.jpg".format(name2, index2)))
+            self.matches.append(match)
+
     def _read_pairs(self, pairs_filename):
         pairs = []
         with open(pairs_filename, 'r') as f:
-            for line in f.readlines():
+            for line in f.readlines()[1:]:
                 pair = line.strip().split()
                 pairs.append(pair)
         return pairs
-        #line1= []
-        #line2=[]
-        #pair_b=[]
-       # for line in f.readlines():
-            # pair = line.strip().split()
-            # pairs.append(pair)
-       # with open(pairs_filename) as f:
-        #    for line1,line2 in itertools.zip_longest(*[f]*2):
-         #         line1=line1[:-1]
-          #        line2=line2[:-1]
-           #       line1 = line1
-            #      line2 = line2
-             #     pair = line1 + '#' + line2 
-              #    pairs.append(pair) 
