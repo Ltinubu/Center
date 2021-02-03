@@ -235,7 +235,7 @@ class LFWPairedDataset(PairedDataset):
                name2 = find_pair[2] 
                index2 = find_pair[3] 
              
-           if name1==name2 
+            if name1==name2 
                 match = True
                 race1=find_pair[1]
                 name1=find_pair[2]
@@ -243,7 +243,7 @@ class LFWPairedDataset(PairedDataset):
                 race2 = find_pair[1] 
                 name2 = find_pair[2] 
                 index2 = find_pair[3] 
-          else:
+            else:
                 match = False
                 race1=find_pair[1]
                 name1=find_pair[2]
@@ -251,10 +251,12 @@ class LFWPairedDataset(PairedDataset):
                 race2=find_pair[1]
                 name2=find_pair[2]
                 index2 = find_pair[3]
-        lol = random.choice(os.listdir('/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data/'+ race1 +name1 +'/'))
+     
+    lol = random.choice(os.listdir('/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data/'+ race1 +name1 +'/'))
         imagek=os.path(lol)
-        
         self.image_names_a.append(imagek)
+        
+        
         lol_1 = random.choice(os.listdir('/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data/'+ race1 +name1 +'/'))
         imager=os.path('/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data/' + name1 +'/'+ lol_1)
         self.image_names_b.append(imager)
