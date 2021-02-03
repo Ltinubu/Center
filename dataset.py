@@ -234,16 +234,15 @@ class LFWPairedDataset(PairedDataset):
                race2 = find_pair[1] 
                name2 = find_pair[2] 
                index2 = find_pair[3] 
-             
-            if name1==name2 
-                match = True
-                race1=find_pair[1]
-                name1=find_pair[2]
-                index1 = find_pair[3] 
-                race2 = find_pair[1] 
-                name2 = find_pair[2] 
-                index2 = find_pair[3] 
-            else:
+           if name1==name2 
+               match = True
+               race1=find_pair[1]
+               name1=find_pair[2]
+               index1 = find_pair[3] 
+               race2 = find_pair[1] 
+               name2 = find_pair[2] 
+               index2 = find_pair[3] 
+           else:
                 match = False
                 race1=find_pair[1]
                 name1=find_pair[2]
