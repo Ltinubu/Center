@@ -5,7 +5,6 @@ import tarfile
 import sys
 import itertools
 import random
-import argparse 
 from pick import perm, test , randperm
 from math import ceil, floor
 
@@ -19,7 +18,7 @@ from utils import image_loader, download
 
 
 
-def create_datasetsAF(dataroot, train_val_split=0.9, ):
+def create_datasetsAF(,dataroot, train_val_split=0.9, ):
     if not os.path.isdir(dataroot):
         os.mkdir(dataroot,'RFW-deepfunneled.tar')
 
