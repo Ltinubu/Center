@@ -227,12 +227,15 @@ class LFWPairedDataset(PairedDataset):
         pairs = self._read_pairs(self.pairs_cfg)
 
         for pair in pairs:
-            
-             race, name, index1, index2 = \
-                    pair[0], pair[0], pair[0], pair[0]
-                
-            match = True
-                find_pair = pair.split("/")
+               `find_pair = pair.split("/")
+                race1=find_pair[1]
+                name1=find_pair[2]
+                index1 = find_pair[3] 
+                race2 = find_pair[5] 
+                name2 = find_pair[6] 
+                index2 = find_pair[7] 
+             
+           if name1=name2 match = True
                 race1=find_pair[1]
                 name1=find_pair[2]
                 index1 = find_pair[3] 
@@ -241,7 +244,6 @@ class LFWPairedDataset(PairedDataset):
                 index2 = find_pair[7] 
           else:
                 match = False
-                find_pair = pair.split("/")
                 race1=find_pair[1]
                 name1=find_pair[2]
                 index1 = find_pair[3] 
