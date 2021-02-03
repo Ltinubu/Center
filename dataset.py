@@ -228,11 +228,11 @@ class LFWPairedDataset(PairedDataset):
 
         for pair in pairs:
            asad=2
-           race1= os.listdir(pair)
-           name1=find_pair[2]
-           index1 = find_pair[3] 
-           race2 = find_pair[1] 
-           name2 = find_pair[2] 
+           race1= os.listdir('/cmlscratch','dtinubu','datasets','RFW','eve_set','test,data'), pair[0])
+           name1='/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data' + os.path(pair[0])
+           index1 = '/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data' + os.path(pair[0])
+           race2 = '/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data' + os.path(pair[0])
+           name2 ='/cmlscratch/dtinubu/datasets/RFW/eve_set/test/data' + os.path(pair[0])
            index2 = find_pair[3] 
            if name1 == name2 :
             #
