@@ -18,7 +18,7 @@ from utils import image_loader, download
 
 
 
-def create_datasetsAF( af_pics, dataroot, train_val_split=0.9):
+def create_datasetsAF(af_pics, dataroot, train_val_split=0.9):
     if not os.path.isdir(dataroot):
         os.mkdir(dataroot,'RFW-deepfunneled.tar')
 
@@ -52,7 +52,7 @@ def create_datasetsAF( af_pics, dataroot, train_val_split=0.9):
         
     
 
-def create_datasetsAs(dataroot, train_val_split=0.9 , args.as):
+def create_datasetsAs(ai_pics ,dataroot, train_val_split=0.9):
     if not os.path.isdir(dataroot):
         os.mkdir(dataroot)
 
@@ -85,7 +85,7 @@ def create_datasetsAs(dataroot, train_val_split=0.9 , args.as):
             
     return as_training_set, as_validation_set, len(names_as)
 
-def create_datasetsSA(dataroot, train_val_split=0.9, args.sa):
+def create_datasetsSA(sa_pics, dataroot, train_val_split=0.9):
     if not os.path.isdir(dataroot):
         os.mkdir(dataroot)
 
@@ -118,7 +118,7 @@ def create_datasetsSA(dataroot, train_val_split=0.9, args.sa):
 
     return sa_training_set, sa_validation_set, len(names_sa)
 
-def create_datasetsW(dataroot, train_val_split=0.9, args.w):
+def create_datasetsW(w_pics, dataroot, train_val_split=0.9):
     if not os.path.isdir(dataroot):
         os.mkdir(dataroot)
 
