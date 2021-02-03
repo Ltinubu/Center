@@ -228,7 +228,7 @@ class LFWPairedDataset(PairedDataset):
 
         for pair in pairs:
            find_pair = pair.split("/")
-           race1=find_pair[1]
+           race1=os.path(pair)[0]
            name1=find_pair[2]
            index1 = find_pair[3] 
            race2 = find_pair[1] 
