@@ -89,7 +89,7 @@ def train(args):
     
     
     if args.ai != 0:
-        as_training_set, as_validation_set, num_classes_as= create_datasetsAs(dataset_dir)
+        as_training_set, as_validation_set, num_classes_as= create_datasetsAs(ars.af,dataset_dir)
         t_training_set.extend(as_training_set)
         t_validation_set.extend(as_validation_set)
         t_num_classes+=num_classes_as
