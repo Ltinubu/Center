@@ -227,8 +227,8 @@ class PairedDataset(data.Dataset):
         return len(self.matches)
 
     def __getitem__(self, index):
-        return (self.transform(self.loader(self.image_names_a[index])),
-                self.transform(self.loader(self.image_names_b[index])),
+        return (self.transform(self.loader(self.image_names_a)),
+                self.transform(self.loader(self.image_names_b)),
                 self.matches[index][0])
 
     def _prepare_dataset(self):
