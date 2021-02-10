@@ -60,8 +60,7 @@ def create_datasetsAF(af_pics, dataroot, train_val_split=0.9):
         af_validation_set+= map(
                     add_class,
                     images_of_person[int(total * train_val_split):])
-        
-        return af_training_set, af_validation_set, len(names_af)
+    return af_training_set, af_validation_set, len(names_af)
   
         
     
