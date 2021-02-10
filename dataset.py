@@ -228,7 +228,7 @@ class PairedDataset(data.Dataset):
     def __getitem__(self, index):
         return (self.transform(self.loader(self.image_names_a)),
                 self.transform(self.loader(self.image_names_b)),
-                self.matches[index][0])
+                self.matches[index])
 
     def _prepare_dataset(self):
         raise NotImplementedError
