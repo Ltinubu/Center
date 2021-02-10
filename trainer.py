@@ -80,7 +80,7 @@ class Trainer(object):
         with torch.set_grad_enabled(mode == 'train'):
             for images, targets, names in dataloader:
                 batch += 1
-                targets = torch.tensor(targets[1]).to(device)
+                targets = torch.tensor(targets).to(device)
                 images = images.to(device)
                 centers = self.model.centers
 
