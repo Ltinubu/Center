@@ -113,8 +113,8 @@ def create_datasetsSA(sa_pics, dataroot, train_val_split=0.9):
     if len(names_sa) == 0:
         raise RuntimeError('Empty dataset')
 
-    sa_training_set = []
-    sa_validation_set = []
+    sa_t_training_set = []
+    sa_t_validation_set = []
     count=0
     for count in range(0, 1):
         for klass, name in enumerate(names_sa):
@@ -147,8 +147,8 @@ def create_datasetsW(w_pics, dataroot, train_val_split=0.9):
     if len(names_w) == 0:
         raise RuntimeError('Empty dataset')
 
-    w_training_set = []
-    w_validation_set = []
+    w_t_training_set = []
+    w_t_validation_set = []
     count=0
     for count in range(0, 1):
         count+=1
