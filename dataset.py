@@ -61,8 +61,8 @@ def create_datasetsAF(af_pics, dataroot, train_val_split=0.9):
                     add_class,
                     images_of_person[int(total * train_val_split):])
     
-    af_validation_set=af_t_validation_set[0:int(af_pics/2)]
-    af_training_set=af_t_training_set[0:int(af_pics/2)]
+    af_validation_set=af_t_validation_set[0:int(af_pics*.10)]
+    af_training_set=af_t_training_set[0:int(af_pics*.90)]
     
     return af_training_set, af_validation_set, len(names_af)
   
@@ -99,8 +99,8 @@ def create_datasetsAs(ai_pics ,dataroot, train_val_split=0.9):
                     add_class,
                     images_of_person[int(total * train_val_split):])
             
-    as_validation_set=as_t_validation_set[0:int(ai_pics/2)]
-    as_training_set=as_t_training_set[0:int(ai_pics/2)]        
+    as_validation_set=as_t_validation_set[0:int(ai_pics*.10)]
+    as_training_set=as_t_training_set[0:int(ai_pics*.90)]        
     return as_training_set, as_validation_set, len(names_as)
 
 def create_datasetsSA(sa_pics, dataroot, train_val_split=0.9):
@@ -133,8 +133,8 @@ def create_datasetsSA(sa_pics, dataroot, train_val_split=0.9):
                     add_class,
                     images_of_person[int(total * train_val_split):])
         
-    sa_validation_set=sa_t_validation_set[0:int(sa_pics/2)]
-    sa_training_set=sa_t_training_set[0:int(sa_pics/2)]     
+    sa_validation_set=sa_t_validation_set[0:int(sa_pics*.10)]
+    sa_training_set=sa_t_training_set[0:int(sa_pics*.90)]     
     return sa_training_set, sa_validation_set, len(names_sa)
 
 def create_datasetsW(w_pics, dataroot, train_val_split=0.9):
@@ -167,8 +167,8 @@ def create_datasetsW(w_pics, dataroot, train_val_split=0.9):
                     add_class,
                     images_of_person[int(total * train_val_split):])
             
-    w_validation_set = w_t_validation_set[0:int(w_pics/2)]
-    w_training_set = w_t_training_set[0:int(w_pics/2)]          
+    w_validation_set = w_t_validation_set[0:int(w_pics*.10)]
+    w_training_set = w_t_training_set[0:int(w_pics*.90)]          
     return w_training_set, w_validation_set, len(names_w)
 
 def create_datasets(dataroot, train_val_split=0.9):
