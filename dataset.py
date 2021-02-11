@@ -79,8 +79,8 @@ def create_datasetsAs(ai_pics ,dataroot, train_val_split=0.9):
     if len(names_as) == 0:
         raise RuntimeError('Empty dataset')
 
-    as_training_set = []
-    as_validation_set = []
+    as_t_training_set = []
+    as_t_validation_set = []
     count=0
     for count in range(0, 1): 
         for klass, name in enumerate(names_as):
@@ -92,14 +92,15 @@ def create_datasetsAs(ai_pics ,dataroot, train_val_split=0.9):
             images_of_person = os.listdir(os.path.join(images_root, name))
             total = len(images_of_person)
 
-            as_training_set += map(
+            as_t_training_set += map(
                     add_class,
                     images_of_person[:int(total * train_val_split)])
-            as_validation_set += map(
+            as_t_validation_set += map(
                     add_class,
                     images_of_person[int(total * train_val_split):])
-           
             
+    as_validation_set=as_t_validation_set[0:int(ai_pics/2)]
+    as_training_set=as_t_training_set[0:int(ai_pics/2)]        
     return as_training_set, as_validation_set, len(names_as)
 
 def create_datasetsSA(sa_pics, dataroot, train_val_split=0.9):
@@ -132,7 +133,8 @@ def create_datasetsSA(sa_pics, dataroot, train_val_split=0.9):
                     add_class,
                     images_of_person[int(total * train_val_split):])
         
-
+    sa_validation_set=sa_t_validation_set[0:int(sa_pics/2)]
+    sa_training_set=sa_t_training_set[0:int(sa_pics/2)]     
     return sa_training_set, sa_validation_set, len(names_sa)
 
 def create_datasetsW(w_pics, dataroot, train_val_split=0.9):
@@ -158,14 +160,15 @@ def create_datasetsW(w_pics, dataroot, train_val_split=0.9):
             images_of_person = os.listdir(os.path.join(images_root, name))
             total = len(images_of_person)
 
-            w_training_set += map(
+            w_t_training_set += map(
                     add_class,
                     images_of_person[:int(total * train_val_split)])
-            w_validation_set += map(
+            w_t_validation_set += map(
                     add_class,
                     images_of_person[int(total * train_val_split):])
-         
-
+            
+    w_validation_set = w_t_validation_set[0:int(w_pics/2)]
+    w_training_set = w_t_training_set[0:int(w_pics/2)]          
     return w_training_set, w_validation_set, len(names_w)
 
 def create_datasets(dataroot, train_val_split=0.9):
