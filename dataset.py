@@ -5,7 +5,6 @@ import tarfile
 import sys
 import itertools
 import random
-from pick import perm, test , randperm
 from math import ceil, floor
 
 
@@ -60,7 +59,8 @@ def create_datasetsAF(af_pics, dataroot, train_val_split=0.9):
         af_t_validation_set+= map(
                     add_class,
                     images_of_person[int(total * train_val_split):])
-    
+    random.shuffle(af_t_training_set)
+    random.shuffle(af_t_validation_set)
     af_validation_set=af_t_validation_set[0:int(af_pics*.10)]
     af_training_set=af_t_training_set[0:int(af_pics*.90)]
     
@@ -98,7 +98,8 @@ def create_datasetsAs(ai_pics ,dataroot, train_val_split=0.9):
             as_t_validation_set += map(
                     add_class,
                     images_of_person[int(total * train_val_split):])
-            
+    random.shuffle(as_t_training_set)
+    random.shuffle(as_t_validation_set)        
     as_validation_set=as_t_validation_set[0:int(ai_pics*.10)]
     as_training_set=as_t_training_set[0:int(ai_pics*.90)]        
     return as_training_set, as_validation_set, len(names_as)
@@ -126,13 +127,14 @@ def create_datasetsSA(sa_pics, dataroot, train_val_split=0.9):
             images_of_person = os.listdir(os.path.join(images_root, name))
             total = len(images_of_person)
 
-            sa_training_set += map(
+            sa_t_training_set += map(
                     add_class,
                     images_of_person[:int(total * train_val_split)])
-            sa_validation_set += map(
+            sa_t_validation_set += map(
                     add_class,
                     images_of_person[int(total * train_val_split):])
-        
+    random.shuffle(sa_t_training_set)    
+    random.shuffle(sa_t_validation_set)
     sa_validation_set=sa_t_validation_set[0:int(sa_pics*.10)]
     sa_training_set=sa_t_training_set[0:int(sa_pics*.90)]     
     return sa_training_set, sa_validation_set, len(names_sa)
@@ -166,7 +168,8 @@ def create_datasetsW(w_pics, dataroot, train_val_split=0.9):
             w_t_validation_set += map(
                     add_class,
                     images_of_person[int(total * train_val_split):])
-            
+    random.shuffle(w_t_validation_set)        
+    random.shuffle(w_t_training_set)
     w_validation_set = w_t_validation_set[0:int(w_pics*.10)]
     w_training_set = w_t_training_set[0:int(w_pics*.90)]          
     return w_training_set, w_validation_set, len(names_w)
