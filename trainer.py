@@ -9,7 +9,7 @@ from loss import compute_center_loss, get_center_delta
 class Trainer(object):
 
     def __init__(
-            self, optimizer, model, training_dataloader,
+            group_flie ,self, optimizer, model, training_dataloader,
             validation_dataloader, log_dir=False, max_epoch=100, resume=False,
             persist_stride=5, lamda=0.03, alpha=0.5):
 
@@ -34,7 +34,7 @@ class Trainer(object):
 
         if not self.log_dir:
             self.log_dir = os.path.join(os.path.dirname(
-                os.path.realpath(__file__)), 'logs')
+                os.path.realpath(__file__)), 'logs' , group_flie)
         if not os.path.isdir(self.log_dir):
             os.mkdir(self.log_dir)
 
@@ -145,7 +145,7 @@ class Trainer(object):
         return matches
 
     def persist(self, is_best=False ):
-        model_dir = os.path.join(self.log_dir, 'black' , 'models')
+        model_dir = os.path.join(self.log_dir, group_flie , 'models')
         if not os.path.isdir(model_dir):
             os.mkdir(model_dir)
         file_name = (
