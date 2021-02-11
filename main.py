@@ -139,8 +139,10 @@ def train(args):
         {'params': trainables_wo_bn, 'weight_decay': 0.0001},
         {'params': trainables_only_bn}
     ], lr=args.lr, momentum=0.9)
+    
+    group_flie = args.save_file_name
 
-    trainer = Trainer(
+    trainer = Trainer(group_flie,
         optimizer,
         model,
         training_dataloader,
